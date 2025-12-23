@@ -1,5 +1,6 @@
 # Smart-Medication-Reminder-and-Medicine-Expiry-Tracer-System
-#Design Justification – Embossed Foil OCR
+**Design Justification – Embossed Foil OCR**
+
 Reflective aluminium foil, which lacks ink contrast and creates specular highlights, is frequently used to emboss medicine expiration details. Because of this, even with contemporary vision systems, accurate OCR is a known open problem.
 In order to overcome this, our system employs a specific preprocessing pipeline for metallic surfaces that consists of the following: Contrast Limited Adaptive Histogram Equalisation (CLAHE) to improve local contrast and normalise illumination,
 Sobel filters are used for edge enhancement to highlight embossed text. Adaptive thresholding is used to binarize the image for improved text separation, while denoising is used to reduce background noise.
