@@ -11,7 +11,7 @@
 7. [Module 7 Implemenattation](Module%207%20Implemenattation/)
 8. [Module 8 Result and Conclusion](Module%208%20Result%20and%20Conclusion.docx)
 
-##Design Justification – Embossed Foil OCR
+## Design Justification – Embossed Foil OCR
 
 Reflective aluminium foil, which lacks ink contrast and creates specular highlights, is frequently used to emboss medicine expiration details. Because of this, even with contemporary vision systems, accurate OCR is a known open problem.
 In order to overcome this, our system employs a specific preprocessing pipeline for metallic surfaces that consists of the following: Contrast Limited Adaptive Histogram Equalisation (CLAHE) to improve local contrast and normalise illumination,
