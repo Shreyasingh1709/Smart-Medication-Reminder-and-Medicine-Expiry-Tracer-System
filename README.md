@@ -1,4 +1,15 @@
 # Smart-Medication-Reminder-and-Medicine-Expiry-Tracer-System
+
+## Project Modules (in order)
+
+1. [Module 1 Ideation.docx](Module%201%20Ideation.docx)
+2. [Module 2 Description.docx](Module%202%20Description.docx)
+3. [Module 3 Learning.docx](Module%203%20Learning.docx)
+4. [Module 4 Basics of project.docx](Module%204%20Basics%20of%20project.docx)
+5. [Module 5 Originality of the Project.docx](Module%205%20Originality%20of%20the%20Project.docx)
+6. [Module 6 GUI Dashboard.mp4](Module%206%20GUI%20Dashboard.mp4)
+7. [Module 7 Implemenattation](Module%207%20Implemenattation/)
+
 ****Design Justification – Embossed Foil OCR****
 
 Reflective aluminium foil, which lacks ink contrast and creates specular highlights, is frequently used to emboss medicine expiration details. Because of this, even with contemporary vision systems, accurate OCR is a known open problem.
