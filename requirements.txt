@@ -1,0 +1,4 @@
+# Requirements for Smart Medication Reminder CNN & NLP modules
+spacy
+# For spaCy English model, run: python -m spacy download en_core_web_sm
+tensorflow
