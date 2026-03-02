@@ -1,22 +1,34 @@
 """
 CNN Training Module for Medicine Image Classification
+Exports TFLite model compatible with predict_cnn.py
 """
+
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications import MobileNetV2
 from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
 from tensorflow.keras.models import Model
+import json
+import os
+import matplotlib.pyplot as plt
 
+# ---------------------------
 # Config
-DATASET_PATH = 'medicine_dataset/'
+# ---------------------------
+DATASET_PATH = "medicine_dataset/"
 IMG_SIZE = (128, 128)
 BATCH_SIZE = 32
-NUM_CLASSES = 3
 EPOCHS = 10
+MODEL_OUTPUT_DIR = "cnn_module"
+MODEL_NAME = "mobilenetv2_medicine.tflite"
 
+os.makedirs(MODEL_OUTPUT_DIR, exist_ok=True)
+
+# ---------------------------
 # Data generators
+# ---------------------------
 datagen = ImageDataGenerator(
-    rescale=1./255,
+    rescale=1.0 / 255,
     validation_split=0.2,
     horizontal_flip=True,
     rotation_range=20
@@ -26,44 +38,109 @@ train_gen = datagen.flow_from_directory(
     DATASET_PATH,
     target_size=IMG_SIZE,
     batch_size=BATCH_SIZE,
-    class_mode='categorical',
-    subset='training'
+    class_mode="categorical",
+    subset="training"
 )
 
 val_gen = datagen.flow_from_directory(
     DATASET_PATH,
     target_size=IMG_SIZE,
     batch_size=BATCH_SIZE,
-    class_mode='categorical',
-    subset='validation'
+    class_mode="categorical",
+    subset="validation"
 )
 
+NUM_CLASSES = train_gen.num_classes
+CLASS_NAMES = list(train_gen.class_indices.keys())
+
+print("Class order:", CLASS_NAMES)
+
+# ---------------------------
 # Model
+# ---------------------------
 base_model = MobileNetV2(
-    weights='imagenet',
+    weights="imagenet",
     include_top=False,
     input_shape=IMG_SIZE + (3,)
 )
+
 base_model.trainable = False
 
 x = base_model.output
 x = GlobalAveragePooling2D()(x)
-x = Dense(64, activation='relu')(x)
-outputs = Dense(NUM_CLASSES, activation='softmax')(x)
+x = Dense(64, activation="relu")(x)
+outputs = Dense(NUM_CLASSES, activation="softmax")(x)
 
 model = Model(inputs=base_model.input, outputs=outputs)
-model.compile(optimizer='adam',
-              loss='categorical_crossentropy',
-              metrics=['accuracy'])
 
+model.compile(
+    optimizer="adam",
+    loss="categorical_crossentropy",
+    metrics=["accuracy"]
+)
+
+# ---------------------------
 # Train
-model.fit(train_gen, validation_data=val_gen, epochs=EPOCHS)
+# ---------------------------
 
+# Train and capture history
+history = model.fit(
+    train_gen,
+    validation_data=val_gen,
+    epochs=EPOCHS
+)
+
+# ---------------------------
+# Plot and save accuracy/loss graphs
+# ---------------------------
+plt.figure(figsize=(12, 5))
+
+# Accuracy plot
+plt.subplot(1, 2, 1)
+plt.plot(history.history['accuracy'], label='Train Accuracy')
+plt.plot(history.history['val_accuracy'], label='Val Accuracy')
+plt.title('Model Accuracy')
+plt.xlabel('Epoch')
+plt.ylabel('Accuracy')
+plt.legend()
+
+# Loss plot
+plt.subplot(1, 2, 2)
+plt.plot(history.history['loss'], label='Train Loss')
+plt.plot(history.history['val_loss'], label='Val Loss')
+plt.title('Model Loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.legend()
+
+plt.tight_layout()
+plot_path = os.path.join(MODEL_OUTPUT_DIR, 'training_curves.png')
+plt.savefig(plot_path)
+plt.close()
+print(f"\U0001F4C8 Training curves saved to {plot_path}")
+
+# ---------------------------
+# Print final accuracy in terminal
+# ---------------------------
+final_train_acc = history.history['accuracy'][-1]
+final_val_acc = history.history['val_accuracy'][-1]
+print(f"\nFinal Training Accuracy: {final_train_acc:.4f}")
+print(f"Final Validation Accuracy: {final_val_acc:.4f}\n")
+
+# ---------------------------
 # Export TFLite
+# ---------------------------
 converter = tf.lite.TFLiteConverter.from_keras_model(model)
 tflite_model = converter.convert()
 
-with open("mobilenetv2_medicine.tflite", "wb") as f:
+tflite_path = os.path.join(MODEL_OUTPUT_DIR, MODEL_NAME)
+with open(tflite_path, "wb") as f:
     f.write(tflite_model)
 
-print("✅ Model trained and exported successfully")
+# Save class labels (VERY IMPORTANT)
+with open(os.path.join(MODEL_OUTPUT_DIR, "class_names.json"), "w") as f:
+    json.dump(CLASS_NAMES, f)
+
+print("Model trained and exported successfully")
+print("TFLite model:", tflite_path)
+print("Class labels saved")

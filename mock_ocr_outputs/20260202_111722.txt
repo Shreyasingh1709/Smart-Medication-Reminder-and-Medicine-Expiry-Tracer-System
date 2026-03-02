@@ -1,0 +1,5 @@
+This is a mock OCR output for 20260202_111722.jpg.
+Medicine Name: Paracetamol
+Expiry Date: 12/2027
+Batch No: XYZ123
+line_count = 2

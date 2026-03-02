@@ -1,0 +1,17 @@
+
+--- FINAL REPORT ---
+Image: medicine_dataset/Background_notebook/20260202_111722.jpg
+
+--- OCR TEXT ---
+This is a mock OCR output for 20260202_111722.jpg.
+Medicine Name: Paracetamol
+Expiry Date: 12/2027
+Batch No: XYZ123
+line_count = 2
+
+Medicine Name: Paracetamol
+Expiry Date: 12/2027
+
+CNN Output: {'success': True, 'prediction': 'Tablet', 'error': None}
+
+Dosage (from lines): 2 times per day
