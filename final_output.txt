@@ -4,14 +4,63 @@ Image: medicine_dataset/Background_notebook/20260202_111722.jpg
 
 --- OCR TEXT ---
 This is a mock OCR output for 20260202_111722.jpg.
+
 Medicine Name: Paracetamol
-Expiry Date: 12/2027
+1-0-1
+after food
+Expiry: 12/2027
+
+AMOXICILLIN
+0-1-0
+before food
+Exp: 11/2026
+
+Cetirizine
+HS
+with water
+Expiry: 05/2028
+
+VITAMIN D3
+1-0-0
+Expiry: 2029-03-01
+
+Ibuprofen
+TDS
+as needed
+
 Batch No: XYZ123
-line_count = 2
+line_count = 5
 
 Medicine Name: Paracetamol
 Expiry Date: 12/2027
 
 CNN Output: {'success': True, 'prediction': 'Tablet', 'error': None}
 
-Dosage (from lines): 2 times per day
+Dosage (from lines): 5 times per day
+
+--- EXTRACTED MEDICINES (using nlp_module) ---
+Medicine 1:
+  name: Paracetamol
+  dosage_timing: 1-0-1
+  timing_context: after food
+  expiry: 12/2027
+Medicine 2:
+  name: AMOXICILLIN
+  dosage_timing: 0-1-0
+  timing_context: before food
+  expiry: 11/2026
+Medicine 3:
+  name: Cetirizine
+  dosage_timing: HS
+  timing_context: with water
+  expiry: 05/2028
+Medicine 4:
+  name: VITAMIN D3
+  dosage_timing: 1-0-0
+  timing_context: 
+  expiry: 2029-03-01
+Medicine 5:
+  name: Ibuprofen
+  dosage_timing: TDS
+  timing_context: as needed
+  expiry: 

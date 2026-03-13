@@ -1,5 +1,27 @@
 This is a mock OCR output for 20260202_111722.jpg.
+
 Medicine Name: Paracetamol
-Expiry Date: 12/2027
+1-0-1
+after food
+Expiry: 12/2027
+
+AMOXICILLIN
+0-1-0
+before food
+Exp: 11/2026
+
+Cetirizine
+HS
+with water
+Expiry: 05/2028
+
+VITAMIN D3
+1-0-0
+Expiry: 2029-03-01
+
+Ibuprofen
+TDS
+as needed
+
 Batch No: XYZ123
-line_count = 2
+line_count = 5
