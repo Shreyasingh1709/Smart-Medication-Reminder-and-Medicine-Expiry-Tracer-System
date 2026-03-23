@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/oat">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/lavender" android:paddingTop="48dp"
+        android:paddingBottom="20dp" android:paddingHorizontal="22dp"
+        android:gravity="center_vertical">
+        <Button android:id="@+id/btn_back" android:layout_width="48dp" android:layout_height="48dp"
+            android:text="←" android:background="@null" android:textSize="22sp"
+            android:textColor="@color/charcoal" android:stateListAnimator="@null"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Adherence Analysis" android:textSize="22sp" android:fontFamily="@font/nunito"
+            android:textStyle="bold" android:textColor="@color/charcoal"/>
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="18dp">
+            <TextView android:id="@+id/tv_adherence_percent" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="0%" android:textSize="72sp"
+                android:fontFamily="@font/nunito" android:textStyle="bold"
+                android:textColor="@color/lavender_deeper" android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+            <ProgressBar android:id="@+id/progress_adherence"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent" android:layout_height="16dp"
+                android:progressTint="@color/lavender_deep"
+                android:progressBackgroundTint="@color/oat_dark"
+                android:layout_marginBottom="24dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="24dp">
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="80dp" android:layout_weight="1"
+                    app:cardCornerRadius="16dp" app:cardElevation="3dp"
+                    app:cardBackgroundColor="@color/status_taken_bg" android:layout_marginEnd="8dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:gravity="center" android:orientation="vertical">
+                        <TextView android:id="@+id/tv_taken_count" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0" android:textSize="28sp"
+                            android:fontFamily="@font/nunito" android:textStyle="bold"
+                            android:textColor="@color/status_taken_text"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Taken" android:textSize="12sp"
+                            android:textColor="@color/status_taken_text"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="80dp" android:layout_weight="1"
+                    app:cardCornerRadius="16dp" app:cardElevation="3dp"
+                    app:cardBackgroundColor="@color/status_missed_bg" android:layout_marginStart="8dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:gravity="center" android:orientation="vertical">
+                        <TextView android:id="@+id/tv_missed_count" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0" android:textSize="28sp"
+                            android:fontFamily="@font/nunito" android:textStyle="bold"
+                            android:textColor="@color/status_missed_text"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Missed" android:textSize="12sp"
+                            android:textColor="@color/status_missed_text"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@color/lavender" android:padding="14dp" android:orientation="horizontal">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="💡" android:textSize="22sp" android:layout_marginEnd="10dp"/>
+                <TextView android:id="@+id/tv_tip" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="Keep taking your medicines as scheduled!"
+                    android:textSize="14sp" android:textColor="@color/charcoal"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

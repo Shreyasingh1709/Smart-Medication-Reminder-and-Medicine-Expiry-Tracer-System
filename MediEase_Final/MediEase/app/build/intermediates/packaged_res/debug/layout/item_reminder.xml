@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    app:cardCornerRadius="18dp" app:cardElevation="3dp"
+    app:cardBackgroundColor="@color/white" android:layout_marginBottom="12dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:padding="18dp" android:gravity="center_vertical">
+        <FrameLayout android:layout_width="48dp" android:layout_height="48dp" android:layout_marginEnd="14dp">
+            <View android:layout_width="match_parent" android:layout_height="match_parent"
+                android:background="@drawable/bg_circle_lavender"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center" android:text="🔔" android:textSize="22sp"/>
+        </FrameLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/tv_medicine_name" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="17sp"
+                android:fontFamily="@font/nunito" android:textStyle="bold" android:textColor="@color/charcoal"/>
+            <TextView android:id="@+id/tv_time" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="22sp"
+                android:fontFamily="@font/nunito" android:textStyle="bold"
+                android:textColor="@color/coral" android:layout_marginTop="2dp"/>
+        </LinearLayout>
+        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switch_enabled"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:checked="true"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

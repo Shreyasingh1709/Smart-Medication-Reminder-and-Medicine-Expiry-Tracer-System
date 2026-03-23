@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_xxl">48dp</dimen>
+
+    <!-- Corner Radius -->
+    <dimen name="radius_sm">12dp</dimen>
+    <dimen name="radius_md">18dp</dimen>
+    <dimen name="radius_lg">24dp</dimen>
+    <dimen name="radius_xl">32dp</dimen>
+    <dimen name="radius_pill">100dp</dimen>
+
+    <!-- Button heights (elderly-friendly: large touch targets) -->
+    <dimen name="btn_height_primary">58dp</dimen>
+    <dimen name="btn_height_secondary">54dp</dimen>
+    <dimen name="btn_height_small">44dp</dimen>
+
+    <!-- Text sizes (elderly-friendly: larger text) -->
+    <dimen name="text_xxs">10sp</dimen>
+    <dimen name="text_xs">12sp</dimen>
+    <dimen name="text_sm">14sp</dimen>
+    <dimen name="text_md">16sp</dimen>
+    <dimen name="text_lg">18sp</dimen>
+    <dimen name="text_xl">22sp</dimen>
+    <dimen name="text_xxl">26sp</dimen>
+    <dimen name="text_h2">24sp</dimen>
+    <dimen name="text_h4">20sp</dimen>
+    <dimen name="text_h5">18sp</dimen>
+    <dimen name="text_body">16sp</dimen>
+    <dimen name="text_body_sm">14sp</dimen>
+    <dimen name="text_caption">12sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_display">32sp</dimen>
+    <dimen name="text_hero">44sp</dimen>
+
+    <!-- Icon sizes -->
+    <dimen name="icon_sm">20dp</dimen>
+    <dimen name="icon_md">28dp</dimen>
+    <dimen name="icon_lg">36dp</dimen>
+    <dimen name="icon_xl">48dp</dimen>
+    <dimen name="icon_xxl">68dp</dimen>
+
+    <!-- Header heights -->
+    <dimen name="header_height">180dp</dimen>
+    <dimen name="header_height_sm">140dp</dimen>
+    <dimen name="status_bar_padding">48dp</dimen>
+    <dimen name="header_padding_h">20dp</dimen>
+    <dimen name="header_padding_top">16dp</dimen>
+
+    <!-- Card -->
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_margin">14dp</dimen>
+    <dimen name="card_padding">18dp</dimen>
+    <dimen name="card_corner_radius">16dp</dimen>
+
+    <!-- Bottom nav height -->
+    <dimen name="bottom_nav_height">72dp</dimen>
+    <dimen name="bottom_nav_padding_bottom">8dp</dimen>
+
+    <!-- Logo -->
+    <dimen name="logo_size_large">108dp</dimen>
+    <dimen name="logo_size_medium">68dp</dimen>
+    <dimen name="logo_size_small">48dp</dimen>
+
+    <!-- Field -->
+    <dimen name="field_height">58dp</dimen>
+    <dimen name="field_radius">16dp</dimen>
+    <dimen name="field_padding_h">16dp</dimen>
+    <dimen name="field_corner">12dp</dimen>
+
+    <!-- Minimum touch target (accessibility) -->
+    <dimen name="min_touch_target">48dp</dimen>
+
+    <!-- Medicine card image -->
+    <dimen name="med_image_size">72dp</dimen>
+
+    <!-- Avatar -->
+    <dimen name="avatar_size">84dp</dimen>
+
+    <!-- Screen horizontal padding -->
+    <dimen name="screen_padding_h">20dp</dimen>
+    <dimen name="screen_padding_v">16dp</dimen>
+
+    <!-- Added missing dimens -->
+    <dimen name="bsheet_corner">20dp</dimen>
+    <dimen name="chip_corner">16dp</dimen>
+    <dimen name="chart_height">240dp</dimen>
+</resources>

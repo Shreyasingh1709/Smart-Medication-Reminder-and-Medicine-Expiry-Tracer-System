@@ -1,0 +1,282 @@
+[
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_bottom_nav.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_bottom_nav.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_fragment_reminders.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\fragment_reminders.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_status_taken.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_status_taken.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_fragment_caregiver_patients.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\fragment_caregiver_patients.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_activity_notification_settings.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_notification_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_fragment_adherence.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\fragment_adherence.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_activity_patient_setup.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_patient_setup.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_chart.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\ic_chart.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\menu_menu_patient_nav.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\menu\\menu_patient_nav.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\menu_bottom_nav_caregiver.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\menu\\bottom_nav_caregiver.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\font_nunito_extrabold.ttf.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\font\\nunito_extrabold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\font_nunito_bold.ttf.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\font\\nunito_bold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\font_nunito_regular.ttf.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\font\\nunito_regular.ttf"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\font_nunito.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\font\\nunito.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_card_white.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_card_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_activity_adherence_analysis.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_adherence_analysis.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_picker_row.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_picker_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_fragment_analysis.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\fragment_analysis.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_gradient_background.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\gradient_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\font_nunito_black.ttf.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\font\\nunito_black.ttf"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_field.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_field.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_fragment_calendar.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\fragment_calendar.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_item_expiry_warning.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\item_expiry_warning.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_more.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\ic_more.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_activity_add_medicine.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_add_medicine.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\navigation_nav_patient.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\navigation\\nav_patient.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_medicine_placeholder.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\ic_medicine_placeholder.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_circle_white.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_circle_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_status_expiring.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_status_expiring.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_login_card.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_login_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_splash_background.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\splash_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_people.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\ic_people.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_btn_outline.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_btn_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_code_display.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_code_display.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_circle_coral_light.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_circle_coral_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_activity_help_support.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_help_support.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_status_missed.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_status_missed.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_activity_forgot_password.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_forgot_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_circle_lavender.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_circle_lavender.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_field_focused.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_field_focused.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_item_medicine_card.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\item_medicine_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_toggle_bar.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_toggle_bar.xml"
+    },
+    {
+        "merged": "com.mediease.app-merged_res-82:/layout_activity_add_medicine.xml.flat",
+        "source": "com.mediease.app-main-84:/layout/activity_add_medicine.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_bell.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\ic_bell.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\xml_file_paths.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\xml\\file_paths.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_activity_role_select.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_role_select.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_add.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\ic_add.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_status_expired.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_status_expired.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_check.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\ic_check.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_tip_card.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_tip_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_activity_patient_main.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_patient_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_item_reminder.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\item_reminder.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\font_nunito_semibold.ttf.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\font\\nunito_semibold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_home.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\ic_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_status_upcoming.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_status_upcoming.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_btn_coral.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_btn_coral.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_tag_lavender.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_tag_lavender.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_toggle_selected.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_toggle_selected.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_arrow_back.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\ic_arrow_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_calendar.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\ic_calendar.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_activity_caregiver_setup.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_caregiver_setup.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_person.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\ic_person.xml"
+    },
+    {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_pill_notif.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\ic_pill_notif.xml"
+    }
+]

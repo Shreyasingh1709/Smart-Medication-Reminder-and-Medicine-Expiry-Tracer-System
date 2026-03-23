@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/oat">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/lavender" android:paddingTop="52dp" android:paddingBottom="32dp"
+        android:paddingHorizontal="24dp" android:orientation="vertical" android:gravity="center">
+        <FrameLayout android:layout_width="80dp" android:layout_height="80dp">
+            <View android:layout_width="match_parent" android:layout_height="match_parent"
+                android:background="@drawable/bg_circle_coral_light"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center" android:text="🤝" android:textSize="36sp"/>
+        </FrameLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Caregiver Connection" android:textSize="22sp" android:fontFamily="@font/nunito"
+            android:textStyle="bold" android:textColor="@color/charcoal" android:layout_marginTop="12dp"
+            android:gravity="center"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Link with your patient to monitor their medication schedule"
+            android:textSize="13sp" android:textColor="@color/charcoal_light"
+            android:gravity="center" android:maxWidth="260dp" android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="22dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Patient Name" android:textSize="15sp" android:fontFamily="@font/nunito"
+                android:textStyle="bold" android:textColor="@color/charcoal"
+                android:layout_marginBottom="8dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/field_height"
+                android:background="@drawable/bg_field" android:gravity="center_vertical"
+                android:paddingHorizontal="16dp" android:layout_marginBottom="22dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="👤" android:textSize="20sp"/>
+                <EditText android:id="@+id/et_patient_name" android:layout_width="0dp"
+                    android:layout_height="match_parent" android:layout_weight="1"
+                    android:background="@null" android:hint="The name of the person you care for"
+                    android:textSize="17sp" android:fontFamily="@font/nunito"
+                    android:paddingStart="10dp" android:inputType="textPersonName"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/charcoal_light"/>
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Patient Unique Code" android:textSize="15sp" android:fontFamily="@font/nunito"
+                android:textStyle="bold" android:textColor="@color/charcoal"
+                android:layout_marginBottom="8dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/field_height"
+                android:background="@drawable/bg_field" android:gravity="center_vertical"
+                android:paddingHorizontal="16dp" android:layout_marginBottom="6dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🔗" android:textSize="20sp"/>
+                <EditText android:id="@+id/et_patient_code" android:layout_width="0dp"
+                    android:layout_height="match_parent" android:layout_weight="1"
+                    android:background="@null" android:hint="e.g. MED-7X29K"
+                    android:textSize="17sp" android:fontFamily="@font/nunito"
+                    android:paddingStart="10dp" android:inputType="textCapCharacters"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/charcoal_light"/>
+            </LinearLayout>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="The patient can find this code in their profile settings."
+                android:textSize="12sp" android:textColor="@color/charcoal_light"
+                android:layout_marginBottom="28dp"/>
+
+            <Button android:id="@+id/btn_connect"
+                android:layout_width="match_parent" android:layout_height="@dimen/btn_height_primary"
+                android:text="Connect &amp; Start ✓" android:background="@drawable/bg_btn_coral"
+                android:textColor="@color/white" android:textSize="18sp"
+                android:fontFamily="@font/nunito" android:textStyle="bold"
+                android:stateListAnimator="@null" android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

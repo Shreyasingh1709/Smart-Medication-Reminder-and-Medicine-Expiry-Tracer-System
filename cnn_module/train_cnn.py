@@ -11,7 +11,8 @@ from tensorflow.keras.models import Model
 import json
 import os
 import matplotlib.pyplot as plt
-
+import numpy as np
+from sklearn.metrics import accuracy_score, f1_score
 # ---------------------------
 # Config
 # ---------------------------
@@ -141,6 +142,28 @@ with open(tflite_path, "wb") as f:
 with open(os.path.join(MODEL_OUTPUT_DIR, "class_names.json"), "w") as f:
     json.dump(CLASS_NAMES, f)
 
-print("Model trained and exported successfully")
-print("TFLite model:", tflite_path)
-print("Class labels saved")
+# ---------------------------
+# Compute F1 Score and Accuracy for Train and Validation
+# ---------------------------
+def get_preds_and_labels(generator, model):
+    y_true = []
+    y_pred = []
+    for i in range(len(generator)):
+        x_batch, y_batch = generator[i]
+        preds = model.predict(x_batch)
+        y_true.extend(np.argmax(y_batch, axis=1))
+        y_pred.extend(np.argmax(preds, axis=1))
+    return np.array(y_true), np.array(y_pred)
+
+train_true, train_pred = get_preds_and_labels(train_gen, model)
+val_true, val_pred = get_preds_and_labels(val_gen, model)
+
+train_acc = accuracy_score(train_true, train_pred)
+val_acc = accuracy_score(val_true, val_pred)
+train_f1 = f1_score(train_true, train_pred, average='weighted')
+val_f1 = f1_score(val_true, val_pred, average='weighted')
+
+print(f"\nFinal Training Accuracy: {final_train_acc:.4f} (sklearn: {train_acc:.4f})")
+print(f"Final Validation Accuracy: {final_val_acc:.4f} (sklearn: {val_acc:.4f})")
+print(f"Final Training F1 Score: {train_f1:.4f}")
+print(f"Final Validation F1 Score: {val_f1:.4f}\n")

@@ -1,0 +1,4 @@
+-keep class com.mediease.app.models.** { *; }
+-keep class com.mediease.app.database.** { *; }
+-keepattributes *Annotation*
+-keepattributes Signature

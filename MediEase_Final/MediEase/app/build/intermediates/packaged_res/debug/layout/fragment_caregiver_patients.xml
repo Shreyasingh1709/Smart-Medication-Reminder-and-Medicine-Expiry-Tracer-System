@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/oat">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/lavender" android:paddingTop="48dp"
+        android:paddingBottom="20dp" android:paddingHorizontal="22dp">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="👥 My Patients" android:textSize="26sp"
+            android:fontFamily="@font/nunito" android:textStyle="bold" android:textColor="@color/charcoal"/>
+    </LinearLayout>
+    <TextView android:id="@+id/tv_no_patients" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No patients linked yet.\n\nAsk your patient to share their code\nfrom their Profile screen."
+        android:gravity="center" android:padding="48dp" android:textSize="16sp"
+        android:textColor="@color/charcoal_light"/>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_patients"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:padding="18dp" android:clipToPadding="false" android:visibility="gone"/>
+</LinearLayout>

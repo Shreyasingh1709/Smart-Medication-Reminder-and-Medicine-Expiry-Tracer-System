@@ -1,7 +1,10 @@
 from dotenv import load_dotenv
 load_dotenv()
 import os
+from vision_utils.ocr import extract_text
 
+result = extract_text(r"C:\Users\shrey\OneDrive\Smart Medication Reminder\medicine_dataset\Background_notebook\20260202_111728.jpg")
+print(result)
 USE_MOCK_OCR = os.getenv("USE_MOCK_OCR", "1") == "1"
 
 if not USE_MOCK_OCR:

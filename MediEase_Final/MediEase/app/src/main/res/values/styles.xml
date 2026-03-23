@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base Text Appearance -->
+    <style name="TextAppearance.MediEase" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:textColor">@color/charcoal</item>
+    </style>
+
+    <!-- Calendar Specific Text Appearances -->
+    <style name="CalendarDateTextAppearance" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/charcoal</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="CalendarWeekDayTextAppearance" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/charcoal_light</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Theme for inline CalendarView -->
+    <style name="CalendarViewTheme" parent="Theme.MaterialComponents.Light">
+        <item name="android:textColorPrimary">@color/charcoal</item>
+        <item name="android:textColorSecondary">@color/charcoal_light</item>
+        <item name="colorPrimary">@color/coral</item>
+    </style>
+
+    <!-- Primary coral button -->
+    <style name="Widget.MediEase.Button.Primary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/btn_height_primary</item>
+        <item name="android:background">@drawable/bg_btn_coral</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_h5</item>
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:gravity">center</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <!-- Base Button Style -->
+    <style name="Widget.MediEase.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="cornerRadius">@dimen/radius_md</item>
+    </style>
+
+    <!-- Outline / secondary button -->
+    <style name="Widget.MediEase.Button.Outline">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/btn_height_secondary</item>
+        <item name="android:background">@drawable/bg_btn_outline</item>
+        <item name="android:textColor">@color/charcoal</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <!-- Form input field -->
+    <style name="Widget.MediEase.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">@dimen/field_corner</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/field_corner</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/field_corner</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/field_corner</item>
+        <item name="boxStrokeColor">@color/lavender_dark</item>
+        <item name="boxBackgroundColor">@color/oat</item>
+        <item name="hintTextColor">@color/charcoal_light</item>
+        <item name="android:textColorHint">@color/charcoal_light</item>
+    </style>
+
+    <!-- Card style -->
+    <style name="Widget.MediEase.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="android:padding">@dimen/card_padding</item>
+    </style>
+
+    <!-- Section title text -->
+    <style name="TextAppearance.MediEase.SectionTitle" parent="TextAppearance.MediEase">
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+        <item name="android:textColor">@color/charcoal</item>
+    </style>
+
+    <!-- Body text -->
+    <style name="TextAppearance.MediEase.Body" parent="TextAppearance.MediEase">
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:textColor">@color/charcoal</item>
+    </style>
+
+    <!-- Caption text -->
+    <style name="TextAppearance.MediEase.Caption" parent="TextAppearance.MediEase">
+        <item name="android:textSize">@dimen/text_caption</item>
+        <item name="android:fontFamily">@font/nunito_semibold</item>
+        <item name="android:textColor">@color/charcoal_light</item>
+    </style>
+
+    <!-- H2 heading -->
+    <style name="TextAppearance.MediEase.H2" parent="TextAppearance.MediEase">
+        <item name="android:textSize">@dimen/text_h2</item>
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+        <item name="android:textColor">@color/charcoal</item>
+    </style>
+
+    <!-- Bottom sheet dialog theme -->
+    <style name="Theme.MediEase.BottomSheet" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.MediEase.BottomSheet</item>
+    </style>
+
+    <style name="Widget.MediEase.BottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.MediEase.BottomSheet</item>
+    </style>
+
+    <style name="ShapeAppearance.MediEase.BottomSheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/bsheet_corner</item>
+        <item name="cornerSizeTopRight">@dimen/bsheet_corner</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <!-- Dialog / Picker Theme -->
+    <style name="Theme.MediEase.Dialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/coral</item>
+        <item name="colorAccent">@color/coral</item>
+        <item name="android:textColorPrimary">@color/charcoal</item>
+        <item name="android:textColorSecondary">@color/charcoal_light</item>
+        <item name="android:headerBackground">@color/lavender</item>
+        <item name="android:calendarTextColor">@color/charcoal</item>
+        <item name="android:textColor">@color/charcoal</item>
+        <item name="android:dayOfWeekTextAppearance">@style/CalendarWeekDayTextAppearance</item>
+        <item name="android:fontFamily">@font/nunito</item>
+    </style>
+
+    <!-- Toolbar -->
+    <style name="Widget.MediEase.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/lavender</item>
+        <item name="titleTextColor">@color/charcoal</item>
+        <item name="titleTextAppearance">@style/TextAppearance.MediEase.H2</item>
+    </style>
+
+    <!-- Chip style -->
+    <style name="Widget.MediEase.Chip" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipCornerRadius">@dimen/chip_corner</item>
+        <item name="chipStrokeColor">@color/oat_dark</item>
+        <item name="chipStrokeWidth">2dp</item>
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textColor">@color/charcoal</item>
+    </style>
+
+</resources>

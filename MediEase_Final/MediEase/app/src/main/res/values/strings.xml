@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MediEase</string>
+    <string name="app_tagline">Your Simple, Smart Medication Companion</string>
+
+    <!-- Auth -->
+    <string name="welcome_back">Welcome Back 👋</string>
+    <string name="login">Login</string>
+    <string name="username_or_email">Username or Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot your password? Tap here</string>
+    <string name="get_started">Get Started →</string>
+    <string name="log_out">🚪 Log Out</string>
+
+    <!-- Role Select -->
+    <string name="who_are_you">Who are you?</string>
+    <string name="choose_role">Choose your role to personalise your experience</string>
+    <string name="patient">Patient</string>
+    <string name="caregiver">Caregiver</string>
+    <string name="patient_desc">Manage my own medications and reminders</string>
+    <string name="caregiver_desc">Monitor and support a patient\'s schedule</string>
+    <string name="switch_role_later">You can switch roles later in your profile settings</string>
+
+    <!-- Patient Setup -->
+    <string name="step_of">Step %1$d of 4</string>
+    <string name="setup_name_title">What\'s your name?</string>
+    <string name="setup_name_sub">This helps us personalise your experience</string>
+    <string name="setup_age_title">How old are you?</string>
+    <string name="setup_age_sub">Helps us flag age-appropriate dosing notes</string>
+    <string name="setup_sleep_title">When do you sleep and wake up?</string>
+    <string name="setup_sleep_sub">We\'ll avoid reminders during sleep hours</string>
+    <string name="setup_meals_title">What are your meal times?</string>
+    <string name="setup_meals_sub">We\'ll sync reminders to your meals</string>
+    <string name="full_name">Full Name</string>
+    <string name="your_age">Your Age</string>
+    <string name="or_select_range">Or select a range:</string>
+    <string name="next">Next →</string>
+    <string name="all_done">All Done! ✓</string>
+    <string name="back">←</string>
+    <string name="wake_up_time">Wake Up Time</string>
+    <string name="bed_time">Bed Time</string>
+    <string name="breakfast_time">Breakfast Time</string>
+    <string name="lunch_time">Lunch Time</string>
+    <string name="dinner_time">Dinner Time</string>
+    <string name="tap_to_set_time">Tap to set time</string>
+
+    <!-- Caregiver Setup -->
+    <string name="cg_setup_title">Set Up as Caregiver</string>
+    <string name="cg_setup_sub">Enter a patient code or email to link with their medication schedule</string>
+    <string name="patient_code_or_email">Patient code or email</string>
+    <string name="connect_to_patient">🔗 Connect to Patient</string>
+    <string name="or">OR</string>
+    <string name="skip_for_now">Skip for now</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_email">Your Email</string>
+
+    <!-- Home / Dashboard -->
+    <string name="good_morning">Good Morning 👋</string>
+    <string name="good_afternoon">Good Afternoon 👋</string>
+    <string name="good_evening">Good Evening 👋</string>
+    <string name="todays_schedule">Today\'s Schedule</string>
+    <string name="medicines_today">medicines today</string>
+    <string name="taken">Taken</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="missed">Missed</string>
+    <string name="mark_taken">Mark as Taken ✓</string>
+    <string name="view_all">View All</string>
+    <string name="expiry_warnings">⚠️ Expiry Warnings</string>
+    <string name="expires_soon">Expires Soon</string>
+    <string name="expired">EXPIRED</string>
+
+    <!-- Add Medicine -->
+    <string name="add_medicine">Add Medicine</string>
+    <string name="edit_medicine">Edit Medicine</string>
+    <string name="medicine_name">Medicine Name</string>
+    <string name="dosage">Dosage</string>
+    <string name="frequency">Frequency</string>
+    <string name="reminder_time">Reminder Time</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="start_date">Start Date</string>
+    <string name="notes">Notes (optional)</string>
+    <string name="medicine_type">Medicine Type</string>
+    <string name="tablet">💊 Tablet</string>
+    <string name="capsule">💉 Capsule</string>
+    <string name="syrup">🍶 Syrup</string>
+    <string name="injection">💉 Injection</string>
+    <string name="drops">💧 Drops</string>
+    <string name="take_photo">📷 Take Photo</string>
+    <string name="choose_gallery">🖼️ Choose from Gallery</string>
+    <string name="medicine_image">Medicine Image</string>
+    <string name="save_medicine">💾 Save Medicine</string>
+    <string name="days_repeat">Repeat Days</string>
+    <string name="before_meal">Before Meal</string>
+    <string name="after_meal">After Meal</string>
+    <string name="with_meal">With Meal</string>
+    <string name="anytime">Any Time</string>
+
+    <!-- Reminders Screen -->
+    <string name="reminders">Reminders</string>
+    <string name="active_reminders">Active Reminders</string>
+    <string name="no_reminders">No reminders yet</string>
+    <string name="add_reminder">+ Add Reminder</string>
+
+    <!-- Calendar Screen -->
+    <string name="calendar">Calendar</string>
+    <string name="schedule_for">Schedule for %1$s</string>
+
+    <!-- Profile Screen -->
+    <string name="profile">Profile</string>
+    <string name="edit_schedule">✏️ Edit Schedule</string>
+    <string name="switch_role">Switch Role</string>
+    <string name="connect_with_caregiver">Connect with Caregiver</string>
+    <string name="share_code_hint">Share your code so a caregiver can access your schedule</string>
+    <string name="notification_settings">🔔 Notification Settings</string>
+    <string name="help_support">❓ Help &amp; Support</string>
+    <string name="copy_code">Copy code</string>
+
+    <!-- Analysis -->
+    <string name="analysis">Analysis</string>
+    <string name="adherence_rate">Adherence Rate</string>
+    <string name="this_week">This Week</string>
+    <string name="this_month">This Month</string>
+    <string name="missed_doses">Missed Doses</string>
+    <string name="taken_doses">Taken Doses</string>
+    <string name="overall_adherence">Overall Adherence</string>
+    <string name="improve_adherence_tip">💡 Tip: Set multiple reminders to improve adherence</string>
+    <string name="no_data_yet">No data yet. Start tracking your medicines to see statistics.</string>
+    <string name="adherence_overview">Adherence Overview</string>
+    <string name="weekly_view">Weekly</string>
+    <string name="monthly_view">Monthly</string>
+    <string name="all_time_view">All Time</string>
+    <string name="total_taken">Total Taken</string>
+    <string name="total_missed">Total Missed</string>
+    <string name="missed_doses_trend">Missed Doses Trend</string>
+    <string name="tip_consistency">Maintain consistency for better results!</string>
+
+    <!-- Caregiver Dashboard -->
+    <string name="patients">Patients</string>
+    <string name="patient_overview">Patient Overview</string>
+    <string name="add_patient">+ Add Patient</string>
+    <string name="no_patients">No patients linked yet</string>
+    <string name="connect_patient_code">Connect with a patient code</string>
+    <string name="alert_missed_dose">⚠️ Missed dose alert</string>
+    <string name="alert_expiry">⚠️ Expiry warning</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_reminders">Reminders</string>
+    <string name="nav_calendar">Calendar</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_patients">Patients</string>
+    <string name="nav_analysis">Analysis</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel_medicine">Medicine Reminders</string>
+    <string name="notif_channel_medicine_desc">Reminders to take your medicine</string>
+    <string name="notif_channel_expiry">Expiry Alerts</string>
+    <string name="notif_channel_expiry_desc">Alerts for medicines expiring soon</string>
+    <string name="notif_channel_caregiver">Caregiver Alerts</string>
+    <string name="notif_channel_caregiver_desc">Alerts for caregiver activity</string>
+    <string name="notif_take_medicine">Time to take %1$s</string>
+    <string name="notif_expiring_soon">%1$s expires in %2$d days!</string>
+    <string name="notif_expired">%1$s has expired!</string>
+    <string name="notif_missed_dose">%1$s missed their %2$s dose</string>
+
+    <!-- Common -->
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="ok">OK</string>
+    <string name="loading">Loading…</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="no_medicines">No medicines added yet</string>
+    <string name="add_first_medicine">+ Add your first medicine</string>
+
+    <!-- Accessibility -->
+    <string name="cd_medicine_image">Medicine image</string>
+    <string name="cd_mark_taken">Mark medicine as taken</string>
+    <string name="cd_back_button">Go back</string>
+    <string name="cd_add_medicine">Add new medicine</string>
+    <string name="cd_notification">Notification</string>
+</resources>

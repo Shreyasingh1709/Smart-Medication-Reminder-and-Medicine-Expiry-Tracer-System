@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp" app:cardElevation="3dp"
+    app:cardBackgroundColor="@color/status_expiring_bg" android:layout_marginBottom="10dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:padding="16dp" android:gravity="center_vertical">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="⚠️" android:textSize="22sp" android:layout_marginEnd="14dp"/>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView android:id="@+id/tv_name" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="16sp"
+                android:fontFamily="@font/nunito" android:textStyle="bold" android:textColor="@color/charcoal"/>
+            <TextView android:id="@+id/tv_dosage" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="13sp"
+                android:textColor="@color/charcoal_light" android:layout_marginTop="2dp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="end">
+            <TextView android:id="@+id/tv_status" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="12sp"
+                android:fontFamily="@font/nunito" android:textStyle="bold"/>
+            <TextView android:id="@+id/tv_days_left" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="12sp"
+                android:fontFamily="@font/nunito" android:layout_marginTop="2dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
