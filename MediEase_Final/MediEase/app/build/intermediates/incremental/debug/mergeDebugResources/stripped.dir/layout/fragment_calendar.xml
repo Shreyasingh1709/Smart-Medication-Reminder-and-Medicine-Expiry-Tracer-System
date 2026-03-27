@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/oat">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/lavender" android:paddingTop="48dp"
+        android:paddingBottom="20dp" android:paddingHorizontal="22dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="📅 Calendar" android:textSize="26sp" android:fontFamily="@font/nunito"
+            android:textStyle="bold" android:textColor="@color/charcoal"/>
+    </LinearLayout>
+
+    <CalendarView android:id="@+id/calendar_view"
+        android:layout_width="match_parent" android:layout_height="350dp"
+        android:background="@color/white" android:layout_margin="18dp"
+        android:dateTextAppearance="@style/CalendarDateTextAppearance"
+        android:weekDayTextAppearance="@style/CalendarWeekDayTextAppearance"
+        android:focusedMonthDateColor="@color/charcoal"
+        android:unfocusedMonthDateColor="@color/charcoal_muted"
+        android:selectedWeekBackgroundColor="@color/lavender"
+        android:theme="@style/Theme.MediEase.Dialog"/>
+
+    <TextView android:id="@+id/tv_schedule_date" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="Schedule for today"
+        android:textSize="18sp" android:fontFamily="@font/nunito" android:textStyle="bold"
+        android:textColor="@color/charcoal" android:layout_marginTop="18dp"
+        android:layout_marginBottom="12dp" android:layout_marginLeft="18dp" android:layout_marginRight="18dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_medicines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="12dp"
+        android:overScrollMode="ifContentScrolls"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"
+        android:visibility="visible"/>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Select a date to view medicines scheduled for that day."
+        android:textSize="14sp" android:textColor="@color/charcoal_light"
+        android:gravity="center" android:padding="24dp"/>
+</LinearLayout>

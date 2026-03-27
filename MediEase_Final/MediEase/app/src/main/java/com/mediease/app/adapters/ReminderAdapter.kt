@@ -8,14 +8,23 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mediease.app.databinding.ItemReminderBinding
 import com.mediease.app.models.Reminder
 
-class ReminderAdapter : ListAdapter<Reminder, ReminderAdapter.ViewHolder>(DiffCallback) {
+class ReminderAdapter(
+    private val onStatusChanged: (Reminder, Boolean) -> Unit
+) : ListAdapter<Reminder, ReminderAdapter.ViewHolder>(DiffCallback) {
 
     inner class ViewHolder(private val binding: ItemReminderBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(reminder: Reminder) {
             binding.tvMedicineName.text = reminder.medicineName
             binding.tvTime.text = formatTime(reminder.time)
+            
+            // Remove listener before setting state to avoid infinite loop
+            binding.switchEnabled.setOnCheckedChangeListener(null)
             binding.switchEnabled.isChecked = reminder.isEnabled
+            
+            binding.switchEnabled.setOnCheckedChangeListener { _, isChecked ->
+                onStatusChanged(reminder, isChecked)
+            }
         }
 
         private fun formatTime(time: String): String {

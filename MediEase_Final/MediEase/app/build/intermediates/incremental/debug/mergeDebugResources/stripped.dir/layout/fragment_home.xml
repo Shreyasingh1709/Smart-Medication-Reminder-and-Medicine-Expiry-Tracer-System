@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/oat">
+
+    <!-- Header -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/lavender"
+        android:paddingTop="48dp" android:paddingBottom="20dp" android:paddingHorizontal="22dp">
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/tv_greeting" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Good Morning 👋"
+                android:textSize="26sp" android:fontFamily="@font/nunito" android:textStyle="bold"
+                android:textColor="@color/charcoal"/>
+            <TextView android:id="@+id/tv_date" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="14sp"
+                android:textColor="@color/charcoal_light" android:layout_marginTop="3dp"/>
+        </LinearLayout>
+
+        <FrameLayout android:layout_width="48dp" android:layout_height="48dp">
+            <View android:layout_width="match_parent" android:layout_height="match_parent"
+                android:background="@drawable/bg_circle_white"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center" android:text="👤" android:textSize="22sp"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="18dp">
+
+            <!-- Stats Row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="18dp">
+
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="80dp" android:layout_weight="1"
+                    app:cardCornerRadius="16dp" app:cardElevation="3dp"
+                    app:cardBackgroundColor="@color/status_taken_bg" android:layout_marginEnd="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:orientation="vertical" android:gravity="center">
+                        <TextView android:id="@+id/tv_taken_count" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0 Taken"
+                            android:textSize="18sp" android:fontFamily="@font/nunito" android:textStyle="bold"
+                            android:textColor="@color/status_taken_text"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="✓" android:textSize="14sp" android:textColor="@color/status_taken_text"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="80dp" android:layout_weight="1"
+                    app:cardCornerRadius="16dp" app:cardElevation="3dp"
+                    app:cardBackgroundColor="@color/status_missed_bg"
+                    android:layout_marginHorizontal="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:orientation="vertical" android:gravity="center">
+                        <TextView android:id="@+id/tv_missed_count" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0 Missed"
+                            android:textSize="18sp" android:fontFamily="@font/nunito" android:textStyle="bold"
+                            android:textColor="@color/status_missed_text"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="⚠" android:textSize="14sp" android:textColor="@color/status_missed_text"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="80dp" android:layout_weight="1"
+                    app:cardCornerRadius="16dp" app:cardElevation="3dp"
+                    app:cardBackgroundColor="@color/status_upcoming_bg" android:layout_marginStart="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:orientation="vertical" android:gravity="center">
+                        <TextView android:id="@+id/tv_total_count" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0 Total"
+                            android:textSize="18sp" android:fontFamily="@font/nunito" android:textStyle="bold"
+                            android:textColor="@color/status_upcoming_text"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="📋" android:textSize="14sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Today's medicines -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="📋 Today's Schedule" android:textSize="18sp"
+                android:fontFamily="@font/nunito" android:textStyle="bold"
+                android:textColor="@color/charcoal" android:layout_marginBottom="12dp"/>
+
+            <TextView android:id="@+id/tv_medicine_count" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="14sp"
+                android:textColor="@color/charcoal_light" android:layout_marginBottom="10dp"/>
+
+            <!-- Missed Alert -->
+            <androidx.cardview.widget.CardView android:id="@+id/card_missed_alert"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp" app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/status_missed_bg"
+                android:layout_marginBottom="14dp" android:visibility="gone">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:padding="14dp" android:gravity="center_vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="⚠️" android:textSize="22sp" android:layout_marginEnd="10dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="You have missed doses today. Please take your medicine."
+                        android:textSize="14sp" android:textColor="@color/status_missed_text"
+                        android:fontFamily="@font/nunito" android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView android:id="@+id/tv_no_medicines" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="No medicines added yet\nTap + to add your first medicine"
+                android:textSize="16sp" android:textColor="@color/charcoal_light"
+                android:gravity="center" android:padding="32dp" android:visibility="gone"/>
+
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_medicines"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"/>
+
+            <!-- Expiry Section -->
+            <LinearLayout android:id="@+id/card_expiry_section" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical"
+                android:layout_marginTop="18dp" android:visibility="gone">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="⚠️ Expiry Warnings" android:textSize="18sp"
+                    android:fontFamily="@font/nunito" android:textStyle="bold"
+                    android:textColor="@color/charcoal" android:layout_marginBottom="12dp"/>
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_expiry_warnings"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- FAB -->
+    <Button
+        android:id="@+id/fab_add_medicine"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_status_expiring"
+        android:fontFamily="@font/nunito"
+        android:paddingHorizontal="26dp"
+        android:stateListAnimator="@null"
+        android:text="+ Add Medicine"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

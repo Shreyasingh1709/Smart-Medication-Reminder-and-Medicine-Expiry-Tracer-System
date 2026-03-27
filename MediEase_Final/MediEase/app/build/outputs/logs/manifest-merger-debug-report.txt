@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:49:9-53:20
+INJECTED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:50:9-54:20
 	android:grantUriPermissions
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:51:38-72
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:52:38-72
 	android:authorities
 		INJECTED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:50:13-64
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:51:13-64
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:51:13-37
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:52:13-37
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:49:19-68
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:50:19-68
 manifest
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:2:1-63:12
-INJECTED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:2:1-63:12
-INJECTED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:2:1-63:12
-INJECTED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:2:1-63:12
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:2:1-64:12
 MERGED from [androidx.databinding:databinding-adapters:8.2.0] C:\Users\shrey\.gradle\caches\transforms-3\f77b23ae595e4f832c1ee60ac26487a6\transformed\databinding-adapters-8.2.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-ktx:8.2.0] C:\Users\shrey\.gradle\caches\transforms-3\fc582fc121ce681b6292b9db08032b25\transformed\jetified-databinding-ktx-8.2.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-runtime:8.2.0] C:\Users\shrey\.gradle\caches\transforms-3\880ce5697276de85dd03cff1dbee6ad1\transformed\databinding-runtime-8.2.0\AndroidManifest.xml:2:1-7:12
@@ -169,15 +169,19 @@ MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\tra
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:5-68
 	android:name
 		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:14:22-65
-uses-feature#android.hardware.camera
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:15:5-85
-	android:required
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:15:58-82
+uses-permission#android.permission.USE_FULL_SCREEN_INTENT
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:15:5-81
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:15:19-57
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:15:22-78
+uses-feature#android.hardware.camera
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:16:5-85
+	android:required
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:16:58-82
+	android:name
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:16:19-57
 application
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:17:5-62:19
-INJECTED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:17:5-62:19
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:18:5-63:19
+INJECTED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:18:5-63:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\shrey\.gradle\caches\transforms-3\2a33737077e62d232c64b491e619c157\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\shrey\.gradle\caches\transforms-3\2a33737077e62d232c64b491e619c157\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\shrey\.gradle\caches\transforms-3\58ba14dc966e783edef9f222b1fa0614\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -211,181 +215,181 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sh
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] C:\Users\shrey\.gradle\caches\transforms-3\c634865c58dba19226839d38c9b3ea5a\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:23:9-35
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:24:9-35
 	android:label
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:21:9-41
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:22:9-41
 	android:roundIcon
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:22:9-62
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:23:9-62
 	android:icon
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:20:9-57
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:21:9-57
 	android:allowBackup
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:19:9-35
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:20:9-35
 	android:theme
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:24:9-46
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:25:9-46
 	android:usesCleartextTraffic
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:25:9-44
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:26:9-44
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:18:9-36
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:19:9-36
 activity#com.mediease.app.activities.SplashActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:27:9-33:20
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:28:9-34:20
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:28:58-94
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:29:58-94
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:27:61-84
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:28:61-84
 	android:theme
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:28:13-57
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:29:13-57
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:27:19-60
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:28:19-60
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:29:13-32:29
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:30:13-33:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:30:17-69
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:30:25-66
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:31:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:31:17-77
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:31:27-74
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:32:27-74
 activity#com.mediease.app.activities.LoginActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:34:9-124
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:35:9-124
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:34:85-121
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:35:85-121
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:34:60-84
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:35:60-84
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:34:19-59
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:35:19-59
 activity#com.mediease.app.activities.RegisterActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:35:9-127
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:36:9-127
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:35:88-124
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:36:88-124
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:35:63-87
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:36:63-87
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:35:19-62
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:36:19-62
 activity#com.mediease.app.activities.ForgotPasswordActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:36:9-133
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:9-133
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:36:94-130
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:94-130
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:36:69-93
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:69-93
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:36:19-68
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:19-68
 activity#com.mediease.app.activities.RoleSelectActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:9-129
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:9-129
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:90-126
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:90-126
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:65-89
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:65-89
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:19-64
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:19-64
 activity#com.mediease.app.activities.PatientSetupActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:9-131
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:9-131
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:92-128
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:92-128
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:67-91
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:67-91
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:19-66
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:19-66
 activity#com.mediease.app.activities.CaregiverSetupActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:9-133
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:9-133
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:94-130
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:94-130
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:69-93
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:69-93
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:19-68
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:19-68
 activity#com.mediease.app.activities.MainActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:9-166
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:9-166
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:84-120
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:84-120
 	android:windowSoftInputMode
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:121-163
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:121-163
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:59-83
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:59-83
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:19-58
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:19-58
 activity#com.mediease.app.activities.AddMedicineActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:9-173
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:9-173
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:91-127
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:91-127
 	android:windowSoftInputMode
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:128-170
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:128-170
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:66-90
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:66-90
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:19-65
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:19-65
 activity#com.mediease.app.activities.MedicineDetailActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:9-133
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:9-133
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:94-130
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:94-130
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:69-93
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:69-93
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:19-68
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:19-68
 activity#com.mediease.app.activities.CaregiverDashboardActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:9-137
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:9-137
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:98-134
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:98-134
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:73-97
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:73-97
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:19-72
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:19-72
 activity#com.mediease.app.activities.AdherenceAnalysisActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:9-136
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:9-136
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:97-133
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:97-133
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:72-96
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:72-96
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:19-71
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:19-71
 activity#com.mediease.app.activities.NotificationDetailActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:9-137
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:9-137
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:98-134
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:98-134
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:73-97
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:73-97
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:19-72
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:19-72
 activity#com.mediease.app.activities.NotificationSettingsActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:9-139
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:9-139
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:100-136
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:100-136
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:75-99
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:75-99
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:19-74
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:19-74
 activity#com.mediease.app.activities.HelpSupportActivity
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:9-130
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:48:9-130
 	android:screenOrientation
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:91-127
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:48:91-127
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:66-90
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:48:66-90
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:19-65
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:48:19-65
 receiver#com.mediease.app.notifications.MedicineAlarmReceiver
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:55:9-98
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:56:9-98
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:55:71-95
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:56:71-95
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:55:19-70
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:56:19-70
 receiver#com.mediease.app.notifications.BootReceiver
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:56:9-60:20
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:57:9-61:20
 	android:exported
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:56:62-85
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:57:62-85
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:56:19-61
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:57:19-61
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:57:13-59:29
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:58:13-60:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:58:17-79
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:59:17-79
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:58:25-76
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:59:25-76
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:52:13-112
+ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:53:13-112
 	android:resource
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:52:75-109
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:53:75-109
 	android:name
-		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:52:24-74
+		ADDED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:53:24-74
 uses-sdk
 INJECTED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml

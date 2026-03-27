@@ -121,8 +121,12 @@ class MedicineRepository(context: Context) {
 
     // ── Reminders ─────────────────────────────────────────
     fun getActiveReminders(): LiveData<List<Reminder>> = reminderDao.getActiveReminders()
+    
+    fun getAllRemindersLive(): LiveData<List<Reminder>> = reminderDao.getAllRemindersLive()
 
     suspend fun insertReminder(reminder: Reminder): Long = reminderDao.insertReminder(reminder)
+    
+    suspend fun updateReminder(reminder: Reminder) = reminderDao.updateReminder(reminder)
 
     suspend fun deleteRemindersForMedicine(medicineId: Long) =
         reminderDao.deleteRemindersForMedicine(medicineId)

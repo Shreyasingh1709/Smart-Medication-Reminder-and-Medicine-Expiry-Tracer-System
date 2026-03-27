@@ -1,6 +1,7 @@
 package com.mediease.app.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -21,16 +22,29 @@ class RemindersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = ReminderAdapter()
+        
+        adapter = ReminderAdapter { reminder, isEnabled ->
+            viewModel.updateReminderStatus(reminder, isEnabled)
+        }
         binding.rvReminders.adapter = adapter
 
-            viewModel.loadActiveReminders()
-        viewModel.activeReminders.observe(viewLifecycleOwner) { reminders ->
+        // Observe all reminders (including those that might have been disabled)
+        viewModel.allReminders.observe(viewLifecycleOwner) { reminders ->
+            Log.d("RemindersFragment", "Loaded ${reminders.size} reminders from DB")
             adapter.submitList(reminders)
-            binding.tvNoReminders.visibility = if (reminders.isEmpty()) View.VISIBLE else View.GONE
-            binding.rvReminders.visibility = if (reminders.isEmpty()) View.GONE else View.VISIBLE
+            
+            if (reminders.isEmpty()) {
+                binding.tvNoReminders.visibility = View.VISIBLE
+                binding.rvReminders.visibility = View.GONE
+            } else {
+                binding.tvNoReminders.visibility = View.GONE
+                binding.rvReminders.visibility = View.VISIBLE
+            }
         }
     }
 
-    override fun onDestroyView() { super.onDestroyView(); _binding = null }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

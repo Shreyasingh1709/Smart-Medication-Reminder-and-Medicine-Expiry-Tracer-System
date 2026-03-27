@@ -6,33 +6,48 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.media.AudioAttributes
+import android.media.RingtoneManager
 import android.os.Build
 import com.mediease.app.notifications.MedicineAlarmReceiver
 import java.util.*
 
 object NotificationUtils {
-    const val CHANNEL_MEDICINE = "medicine_reminders"
+    const val CHANNEL_MEDICINE = "medicine_alarms_v2"
     const val CHANNEL_EXPIRY = "expiry_alerts"
     const val CHANNEL_CAREGIVER = "caregiver_alerts"
 
     fun createNotificationChannels(context: Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            listOf(
-                NotificationChannel(CHANNEL_MEDICINE, "Medicine Reminders",
-                    NotificationManager.IMPORTANCE_HIGH).apply {
-                    description = "Reminders to take your medicine"
-                    enableVibration(true)
-                },
-                NotificationChannel(CHANNEL_EXPIRY, "Expiry Alerts",
-                    NotificationManager.IMPORTANCE_DEFAULT).apply {
-                    description = "Alerts for medicines expiring soon"
-                },
-                NotificationChannel(CHANNEL_CAREGIVER, "Caregiver Alerts",
-                    NotificationManager.IMPORTANCE_HIGH).apply {
-                    description = "Alerts for caregiver activity"
-                }
-            ).forEach { nm.createNotificationChannel(it) }
+            
+            val alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
+                ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE)
+
+            val medicineChannel = NotificationChannel(CHANNEL_MEDICINE, "Medicine Alarms",
+                NotificationManager.IMPORTANCE_HIGH).apply {
+                description = "Urgent reminders to take your medicine"
+                enableVibration(true)
+                lockscreenVisibility = android.app.Notification.VISIBILITY_PUBLIC
+                setSound(alarmSound, AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ALARM)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build())
+            }
+
+            val expiryChannel = NotificationChannel(CHANNEL_EXPIRY, "Expiry Alerts",
+                NotificationManager.IMPORTANCE_DEFAULT).apply {
+                description = "Alerts for medicines expiring soon"
+            }
+
+            val caregiverChannel = NotificationChannel(CHANNEL_CAREGIVER, "Caregiver Alerts",
+                NotificationManager.IMPORTANCE_HIGH).apply {
+                description = "Alerts for caregiver activity"
+            }
+
+            nm.createNotificationChannel(medicineChannel)
+            nm.createNotificationChannel(expiryChannel)
+            nm.createNotificationChannel(caregiverChannel)
         }
     }
 
@@ -46,10 +61,12 @@ object NotificationUtils {
         }
         val pi = PendingIntent.getBroadcast(context, requestCode, intent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && alarmManager.canScheduleExactAlarms()) {
-            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerMillis, pi)
+        
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val info = AlarmManager.AlarmClockInfo(triggerMillis, pi)
+            alarmManager.setAlarmClock(info, pi)
         } else {
-            alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerMillis, pi)
+            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerMillis, pi)
         }
     }
 

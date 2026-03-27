@@ -323,6 +323,67 @@ public final class ReminderDao_Impl implements ReminderDao {
   }
 
   @Override
+  public LiveData<List<Reminder>> getAllRemindersLive() {
+    final String _sql = "SELECT * FROM reminders ORDER BY time ASC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return __db.getInvalidationTracker().createLiveData(new String[] {"reminders"}, false, new Callable<List<Reminder>>() {
+      @Override
+      @Nullable
+      public List<Reminder> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfMedicineId = CursorUtil.getColumnIndexOrThrow(_cursor, "medicineId");
+          final int _cursorIndexOfMedicineName = CursorUtil.getColumnIndexOrThrow(_cursor, "medicineName");
+          final int _cursorIndexOfTime = CursorUtil.getColumnIndexOrThrow(_cursor, "time");
+          final int _cursorIndexOfRepeatDays = CursorUtil.getColumnIndexOrThrow(_cursor, "repeatDays");
+          final int _cursorIndexOfIsEnabled = CursorUtil.getColumnIndexOrThrow(_cursor, "isEnabled");
+          final int _cursorIndexOfAlarmRequestCode = CursorUtil.getColumnIndexOrThrow(_cursor, "alarmRequestCode");
+          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+          final int _cursorIndexOfFrequency = CursorUtil.getColumnIndexOrThrow(_cursor, "frequency");
+          final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
+          final List<Reminder> _result = new ArrayList<Reminder>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final Reminder _item;
+            final long _tmpId;
+            _tmpId = _cursor.getLong(_cursorIndexOfId);
+            final long _tmpMedicineId;
+            _tmpMedicineId = _cursor.getLong(_cursorIndexOfMedicineId);
+            final String _tmpMedicineName;
+            _tmpMedicineName = _cursor.getString(_cursorIndexOfMedicineName);
+            final String _tmpTime;
+            _tmpTime = _cursor.getString(_cursorIndexOfTime);
+            final String _tmpRepeatDays;
+            _tmpRepeatDays = _cursor.getString(_cursorIndexOfRepeatDays);
+            final boolean _tmpIsEnabled;
+            final int _tmp;
+            _tmp = _cursor.getInt(_cursorIndexOfIsEnabled);
+            _tmpIsEnabled = _tmp != 0;
+            final int _tmpAlarmRequestCode;
+            _tmpAlarmRequestCode = _cursor.getInt(_cursorIndexOfAlarmRequestCode);
+            final long _tmpCreatedAt;
+            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
+            final String _tmpFrequency;
+            _tmpFrequency = _cursor.getString(_cursorIndexOfFrequency);
+            final String _tmpStatus;
+            _tmpStatus = _cursor.getString(_cursorIndexOfStatus);
+            _item = new Reminder(_tmpId,_tmpMedicineId,_tmpMedicineName,_tmpTime,_tmpRepeatDays,_tmpIsEnabled,_tmpAlarmRequestCode,_tmpCreatedAt,_tmpFrequency,_tmpStatus);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
   public Object getAllReminders(final Continuation<? super List<Reminder>> $completion) {
     final String _sql = "SELECT * FROM reminders";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);

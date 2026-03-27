@@ -12,6 +12,9 @@ interface ReminderDao {
     @Query("SELECT * FROM reminders WHERE medicineId = :medicineId")
     suspend fun getRemindersForMedicine(medicineId: Long): List<Reminder>
 
+    @Query("SELECT * FROM reminders ORDER BY time ASC")
+    fun getAllRemindersLive(): LiveData<List<Reminder>>
+
     @Query("SELECT * FROM reminders")
     suspend fun getAllReminders(): List<Reminder>
 

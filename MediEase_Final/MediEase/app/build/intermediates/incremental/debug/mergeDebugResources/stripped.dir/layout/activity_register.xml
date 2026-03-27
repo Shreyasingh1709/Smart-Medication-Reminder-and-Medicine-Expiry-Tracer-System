@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/oat" android:padding="24dp">
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Create Account" android:textSize="28sp" android:fontFamily="@font/nunito"
+        android:textStyle="bold" android:textColor="@color/charcoal" android:layout_marginTop="40dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Join MediEase to manage medications" android:textSize="15sp"
+        android:textColor="@color/charcoal_light" android:layout_marginBottom="32dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Email Address" android:textSize="15sp" android:fontFamily="@font/nunito"
+        android:textStyle="bold" android:textColor="@color/charcoal" android:layout_marginBottom="8dp"/>
+    <EditText android:id="@+id/et_email" android:layout_width="match_parent"
+        android:layout_height="56dp" android:background="@drawable/bg_field"
+        android:hint="email@example.com" android:paddingHorizontal="16dp"
+        android:inputType="textEmailAddress" android:layout_marginBottom="16dp"
+        android:textColor="@color/charcoal"
+        android:textColorHint="@color/charcoal_light"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Create Password" android:textSize="15sp" android:fontFamily="@font/nunito"
+        android:textStyle="bold" android:textColor="@color/charcoal" android:layout_marginBottom="8dp"/>
+    <EditText android:id="@+id/et_password" android:layout_width="match_parent"
+        android:layout_height="56dp" android:background="@drawable/bg_field"
+        android:hint="At least 6 characters" android:paddingHorizontal="16dp"
+        android:inputType="textPassword" android:layout_marginBottom="24dp"
+        android:textColor="@color/charcoal"
+        android:textColorHint="@color/charcoal_light"/>
+
+    <Button android:id="@+id/btn_register" android:layout_width="match_parent"
+        android:layout_height="56dp" android:text="Create Account"
+        android:background="@drawable/bg_btn_coral" android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/layout_otp_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <!-- Kept for binding compatibility, but hidden -->
+        <EditText android:id="@+id/et_otp" android:layout_width="0dp" android:layout_height="0dp"/>
+        <Button android:id="@+id/btn_send_otp" android:layout_width="0dp" android:layout_height="0dp"/>
+    </LinearLayout>
+
+</LinearLayout>

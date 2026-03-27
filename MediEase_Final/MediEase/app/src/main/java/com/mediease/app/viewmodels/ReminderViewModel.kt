@@ -9,27 +9,15 @@ import kotlinx.coroutines.launch
 class ReminderViewModel(application: Application) : AndroidViewModel(application) {
     private val repo = MedicineRepository(application)
 
-    // Properly expose LiveData from repository
-    val activeReminders: LiveData<List<Reminder>> = repo.getActiveReminders()
+    // Link directly to the LiveData from DAO
+    val allReminders: LiveData<List<Reminder>> = repo.getAllRemindersLive()
     
     val isLoading = MutableLiveData<Boolean>()
     val error = MutableLiveData<String?>()
 
-    fun loadActiveReminders() {
-        // No longer needed to manually update activeReminders as it's directly linked to the DB LiveData
-    }
-
-    fun addReminder(reminder: Reminder) {
+    fun updateReminderStatus(reminder: Reminder, isEnabled: Boolean) {
         viewModelScope.launch {
-            isLoading.value = true
-            try {
-                repo.insertReminder(reminder)
-                error.value = null
-            } catch (e: Exception) {
-                error.value = e.message
-            } finally {
-                isLoading.value = false
-            }
+            repo.updateReminder(reminder.copy(isEnabled = isEnabled))
         }
     }
 
