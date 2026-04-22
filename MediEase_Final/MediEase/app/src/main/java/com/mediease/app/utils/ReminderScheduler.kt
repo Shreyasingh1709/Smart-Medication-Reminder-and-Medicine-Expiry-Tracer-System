@@ -19,6 +19,7 @@ object ReminderScheduler {
             val times = medicine.getReminderTimesList()
             val name = medicine.name
             val medicineId = medicine.id
+            val imagePath = medicine.imagePath
 
             // 1. Clear existing reminders for this medicine in DB
             repo.deleteRemindersForMedicine(medicineId)
@@ -35,7 +36,8 @@ object ReminderScheduler {
                     repeatDays = medicine.repeatDays,
                     alarmRequestCode = requestCode,
                     isEnabled = true,
-                    frequency = medicine.frequency
+                    frequency = medicine.frequency,
+                    medicineImagePath = imagePath // Store medicine image in reminder
                 )
                 repo.insertReminder(reminder)
 

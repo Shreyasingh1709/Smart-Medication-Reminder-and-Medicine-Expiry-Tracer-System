@@ -5,12 +5,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import com.mediease.app.databinding.ActivityRegisterBinding
 import com.mediease.app.models.User
 import com.mediease.app.utils.PrefsManager
 import com.mediease.app.viewmodels.UserViewModel
-import kotlinx.coroutines.launch
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
@@ -43,15 +41,21 @@ class RegisterActivity : AppCompatActivity() {
                 password = password
             )
 
-            lifecycleScope.launch {
-                viewModel.saveUser(newUser)
+            viewModel.saveUser(newUser)
+        }
+
+        viewModel.saveResult.observe(this) { success ->
+            if (success) {
                 prefs.isLoggedIn = true
-                prefs.userId = newUser.id
-                prefs.userEmail = email
+                prefs.userId = viewModel.currentUser.value?.id ?: ""
+                prefs.userEmail = binding.etEmail.text.toString().trim()
                 
-                Toast.makeText(this@RegisterActivity, "Account created successfully!", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this@RegisterActivity, RoleSelectActivity::class.java))
+                Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, RoleSelectActivity::class.java))
                 finish()
+            } else {
+                val errorMsg = viewModel.error.value ?: "Registration failed"
+                Toast.makeText(this, errorMsg, Toast.LENGTH_LONG).show()
             }
         }
     }

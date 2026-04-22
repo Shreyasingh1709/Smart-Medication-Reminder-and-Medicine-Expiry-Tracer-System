@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from backend.models.schemas import User, Token
+from ..models.schemas import User, Token
 from typing import List
 
 router = APIRouter(prefix="/users", tags=["users"])

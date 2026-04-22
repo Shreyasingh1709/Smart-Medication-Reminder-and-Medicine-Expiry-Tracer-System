@@ -1,7 +1,9 @@
-from fastapi import FastAPI
+
+from fastapi import FastAPI, Request
 from backend.routers import users, medicines, reminders, adherence, images, auth
 from fastapi.middleware.cors import CORSMiddleware
 import os
+from nlp_module import extract_medicine_info
 
 app = FastAPI(title="MediEase Backend")
 
@@ -25,6 +27,15 @@ app.include_router(adherence.router)
 app.include_router(images.router)
 app.include_router(auth.router)
 
+
 @app.get("/")
 def root():
     return {"msg": "MediEase backend running"}
+
+# ML Kit integration endpoint: Accept OCR text and return parsed medicine info
+@app.post("/parse_medicine")
+async def parse_medicine(request: Request):
+    data = await request.json()
+    ocr_text = data.get("ocr_text", "")
+    result = extract_medicine_info(ocr_text)
+    return {"medicines": result}

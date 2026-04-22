@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.mediease.app.adapters.ReminderAdapter
 import com.mediease.app.databinding.FragmentRemindersBinding
 import com.mediease.app.viewmodels.ReminderViewModel
@@ -26,11 +27,15 @@ class RemindersFragment : Fragment() {
         adapter = ReminderAdapter { reminder, isEnabled ->
             viewModel.updateReminderStatus(reminder, isEnabled)
         }
-        binding.rvReminders.adapter = adapter
+        
+        binding.rvReminders.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = this@RemindersFragment.adapter
+        }
 
-        // Observe all reminders (including those that might have been disabled)
-        viewModel.allReminders.observe(viewLifecycleOwner) { reminders ->
-            Log.d("RemindersFragment", "Loaded ${reminders.size} reminders from DB")
+        // Show only DAILY reminders as requested
+        viewModel.dailyReminders.observe(viewLifecycleOwner) { reminders ->
+            Log.d("RemindersFragment", "Loaded ${reminders.size} daily reminders from DB")
             adapter.submitList(reminders)
             
             if (reminders.isEmpty()) {

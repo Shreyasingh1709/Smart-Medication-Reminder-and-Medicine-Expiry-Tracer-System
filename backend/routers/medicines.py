@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from backend.models.schemas import Medicine
+from ..models.schemas import Medicine
 from typing import List
 from datetime import date
 

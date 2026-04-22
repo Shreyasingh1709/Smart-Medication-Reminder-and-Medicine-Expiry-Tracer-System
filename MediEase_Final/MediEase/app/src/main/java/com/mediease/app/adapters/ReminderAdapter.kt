@@ -1,10 +1,12 @@
 package com.mediease.app.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.mediease.app.databinding.ItemReminderBinding
 import com.mediease.app.models.Reminder
 
@@ -17,6 +19,19 @@ class ReminderAdapter(
         fun bind(reminder: Reminder) {
             binding.tvMedicineName.text = reminder.medicineName
             binding.tvTime.text = formatTime(reminder.time)
+            
+            // Load medicine image if available
+            if (!reminder.medicineImagePath.isNullOrEmpty()) {
+                binding.ivMedicineImage.visibility = View.VISIBLE
+                binding.tvIconPlaceholder.visibility = View.GONE
+                Glide.with(binding.root.context)
+                    .load(reminder.medicineImagePath)
+                    .centerCrop()
+                    .into(binding.ivMedicineImage)
+            } else {
+                binding.ivMedicineImage.visibility = View.GONE
+                binding.tvIconPlaceholder.visibility = View.VISIBLE
+            }
             
             // Remove listener before setting state to avoid infinite loop
             binding.switchEnabled.setOnCheckedChangeListener(null)

@@ -70,8 +70,8 @@ class MainActivity : AppCompatActivity() {
             val fragment: Fragment = when (item.itemId) {
                 R.id.nav_home -> HomeFragment()
                 R.id.nav_patients -> CaregiverPatientsFragment()
-                R.id.nav_reminders -> RemindersFragment()
                 R.id.nav_calendar -> CalendarFragment()
+                R.id.nav_ai_chat -> ChatFragment()
                 R.id.nav_analysis -> AdherenceFragment()
                 R.id.nav_profile -> ProfileFragment()
                 else -> HomeFragment()

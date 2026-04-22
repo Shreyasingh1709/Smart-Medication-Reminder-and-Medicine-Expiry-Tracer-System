@@ -171,6 +171,7 @@ id btn_next
 id btn_register
 id btn_reset_password
 id btn_save
+id btn_send
 id btn_send_otp
 id btn_weekly
 id calendarFragment
@@ -203,6 +204,7 @@ id chip_thu
 id chip_tue
 id chip_wed
 id chip_with
+id cv_message_bubble
 id dot1
 id dot2
 id dot3
@@ -211,6 +213,7 @@ id et_age
 id et_dosage
 id et_email
 id et_medicine_name
+id et_message
 id et_name
 id et_new_password
 id et_notes
@@ -226,6 +229,8 @@ id iv_medicine
 id iv_medicine_image
 id layout_otp_password
 id line_chart
+id ll_message_container
+id nav_ai_chat
 id nav_analysis
 id nav_calendar
 id nav_home
@@ -233,16 +238,17 @@ id nav_host_fragment
 id nav_patient
 id nav_patients
 id nav_profile
-id nav_reminders
 id notification_settings_row
 id panel_step1
 id panel_step2
 id panel_step3
 id panel_step4
+id pb_loading
 id profileFragment
 id progress_adherence
 id progress_bar
 id remindersFragment
+id rv_chat
 id rv_expiry_warnings
 id rv_medicines
 id rv_patients
@@ -265,12 +271,14 @@ id tv_expiry_date
 id tv_expiry_status
 id tv_forgot_password
 id tv_greeting
+id tv_icon_placeholder
 id tv_image_placeholder
 id tv_lunch_time
 id tv_meal_timing
 id tv_medicine_count
 id tv_medicine_name
 id tv_medicine_type
+id tv_message
 id tv_missed_count
 id tv_most_missed
 id tv_name
@@ -314,9 +322,11 @@ layout fragment_adherence
 layout fragment_analysis
 layout fragment_calendar
 layout fragment_caregiver_patients
+layout fragment_chat
 layout fragment_home
 layout fragment_profile
 layout fragment_reminders
+layout item_chat_message
 layout item_expiry_warning
 layout item_medicine_card
 layout item_reminder
@@ -509,3 +519,4 @@ style Widget.MediEase.Chip
 style Widget.MediEase.TextInputLayout
 style Widget.MediEase.Toolbar
 xml file_paths
+xml network_security_config

@@ -9,8 +9,19 @@ import kotlinx.coroutines.launch
 class ReminderViewModel(application: Application) : AndroidViewModel(application) {
     private val repo = MedicineRepository(application)
 
-    // Link directly to the LiveData from DAO
+    // All reminders from the database
     val allReminders: LiveData<List<Reminder>> = repo.getAllRemindersLive()
+    
+    // Filtered to show only DAILY reminders
+    // A daily reminder is one that repeats on all 7 days of the week.
+    val dailyReminders: LiveData<List<Reminder>> = allReminders.map { reminders ->
+        reminders.filter { isDaily(it.repeatDays) }
+    }
+    
+    private fun isDaily(repeatDays: String): Boolean {
+        val days = repeatDays.split(",").map { it.trim() }.filter { it.isNotEmpty() }
+        return days.size == 7 && (1..7).all { days.contains(it.toString()) }
+    }
     
     val isLoading = MutableLiveData<Boolean>()
     val error = MutableLiveData<String?>()

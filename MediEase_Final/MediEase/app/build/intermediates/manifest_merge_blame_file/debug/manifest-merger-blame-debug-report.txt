@@ -71,7 +71,7 @@
 36-->[androidx.core:core:1.12.0] C:\Users\shrey\.gradle\caches\transforms-3\c634865c58dba19226839d38c9b3ea5a\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
 37
 38    <application
-38-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:18:5-63:19
+38-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:18:5-66:19
 39        android:name="com.mediease.app.MediEaseApp"
 39-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:19:9-36
 40        android:allowBackup="true"
@@ -84,470 +84,472 @@
 44-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:21:9-57
 45        android:label="@string/app_name"
 45-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:22:9-41
-46        android:roundIcon="@drawable/ic_medicine_placeholder"
-46-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:23:9-62
-47        android:supportsRtl="true"
-47-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:24:9-35
-48        android:testOnly="true"
-49        android:theme="@style/Theme.MediEase"
-49-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:25:9-46
-50        android:usesCleartextTraffic="true" >
-50-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:26:9-44
-51        <activity
-51-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:28:9-34:20
-52            android:name="com.mediease.app.activities.SplashActivity"
-52-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:28:19-60
-53            android:exported="true"
-53-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:28:61-84
-54            android:screenOrientation="portrait"
-54-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:29:58-94
-55            android:theme="@style/Theme.MediEase.Splash" >
-55-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:29:13-57
-56            <intent-filter>
-56-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:30:13-33:29
-57                <action android:name="android.intent.action.MAIN" />
-57-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:31:17-69
-57-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:31:25-66
-58
-59                <category android:name="android.intent.category.LAUNCHER" />
-59-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:32:17-77
-59-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:32:27-74
-60            </intent-filter>
-61        </activity>
-62        <activity
-62-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:35:9-124
-63            android:name="com.mediease.app.activities.LoginActivity"
-63-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:35:19-59
-64            android:exported="false"
-64-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:35:60-84
-65            android:screenOrientation="portrait" />
-65-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:35:85-121
-66        <activity
-66-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:36:9-127
-67            android:name="com.mediease.app.activities.RegisterActivity"
-67-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:36:19-62
-68            android:exported="false"
-68-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:36:63-87
-69            android:screenOrientation="portrait" />
-69-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:36:88-124
-70        <activity
-70-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:9-133
-71            android:name="com.mediease.app.activities.ForgotPasswordActivity"
-71-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:19-68
-72            android:exported="false"
-72-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:69-93
-73            android:screenOrientation="portrait" />
-73-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:94-130
-74        <activity
-74-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:9-129
-75            android:name="com.mediease.app.activities.RoleSelectActivity"
-75-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:19-64
-76            android:exported="false"
-76-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:65-89
-77            android:screenOrientation="portrait" />
-77-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:90-126
-78        <activity
-78-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:9-131
-79            android:name="com.mediease.app.activities.PatientSetupActivity"
-79-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:19-66
-80            android:exported="false"
-80-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:67-91
-81            android:screenOrientation="portrait" />
-81-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:92-128
-82        <activity
-82-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:9-133
-83            android:name="com.mediease.app.activities.CaregiverSetupActivity"
-83-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:19-68
-84            android:exported="false"
-84-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:69-93
-85            android:screenOrientation="portrait" />
-85-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:94-130
-86        <activity
-86-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:9-166
-87            android:name="com.mediease.app.activities.MainActivity"
-87-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:19-58
-88            android:exported="false"
-88-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:59-83
-89            android:screenOrientation="portrait"
-89-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:84-120
-90            android:windowSoftInputMode="adjustResize" />
-90-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:121-163
-91        <activity
-91-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:9-173
-92            android:name="com.mediease.app.activities.AddMedicineActivity"
-92-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:19-65
-93            android:exported="false"
-93-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:66-90
-94            android:screenOrientation="portrait"
-94-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:91-127
-95            android:windowSoftInputMode="adjustResize" />
-95-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:128-170
-96        <activity
-96-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:9-133
-97            android:name="com.mediease.app.activities.MedicineDetailActivity"
-97-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:19-68
-98            android:exported="false"
-98-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:69-93
-99            android:screenOrientation="portrait" />
-99-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:94-130
-100        <activity
-100-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:9-137
-101            android:name="com.mediease.app.activities.CaregiverDashboardActivity"
-101-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:19-72
-102            android:exported="false"
-102-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:73-97
-103            android:screenOrientation="portrait" />
-103-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:98-134
-104        <activity
-104-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:9-136
-105            android:name="com.mediease.app.activities.AdherenceAnalysisActivity"
-105-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:19-71
-106            android:exported="false"
-106-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:72-96
-107            android:screenOrientation="portrait" />
-107-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:97-133
-108        <activity
-108-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:9-137
-109            android:name="com.mediease.app.activities.NotificationDetailActivity"
-109-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:19-72
-110            android:exported="false"
-110-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:73-97
-111            android:screenOrientation="portrait" />
-111-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:98-134
-112        <activity
-112-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:9-139
-113            android:name="com.mediease.app.activities.NotificationSettingsActivity"
-113-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:19-74
-114            android:exported="false"
-114-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:75-99
-115            android:screenOrientation="portrait" />
-115-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:100-136
-116        <activity
-116-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:48:9-130
-117            android:name="com.mediease.app.activities.HelpSupportActivity"
-117-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:48:19-65
-118            android:exported="false"
-118-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:48:66-90
-119            android:screenOrientation="portrait" />
-119-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:48:91-127
-120
-121        <provider
-122            android:name="androidx.core.content.FileProvider"
-122-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:50:19-68
-123            android:authorities="com.mediease.app.fileprovider"
-123-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:51:13-64
-124            android:exported="false"
-124-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:52:13-37
-125            android:grantUriPermissions="true" >
-125-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:52:38-72
-126            <meta-data
-126-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:53:13-112
-127                android:name="android.support.FILE_PROVIDER_PATHS"
-127-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:53:24-74
-128                android:resource="@xml/file_paths" />
-128-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:53:75-109
-129        </provider>
-130
-131        <receiver
-131-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:56:9-98
-132            android:name="com.mediease.app.notifications.MedicineAlarmReceiver"
-132-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:56:19-70
-133            android:exported="false" />
-133-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:56:71-95
-134        <receiver
-134-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:57:9-61:20
-135            android:name="com.mediease.app.notifications.BootReceiver"
-135-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:57:19-61
-136            android:exported="true" >
-136-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:57:62-85
-137            <intent-filter>
-137-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:58:13-60:29
-138                <action android:name="android.intent.action.BOOT_COMPLETED" />
-138-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:59:17-79
-138-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:59:25-76
-139            </intent-filter>
-140        </receiver>
-141
-142        <activity
-142-->[androidx.compose.ui:ui-tooling:1.4.0] C:\Users\shrey\.gradle\caches\transforms-3\6b1f0401b0b9da8dff8926bb9a5b3678\transformed\jetified-ui-tooling-1.4.0\AndroidManifest.xml:23:9-25:39
-143            android:name="androidx.compose.ui.tooling.PreviewActivity"
-143-->[androidx.compose.ui:ui-tooling:1.4.0] C:\Users\shrey\.gradle\caches\transforms-3\6b1f0401b0b9da8dff8926bb9a5b3678\transformed\jetified-ui-tooling-1.4.0\AndroidManifest.xml:24:13-71
-144            android:exported="true" />
-144-->[androidx.compose.ui:ui-tooling:1.4.0] C:\Users\shrey\.gradle\caches\transforms-3\6b1f0401b0b9da8dff8926bb9a5b3678\transformed\jetified-ui-tooling-1.4.0\AndroidManifest.xml:25:13-36
-145
-146        <provider
-146-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:29:9-37:20
-147            android:name="androidx.startup.InitializationProvider"
-147-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:30:13-67
-148            android:authorities="com.mediease.app.androidx-startup"
-148-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:31:13-68
-149            android:exported="false" >
-149-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:32:13-37
-150            <meta-data
-150-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:34:13-36:52
-151                android:name="androidx.work.WorkManagerInitializer"
-151-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:35:17-68
-152                android:value="androidx.startup" />
-152-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:36:17-49
-153            <meta-data
-153-->[androidx.emoji2:emoji2:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\3c4b1169c569d0adc2e80d759b4f7203\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-154                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-154-->[androidx.emoji2:emoji2:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\3c4b1169c569d0adc2e80d759b4f7203\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:30:17-75
-155                android:value="androidx.startup" />
-155-->[androidx.emoji2:emoji2:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\3c4b1169c569d0adc2e80d759b4f7203\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:31:17-49
-156            <meta-data
-156-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\shrey\.gradle\caches\transforms-3\70b71d06ba099ec54dc76e369a482f9a\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
-157                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-157-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\shrey\.gradle\caches\transforms-3\70b71d06ba099ec54dc76e369a482f9a\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
-158                android:value="androidx.startup" />
-158-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\shrey\.gradle\caches\transforms-3\70b71d06ba099ec54dc76e369a482f9a\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
-159            <meta-data
-159-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-160                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-160-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-161                android:value="androidx.startup" />
-161-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-162        </provider>
-163
-164        <service
-164-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:39:9-45:35
-165            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
-165-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:40:13-88
-166            android:directBootAware="false"
-166-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:41:13-44
-167            android:enabled="@bool/enable_system_alarm_service_default"
-167-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:42:13-72
-168            android:exported="false" />
-168-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:43:13-37
-169        <service
-169-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:46:9-52:35
-170            android:name="androidx.work.impl.background.systemjob.SystemJobService"
-170-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:47:13-84
-171            android:directBootAware="false"
-171-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:48:13-44
-172            android:enabled="@bool/enable_system_job_service_default"
-172-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:49:13-70
-173            android:exported="true"
-173-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:50:13-36
-174            android:permission="android.permission.BIND_JOB_SERVICE" />
-174-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:51:13-69
-175        <service
-175-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:53:9-59:35
-176            android:name="androidx.work.impl.foreground.SystemForegroundService"
-176-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:54:13-81
-177            android:directBootAware="false"
-177-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:55:13-44
-178            android:enabled="@bool/enable_system_foreground_service_default"
-178-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:56:13-77
-179            android:exported="false" />
-179-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:57:13-37
-180
-181        <receiver
-181-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:61:9-66:35
-182            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
-182-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:62:13-88
-183            android:directBootAware="false"
-183-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:63:13-44
-184            android:enabled="true"
-184-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:64:13-35
-185            android:exported="false" />
-185-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:65:13-37
-186        <receiver
-186-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:67:9-77:20
-187            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
-187-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:68:13-106
-188            android:directBootAware="false"
-188-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:69:13-44
-189            android:enabled="false"
-189-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:70:13-36
-190            android:exported="false" >
-190-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:71:13-37
-191            <intent-filter>
-191-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:73:13-76:29
-192                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-192-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:17-87
-192-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:25-84
-193                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-193-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:17-90
-193-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:25-87
-194            </intent-filter>
-195        </receiver>
-196        <receiver
-196-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:78:9-88:20
-197            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
-197-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:79:13-104
-198            android:directBootAware="false"
-198-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:80:13-44
-199            android:enabled="false"
-199-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:81:13-36
-200            android:exported="false" >
-200-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:82:13-37
-201            <intent-filter>
-201-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:84:13-87:29
-202                <action android:name="android.intent.action.BATTERY_OKAY" />
-202-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:17-77
-202-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:25-74
-203                <action android:name="android.intent.action.BATTERY_LOW" />
-203-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:17-76
-203-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:25-73
-204            </intent-filter>
-205        </receiver>
-206        <receiver
-206-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:89:9-99:20
-207            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
-207-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:90:13-104
-208            android:directBootAware="false"
-208-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:91:13-44
-209            android:enabled="false"
-209-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:92:13-36
-210            android:exported="false" >
-210-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:93:13-37
-211            <intent-filter>
-211-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:95:13-98:29
-212                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
-212-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:17-83
-212-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:25-80
-213                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
-213-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:17-82
-213-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:25-79
-214            </intent-filter>
-215        </receiver>
-216        <receiver
-216-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:100:9-109:20
-217            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
-217-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:101:13-103
-218            android:directBootAware="false"
-218-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:102:13-44
-219            android:enabled="false"
-219-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:103:13-36
-220            android:exported="false" >
-220-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:104:13-37
-221            <intent-filter>
-221-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:106:13-108:29
-222                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-222-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:17-79
-222-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:25-76
-223            </intent-filter>
-224        </receiver>
-225        <receiver
-225-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:110:9-121:20
-226            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
-226-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:111:13-88
-227            android:directBootAware="false"
-227-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:112:13-44
-228            android:enabled="false"
-228-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:113:13-36
-229            android:exported="false" >
-229-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:114:13-37
-230            <intent-filter>
-230-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:116:13-120:29
-231                <action android:name="android.intent.action.BOOT_COMPLETED" />
-231-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:59:17-79
-231-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:59:25-76
-232                <action android:name="android.intent.action.TIME_SET" />
-232-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:17-73
-232-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:25-70
-233                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-233-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:17-81
-233-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:25-78
-234            </intent-filter>
-235        </receiver>
-236        <receiver
-236-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:122:9-131:20
-237            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
-237-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:123:13-99
-238            android:directBootAware="false"
-238-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:124:13-44
-239            android:enabled="@bool/enable_system_alarm_service_default"
-239-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:125:13-72
-240            android:exported="false" >
-240-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:126:13-37
-241            <intent-filter>
-241-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:128:13-130:29
-242                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
-242-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:17-98
-242-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:25-95
-243            </intent-filter>
-244        </receiver>
-245        <receiver
-245-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:132:9-142:20
-246            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
-246-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:133:13-78
-247            android:directBootAware="false"
-247-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:134:13-44
-248            android:enabled="true"
-248-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:135:13-35
-249            android:exported="true"
-249-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:136:13-36
-250            android:permission="android.permission.DUMP" >
-250-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:137:13-57
-251            <intent-filter>
-251-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:139:13-141:29
-252                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
-252-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:17-88
-252-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:25-85
-253            </intent-filter>
-254        </receiver>
-255
-256        <uses-library
-256-->[androidx.window:window:1.0.0] C:\Users\shrey\.gradle\caches\transforms-3\4747a79c91943f8a321e10a4331d4957\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
-257            android:name="androidx.window.extensions"
-257-->[androidx.window:window:1.0.0] C:\Users\shrey\.gradle\caches\transforms-3\4747a79c91943f8a321e10a4331d4957\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
-258            android:required="false" />
-258-->[androidx.window:window:1.0.0] C:\Users\shrey\.gradle\caches\transforms-3\4747a79c91943f8a321e10a4331d4957\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
-259        <uses-library
-259-->[androidx.window:window:1.0.0] C:\Users\shrey\.gradle\caches\transforms-3\4747a79c91943f8a321e10a4331d4957\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
-260            android:name="androidx.window.sidecar"
-260-->[androidx.window:window:1.0.0] C:\Users\shrey\.gradle\caches\transforms-3\4747a79c91943f8a321e10a4331d4957\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
-261            android:required="false" />
-261-->[androidx.window:window:1.0.0] C:\Users\shrey\.gradle\caches\transforms-3\4747a79c91943f8a321e10a4331d4957\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
-262
-263        <service
-263-->[androidx.room:room-runtime:2.6.1] C:\Users\shrey\.gradle\caches\transforms-3\3831a23d75d3d6fc7437f1a0f5ee229c\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
-264            android:name="androidx.room.MultiInstanceInvalidationService"
-264-->[androidx.room:room-runtime:2.6.1] C:\Users\shrey\.gradle\caches\transforms-3\3831a23d75d3d6fc7437f1a0f5ee229c\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
-265            android:directBootAware="true"
-265-->[androidx.room:room-runtime:2.6.1] C:\Users\shrey\.gradle\caches\transforms-3\3831a23d75d3d6fc7437f1a0f5ee229c\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
-266            android:exported="false" />
-266-->[androidx.room:room-runtime:2.6.1] C:\Users\shrey\.gradle\caches\transforms-3\3831a23d75d3d6fc7437f1a0f5ee229c\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
-267
-268        <receiver
-268-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-269            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-269-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-270            android:directBootAware="false"
-270-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-271            android:enabled="true"
-271-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-272            android:exported="true"
-272-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-273            android:permission="android.permission.DUMP" >
-273-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-274            <intent-filter>
-274-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-275                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-275-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-275-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-276            </intent-filter>
-277            <intent-filter>
-277-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-278                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-278-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-278-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-279            </intent-filter>
-280            <intent-filter>
-280-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-281                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-281-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-281-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-282            </intent-filter>
-283            <intent-filter>
-283-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-284                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-284-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-284-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-285            </intent-filter>
-286        </receiver>
-287    </application>
-288
-289</manifest>
+46        android:networkSecurityConfig="@xml/network_security_config"
+46-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:27:9-69
+47        android:roundIcon="@drawable/ic_medicine_placeholder"
+47-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:23:9-62
+48        android:supportsRtl="true"
+48-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:24:9-35
+49        android:testOnly="true"
+50        android:theme="@style/Theme.MediEase"
+50-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:25:9-46
+51        android:usesCleartextTraffic="true" >
+51-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:26:9-44
+52        <activity
+52-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:30:9-36:20
+53            android:name="com.mediease.app.activities.SplashActivity"
+53-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:30:19-60
+54            android:exported="true"
+54-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:30:61-84
+55            android:screenOrientation="portrait"
+55-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:31:58-94
+56            android:theme="@style/Theme.MediEase.Splash" >
+56-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:31:13-57
+57            <intent-filter>
+57-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:32:13-35:29
+58                <action android:name="android.intent.action.MAIN" />
+58-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:33:17-69
+58-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:33:25-66
+59
+60                <category android:name="android.intent.category.LAUNCHER" />
+60-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:34:17-77
+60-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:34:27-74
+61            </intent-filter>
+62        </activity>
+63        <activity
+63-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:9-124
+64            android:name="com.mediease.app.activities.LoginActivity"
+64-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:19-59
+65            android:exported="false"
+65-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:60-84
+66            android:screenOrientation="portrait" />
+66-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:37:85-121
+67        <activity
+67-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:9-127
+68            android:name="com.mediease.app.activities.RegisterActivity"
+68-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:19-62
+69            android:exported="false"
+69-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:63-87
+70            android:screenOrientation="portrait" />
+70-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:38:88-124
+71        <activity
+71-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:9-133
+72            android:name="com.mediease.app.activities.ForgotPasswordActivity"
+72-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:19-68
+73            android:exported="false"
+73-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:69-93
+74            android:screenOrientation="portrait" />
+74-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:39:94-130
+75        <activity
+75-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:9-129
+76            android:name="com.mediease.app.activities.RoleSelectActivity"
+76-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:19-64
+77            android:exported="false"
+77-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:65-89
+78            android:screenOrientation="portrait" />
+78-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:40:90-126
+79        <activity
+79-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:9-131
+80            android:name="com.mediease.app.activities.PatientSetupActivity"
+80-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:19-66
+81            android:exported="false"
+81-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:67-91
+82            android:screenOrientation="portrait" />
+82-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:41:92-128
+83        <activity
+83-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:9-133
+84            android:name="com.mediease.app.activities.CaregiverSetupActivity"
+84-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:19-68
+85            android:exported="false"
+85-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:69-93
+86            android:screenOrientation="portrait" />
+86-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:42:94-130
+87        <activity
+87-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:9-166
+88            android:name="com.mediease.app.activities.MainActivity"
+88-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:19-58
+89            android:exported="false"
+89-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:59-83
+90            android:screenOrientation="portrait"
+90-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:84-120
+91            android:windowSoftInputMode="adjustResize" />
+91-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:43:121-163
+92        <activity
+92-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:9-173
+93            android:name="com.mediease.app.activities.AddMedicineActivity"
+93-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:19-65
+94            android:exported="false"
+94-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:66-90
+95            android:screenOrientation="portrait"
+95-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:91-127
+96            android:windowSoftInputMode="adjustResize" />
+96-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:44:128-170
+97        <activity
+97-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:9-133
+98            android:name="com.mediease.app.activities.MedicineDetailActivity"
+98-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:19-68
+99            android:exported="false"
+99-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:69-93
+100            android:screenOrientation="portrait" />
+100-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:45:94-130
+101        <activity
+101-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:9-137
+102            android:name="com.mediease.app.activities.CaregiverDashboardActivity"
+102-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:19-72
+103            android:exported="false"
+103-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:73-97
+104            android:screenOrientation="portrait" />
+104-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:46:98-134
+105        <activity
+105-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:9-136
+106            android:name="com.mediease.app.activities.AdherenceAnalysisActivity"
+106-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:19-71
+107            android:exported="false"
+107-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:72-96
+108            android:screenOrientation="portrait" />
+108-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:47:97-133
+109        <activity
+109-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:48:9-137
+110            android:name="com.mediease.app.activities.NotificationDetailActivity"
+110-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:48:19-72
+111            android:exported="false"
+111-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:48:73-97
+112            android:screenOrientation="portrait" />
+112-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:48:98-134
+113        <activity
+113-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:49:9-139
+114            android:name="com.mediease.app.activities.NotificationSettingsActivity"
+114-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:49:19-74
+115            android:exported="false"
+115-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:49:75-99
+116            android:screenOrientation="portrait" />
+116-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:49:100-136
+117        <activity
+117-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:50:9-130
+118            android:name="com.mediease.app.activities.HelpSupportActivity"
+118-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:50:19-65
+119            android:exported="false"
+119-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:50:66-90
+120            android:screenOrientation="portrait" />
+120-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:50:91-127
+121
+122        <provider
+123            android:name="androidx.core.content.FileProvider"
+123-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:52:19-68
+124            android:authorities="com.mediease.app.fileprovider"
+124-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:53:13-64
+125            android:exported="false"
+125-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:54:13-37
+126            android:grantUriPermissions="true" >
+126-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:55:13-47
+127            <meta-data
+127-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:56:13-112
+128                android:name="android.support.FILE_PROVIDER_PATHS"
+128-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:56:24-74
+129                android:resource="@xml/file_paths" />
+129-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:56:75-109
+130        </provider>
+131
+132        <receiver
+132-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:59:9-98
+133            android:name="com.mediease.app.notifications.MedicineAlarmReceiver"
+133-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:59:19-70
+134            android:exported="false" />
+134-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:59:71-95
+135        <receiver
+135-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:60:9-64:20
+136            android:name="com.mediease.app.notifications.BootReceiver"
+136-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:60:19-61
+137            android:exported="true" >
+137-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:60:62-85
+138            <intent-filter>
+138-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:61:13-63:29
+139                <action android:name="android.intent.action.BOOT_COMPLETED" />
+139-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:62:17-79
+139-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:62:25-76
+140            </intent-filter>
+141        </receiver>
+142
+143        <activity
+143-->[androidx.compose.ui:ui-tooling:1.4.0] C:\Users\shrey\.gradle\caches\transforms-3\6b1f0401b0b9da8dff8926bb9a5b3678\transformed\jetified-ui-tooling-1.4.0\AndroidManifest.xml:23:9-25:39
+144            android:name="androidx.compose.ui.tooling.PreviewActivity"
+144-->[androidx.compose.ui:ui-tooling:1.4.0] C:\Users\shrey\.gradle\caches\transforms-3\6b1f0401b0b9da8dff8926bb9a5b3678\transformed\jetified-ui-tooling-1.4.0\AndroidManifest.xml:24:13-71
+145            android:exported="true" />
+145-->[androidx.compose.ui:ui-tooling:1.4.0] C:\Users\shrey\.gradle\caches\transforms-3\6b1f0401b0b9da8dff8926bb9a5b3678\transformed\jetified-ui-tooling-1.4.0\AndroidManifest.xml:25:13-36
+146
+147        <provider
+147-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:29:9-37:20
+148            android:name="androidx.startup.InitializationProvider"
+148-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:30:13-67
+149            android:authorities="com.mediease.app.androidx-startup"
+149-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:31:13-68
+150            android:exported="false" >
+150-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:32:13-37
+151            <meta-data
+151-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:34:13-36:52
+152                android:name="androidx.work.WorkManagerInitializer"
+152-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:35:17-68
+153                android:value="androidx.startup" />
+153-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:36:17-49
+154            <meta-data
+154-->[androidx.emoji2:emoji2:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\3c4b1169c569d0adc2e80d759b4f7203\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+155                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+155-->[androidx.emoji2:emoji2:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\3c4b1169c569d0adc2e80d759b4f7203\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:30:17-75
+156                android:value="androidx.startup" />
+156-->[androidx.emoji2:emoji2:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\3c4b1169c569d0adc2e80d759b4f7203\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:31:17-49
+157            <meta-data
+157-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\shrey\.gradle\caches\transforms-3\70b71d06ba099ec54dc76e369a482f9a\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+158                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+158-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\shrey\.gradle\caches\transforms-3\70b71d06ba099ec54dc76e369a482f9a\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+159                android:value="androidx.startup" />
+159-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\shrey\.gradle\caches\transforms-3\70b71d06ba099ec54dc76e369a482f9a\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+160            <meta-data
+160-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+161                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+161-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+162                android:value="androidx.startup" />
+162-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+163        </provider>
+164
+165        <service
+165-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:39:9-45:35
+166            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+166-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:40:13-88
+167            android:directBootAware="false"
+167-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:41:13-44
+168            android:enabled="@bool/enable_system_alarm_service_default"
+168-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:42:13-72
+169            android:exported="false" />
+169-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:43:13-37
+170        <service
+170-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:46:9-52:35
+171            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+171-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:47:13-84
+172            android:directBootAware="false"
+172-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:48:13-44
+173            android:enabled="@bool/enable_system_job_service_default"
+173-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:49:13-70
+174            android:exported="true"
+174-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:50:13-36
+175            android:permission="android.permission.BIND_JOB_SERVICE" />
+175-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:51:13-69
+176        <service
+176-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:53:9-59:35
+177            android:name="androidx.work.impl.foreground.SystemForegroundService"
+177-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:54:13-81
+178            android:directBootAware="false"
+178-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:55:13-44
+179            android:enabled="@bool/enable_system_foreground_service_default"
+179-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:56:13-77
+180            android:exported="false" />
+180-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:57:13-37
+181
+182        <receiver
+182-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:61:9-66:35
+183            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+183-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:62:13-88
+184            android:directBootAware="false"
+184-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:63:13-44
+185            android:enabled="true"
+185-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:64:13-35
+186            android:exported="false" />
+186-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:65:13-37
+187        <receiver
+187-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:67:9-77:20
+188            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+188-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:68:13-106
+189            android:directBootAware="false"
+189-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:69:13-44
+190            android:enabled="false"
+190-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:70:13-36
+191            android:exported="false" >
+191-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:71:13-37
+192            <intent-filter>
+192-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:73:13-76:29
+193                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+193-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:17-87
+193-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:25-84
+194                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+194-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:17-90
+194-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:25-87
+195            </intent-filter>
+196        </receiver>
+197        <receiver
+197-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:78:9-88:20
+198            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+198-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:79:13-104
+199            android:directBootAware="false"
+199-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:80:13-44
+200            android:enabled="false"
+200-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:81:13-36
+201            android:exported="false" >
+201-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:82:13-37
+202            <intent-filter>
+202-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:84:13-87:29
+203                <action android:name="android.intent.action.BATTERY_OKAY" />
+203-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:17-77
+203-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:25-74
+204                <action android:name="android.intent.action.BATTERY_LOW" />
+204-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:17-76
+204-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:25-73
+205            </intent-filter>
+206        </receiver>
+207        <receiver
+207-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:89:9-99:20
+208            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+208-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:90:13-104
+209            android:directBootAware="false"
+209-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:91:13-44
+210            android:enabled="false"
+210-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:92:13-36
+211            android:exported="false" >
+211-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:93:13-37
+212            <intent-filter>
+212-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:95:13-98:29
+213                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+213-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:17-83
+213-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:25-80
+214                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+214-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:17-82
+214-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:25-79
+215            </intent-filter>
+216        </receiver>
+217        <receiver
+217-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:100:9-109:20
+218            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+218-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:101:13-103
+219            android:directBootAware="false"
+219-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:102:13-44
+220            android:enabled="false"
+220-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:103:13-36
+221            android:exported="false" >
+221-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:104:13-37
+222            <intent-filter>
+222-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:106:13-108:29
+223                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+223-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:17-79
+223-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:25-76
+224            </intent-filter>
+225        </receiver>
+226        <receiver
+226-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:110:9-121:20
+227            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+227-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:111:13-88
+228            android:directBootAware="false"
+228-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:112:13-44
+229            android:enabled="false"
+229-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:113:13-36
+230            android:exported="false" >
+230-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:114:13-37
+231            <intent-filter>
+231-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:116:13-120:29
+232                <action android:name="android.intent.action.BOOT_COMPLETED" />
+232-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:62:17-79
+232-->C:\Users\shrey\OneDrive\Smart Medication Reminder\MediEase_Final\MediEase\app\src\main\AndroidManifest.xml:62:25-76
+233                <action android:name="android.intent.action.TIME_SET" />
+233-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:17-73
+233-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:25-70
+234                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+234-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:17-81
+234-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:25-78
+235            </intent-filter>
+236        </receiver>
+237        <receiver
+237-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:122:9-131:20
+238            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+238-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:123:13-99
+239            android:directBootAware="false"
+239-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:124:13-44
+240            android:enabled="@bool/enable_system_alarm_service_default"
+240-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:125:13-72
+241            android:exported="false" >
+241-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:126:13-37
+242            <intent-filter>
+242-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:128:13-130:29
+243                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+243-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:17-98
+243-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:25-95
+244            </intent-filter>
+245        </receiver>
+246        <receiver
+246-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:132:9-142:20
+247            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+247-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:133:13-78
+248            android:directBootAware="false"
+248-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:134:13-44
+249            android:enabled="true"
+249-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:135:13-35
+250            android:exported="true"
+250-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:136:13-36
+251            android:permission="android.permission.DUMP" >
+251-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:137:13-57
+252            <intent-filter>
+252-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:139:13-141:29
+253                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+253-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:17-88
+253-->[androidx.work:work-runtime:2.9.0] C:\Users\shrey\.gradle\caches\transforms-3\a48d07f69272fe546a91c4d3e779f784\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:25-85
+254            </intent-filter>
+255        </receiver>
+256
+257        <uses-library
+257-->[androidx.window:window:1.0.0] C:\Users\shrey\.gradle\caches\transforms-3\4747a79c91943f8a321e10a4331d4957\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
+258            android:name="androidx.window.extensions"
+258-->[androidx.window:window:1.0.0] C:\Users\shrey\.gradle\caches\transforms-3\4747a79c91943f8a321e10a4331d4957\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
+259            android:required="false" />
+259-->[androidx.window:window:1.0.0] C:\Users\shrey\.gradle\caches\transforms-3\4747a79c91943f8a321e10a4331d4957\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
+260        <uses-library
+260-->[androidx.window:window:1.0.0] C:\Users\shrey\.gradle\caches\transforms-3\4747a79c91943f8a321e10a4331d4957\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
+261            android:name="androidx.window.sidecar"
+261-->[androidx.window:window:1.0.0] C:\Users\shrey\.gradle\caches\transforms-3\4747a79c91943f8a321e10a4331d4957\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
+262            android:required="false" />
+262-->[androidx.window:window:1.0.0] C:\Users\shrey\.gradle\caches\transforms-3\4747a79c91943f8a321e10a4331d4957\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
+263
+264        <service
+264-->[androidx.room:room-runtime:2.6.1] C:\Users\shrey\.gradle\caches\transforms-3\3831a23d75d3d6fc7437f1a0f5ee229c\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+265            android:name="androidx.room.MultiInstanceInvalidationService"
+265-->[androidx.room:room-runtime:2.6.1] C:\Users\shrey\.gradle\caches\transforms-3\3831a23d75d3d6fc7437f1a0f5ee229c\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+266            android:directBootAware="true"
+266-->[androidx.room:room-runtime:2.6.1] C:\Users\shrey\.gradle\caches\transforms-3\3831a23d75d3d6fc7437f1a0f5ee229c\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+267            android:exported="false" />
+267-->[androidx.room:room-runtime:2.6.1] C:\Users\shrey\.gradle\caches\transforms-3\3831a23d75d3d6fc7437f1a0f5ee229c\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+268
+269        <receiver
+269-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+270            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+270-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+271            android:directBootAware="false"
+271-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+272            android:enabled="true"
+272-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+273            android:exported="true"
+273-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+274            android:permission="android.permission.DUMP" >
+274-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+275            <intent-filter>
+275-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+276                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+276-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+276-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+277            </intent-filter>
+278            <intent-filter>
+278-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+279                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+279-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+279-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+280            </intent-filter>
+281            <intent-filter>
+281-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+282                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+282-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+282-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+283            </intent-filter>
+284            <intent-filter>
+284-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+285                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+285-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+285-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\shrey\.gradle\caches\transforms-3\4500fb234d907684d5cb88345353e771\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+286            </intent-filter>
+287        </receiver>
+288    </application>
+289
+290</manifest>

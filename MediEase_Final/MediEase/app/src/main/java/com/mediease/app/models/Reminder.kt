@@ -14,6 +14,7 @@ data class Reminder(
     val isEnabled: Boolean = true,
     val alarmRequestCode: Int = 0,
     val createdAt: Long = System.currentTimeMillis(),
-    val frequency: String = "", // Added field
-    val status: String = "" // Added field
+    val frequency: String = "",
+    val status: String = "",
+    val medicineImagePath: String? = null // New field for recognized medicine image
 )

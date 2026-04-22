@@ -40,27 +40,58 @@ Dosage (from lines): 5 times per day
 
 --- EXTRACTED MEDICINES (using nlp_module) ---
 Medicine 1:
-  name: Paracetamol
-  dosage_timing: 1-0-1
-  timing_context: after food
-  expiry: 12/2027
-Medicine 2:
-  name: AMOXICILLIN
-  dosage_timing: 0-1-0
+  name: AM0X1C1111N
+  dosage_timing: 11/2026
+  dosage_amount: 
+  dosage_frequency: 
   timing_context: before food
   expiry: 11/2026
-Medicine 3:
+Medicine 2:
   name: Cetirizine
-  dosage_timing: HS
+  dosage_timing: Not found
+  dosage_amount: 
+  dosage_frequency: 
+  timing_context: 
+  expiry: 
+Medicine 3:
+  name: H5
+  dosage_timing: 05/2028
+  dosage_amount: 
+  dosage_frequency: 
   timing_context: with water
   expiry: 05/2028
 Medicine 4:
-  name: VITAMIN D3
-  dosage_timing: 1-0-0
+  name: V1TAM1N D3
+  dosage_timing: 2029-03-01
+  dosage_amount: 
+  dosage_frequency: 
   timing_context: 
-  expiry: 2029-03-01
+  expiry: 2029
 Medicine 5:
-  name: Ibuprofen
-  dosage_timing: TDS
+  name: 1bupr0fen
+  dosage_timing: Not found
+  dosage_amount: 
+  dosage_frequency: 
+  timing_context: 
+  expiry: 
+Medicine 6:
+  name: TD5
+  dosage_timing: Not found
+  dosage_amount: 
+  dosage_frequency: 
   timing_context: as needed
+  expiry: 
+Medicine 7:
+  name: Batch No: XY2123
+  dosage_timing: Not found
+  dosage_amount: 
+  dosage_frequency: 
+  timing_context: 
+  expiry: 
+Medicine 8:
+  name: 1ine_c0unt = 5
+  dosage_timing: Not found
+  dosage_amount: 
+  dosage_frequency: 
+  timing_context: 
   expiry: 

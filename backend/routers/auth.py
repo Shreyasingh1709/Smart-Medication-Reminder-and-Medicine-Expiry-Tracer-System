@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, BackgroundTasks
-from backend.models.schemas import User, Token
+from ..models.schemas import User, Token
 from typing import List
 import random
 import string

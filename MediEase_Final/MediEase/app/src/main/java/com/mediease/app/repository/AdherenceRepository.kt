@@ -9,8 +9,12 @@ import kotlinx.coroutines.withContext
 class AdherenceRepository {
     private val api = ApiClient.retrofit.create(ApiService::class.java)
 
-    suspend fun getAdherenceStats(patientId: Long): List<AdherenceStats>? = withContext(Dispatchers.IO) {
-        val response = api.getAdherenceStats(patientId)
-        if (response.isSuccessful) response.body() else null
+    suspend fun getAdherenceStats(patientId: String): List<AdherenceStats>? = withContext(Dispatchers.IO) {
+        try {
+            val response = api.getAdherenceStats(patientId)
+            if (response.isSuccessful) response.body() else null
+        } catch (e: Exception) {
+            null
+        }
     }
 }

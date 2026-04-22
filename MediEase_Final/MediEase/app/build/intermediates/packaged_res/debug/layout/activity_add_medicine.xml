@@ -80,7 +80,7 @@
 
             <!-- Dosage -->
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Dosage *" android:textSize="15sp" android:fontFamily="@font/nunito"
+                android:text="Dosage" android:textSize="15sp" android:fontFamily="@font/nunito"
                 android:textStyle="bold" android:textColor="@color/charcoal" android:layout_marginBottom="8dp"/>
             <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/field_height"
                 android:background="@drawable/bg_field" android:gravity="center_vertical"

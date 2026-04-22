@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from backend.models.schemas import Reminder
+from ..models.schemas import Reminder
 from typing import List
 from datetime import time
 

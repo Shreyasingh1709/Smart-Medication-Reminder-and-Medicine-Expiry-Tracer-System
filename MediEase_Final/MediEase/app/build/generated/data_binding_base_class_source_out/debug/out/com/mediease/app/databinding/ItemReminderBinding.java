@@ -4,6 +4,7 @@ package com.mediease.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,7 +22,13 @@ public final class ItemReminderBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
+  public final ImageView ivMedicineImage;
+
+  @NonNull
   public final SwitchCompat switchEnabled;
+
+  @NonNull
+  public final TextView tvIconPlaceholder;
 
   @NonNull
   public final TextView tvMedicineName;
@@ -29,10 +36,13 @@ public final class ItemReminderBinding implements ViewBinding {
   @NonNull
   public final TextView tvTime;
 
-  private ItemReminderBinding(@NonNull CardView rootView, @NonNull SwitchCompat switchEnabled,
+  private ItemReminderBinding(@NonNull CardView rootView, @NonNull ImageView ivMedicineImage,
+      @NonNull SwitchCompat switchEnabled, @NonNull TextView tvIconPlaceholder,
       @NonNull TextView tvMedicineName, @NonNull TextView tvTime) {
     this.rootView = rootView;
+    this.ivMedicineImage = ivMedicineImage;
     this.switchEnabled = switchEnabled;
+    this.tvIconPlaceholder = tvIconPlaceholder;
     this.tvMedicineName = tvMedicineName;
     this.tvTime = tvTime;
   }
@@ -64,9 +74,21 @@ public final class ItemReminderBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.iv_medicine_image;
+      ImageView ivMedicineImage = ViewBindings.findChildViewById(rootView, id);
+      if (ivMedicineImage == null) {
+        break missingId;
+      }
+
       id = R.id.switch_enabled;
       SwitchCompat switchEnabled = ViewBindings.findChildViewById(rootView, id);
       if (switchEnabled == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_icon_placeholder;
+      TextView tvIconPlaceholder = ViewBindings.findChildViewById(rootView, id);
+      if (tvIconPlaceholder == null) {
         break missingId;
       }
 
@@ -82,7 +104,8 @@ public final class ItemReminderBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemReminderBinding((CardView) rootView, switchEnabled, tvMedicineName, tvTime);
+      return new ItemReminderBinding((CardView) rootView, ivMedicineImage, switchEnabled,
+          tvIconPlaceholder, tvMedicineName, tvTime);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

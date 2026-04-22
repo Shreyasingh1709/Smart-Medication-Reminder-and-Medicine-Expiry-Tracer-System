@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from backend.models.schemas import AdherenceStat
+from ..models.schemas import AdherenceStat
 from typing import List
 
 router = APIRouter(prefix="/adherence", tags=["adherence"])

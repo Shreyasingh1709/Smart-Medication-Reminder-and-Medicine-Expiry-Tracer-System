@@ -49,7 +49,7 @@ public final class ReminderDao_Impl implements ReminderDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `reminders` (`id`,`medicineId`,`medicineName`,`time`,`repeatDays`,`isEnabled`,`alarmRequestCode`,`createdAt`,`frequency`,`status`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `reminders` (`id`,`medicineId`,`medicineName`,`time`,`repeatDays`,`isEnabled`,`alarmRequestCode`,`createdAt`,`frequency`,`status`,`medicineImagePath`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -66,6 +66,11 @@ public final class ReminderDao_Impl implements ReminderDao {
         statement.bindLong(8, entity.getCreatedAt());
         statement.bindString(9, entity.getFrequency());
         statement.bindString(10, entity.getStatus());
+        if (entity.getMedicineImagePath() == null) {
+          statement.bindNull(11);
+        } else {
+          statement.bindString(11, entity.getMedicineImagePath());
+        }
       }
     };
     this.__deletionAdapterOfReminder = new EntityDeletionOrUpdateAdapter<Reminder>(__db) {
@@ -85,7 +90,7 @@ public final class ReminderDao_Impl implements ReminderDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `reminders` SET `id` = ?,`medicineId` = ?,`medicineName` = ?,`time` = ?,`repeatDays` = ?,`isEnabled` = ?,`alarmRequestCode` = ?,`createdAt` = ?,`frequency` = ?,`status` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `reminders` SET `id` = ?,`medicineId` = ?,`medicineName` = ?,`time` = ?,`repeatDays` = ?,`isEnabled` = ?,`alarmRequestCode` = ?,`createdAt` = ?,`frequency` = ?,`status` = ?,`medicineImagePath` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -102,7 +107,12 @@ public final class ReminderDao_Impl implements ReminderDao {
         statement.bindLong(8, entity.getCreatedAt());
         statement.bindString(9, entity.getFrequency());
         statement.bindString(10, entity.getStatus());
-        statement.bindLong(11, entity.getId());
+        if (entity.getMedicineImagePath() == null) {
+          statement.bindNull(11);
+        } else {
+          statement.bindString(11, entity.getMedicineImagePath());
+        }
+        statement.bindLong(12, entity.getId());
       }
     };
     this.__preparedStmtOfDeleteRemindersForMedicine = new SharedSQLiteStatement(__db) {
@@ -220,6 +230,7 @@ public final class ReminderDao_Impl implements ReminderDao {
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
           final int _cursorIndexOfFrequency = CursorUtil.getColumnIndexOrThrow(_cursor, "frequency");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
+          final int _cursorIndexOfMedicineImagePath = CursorUtil.getColumnIndexOrThrow(_cursor, "medicineImagePath");
           final List<Reminder> _result = new ArrayList<Reminder>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Reminder _item;
@@ -245,7 +256,13 @@ public final class ReminderDao_Impl implements ReminderDao {
             _tmpFrequency = _cursor.getString(_cursorIndexOfFrequency);
             final String _tmpStatus;
             _tmpStatus = _cursor.getString(_cursorIndexOfStatus);
-            _item = new Reminder(_tmpId,_tmpMedicineId,_tmpMedicineName,_tmpTime,_tmpRepeatDays,_tmpIsEnabled,_tmpAlarmRequestCode,_tmpCreatedAt,_tmpFrequency,_tmpStatus);
+            final String _tmpMedicineImagePath;
+            if (_cursor.isNull(_cursorIndexOfMedicineImagePath)) {
+              _tmpMedicineImagePath = null;
+            } else {
+              _tmpMedicineImagePath = _cursor.getString(_cursorIndexOfMedicineImagePath);
+            }
+            _item = new Reminder(_tmpId,_tmpMedicineId,_tmpMedicineName,_tmpTime,_tmpRepeatDays,_tmpIsEnabled,_tmpAlarmRequestCode,_tmpCreatedAt,_tmpFrequency,_tmpStatus,_tmpMedicineImagePath);
             _result.add(_item);
           }
           return _result;
@@ -285,6 +302,7 @@ public final class ReminderDao_Impl implements ReminderDao {
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
           final int _cursorIndexOfFrequency = CursorUtil.getColumnIndexOrThrow(_cursor, "frequency");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
+          final int _cursorIndexOfMedicineImagePath = CursorUtil.getColumnIndexOrThrow(_cursor, "medicineImagePath");
           final List<Reminder> _result = new ArrayList<Reminder>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Reminder _item;
@@ -310,7 +328,13 @@ public final class ReminderDao_Impl implements ReminderDao {
             _tmpFrequency = _cursor.getString(_cursorIndexOfFrequency);
             final String _tmpStatus;
             _tmpStatus = _cursor.getString(_cursorIndexOfStatus);
-            _item = new Reminder(_tmpId,_tmpMedicineId,_tmpMedicineName,_tmpTime,_tmpRepeatDays,_tmpIsEnabled,_tmpAlarmRequestCode,_tmpCreatedAt,_tmpFrequency,_tmpStatus);
+            final String _tmpMedicineImagePath;
+            if (_cursor.isNull(_cursorIndexOfMedicineImagePath)) {
+              _tmpMedicineImagePath = null;
+            } else {
+              _tmpMedicineImagePath = _cursor.getString(_cursorIndexOfMedicineImagePath);
+            }
+            _item = new Reminder(_tmpId,_tmpMedicineId,_tmpMedicineName,_tmpTime,_tmpRepeatDays,_tmpIsEnabled,_tmpAlarmRequestCode,_tmpCreatedAt,_tmpFrequency,_tmpStatus,_tmpMedicineImagePath);
             _result.add(_item);
           }
           return _result;
@@ -342,6 +366,7 @@ public final class ReminderDao_Impl implements ReminderDao {
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
           final int _cursorIndexOfFrequency = CursorUtil.getColumnIndexOrThrow(_cursor, "frequency");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
+          final int _cursorIndexOfMedicineImagePath = CursorUtil.getColumnIndexOrThrow(_cursor, "medicineImagePath");
           final List<Reminder> _result = new ArrayList<Reminder>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Reminder _item;
@@ -367,7 +392,13 @@ public final class ReminderDao_Impl implements ReminderDao {
             _tmpFrequency = _cursor.getString(_cursorIndexOfFrequency);
             final String _tmpStatus;
             _tmpStatus = _cursor.getString(_cursorIndexOfStatus);
-            _item = new Reminder(_tmpId,_tmpMedicineId,_tmpMedicineName,_tmpTime,_tmpRepeatDays,_tmpIsEnabled,_tmpAlarmRequestCode,_tmpCreatedAt,_tmpFrequency,_tmpStatus);
+            final String _tmpMedicineImagePath;
+            if (_cursor.isNull(_cursorIndexOfMedicineImagePath)) {
+              _tmpMedicineImagePath = null;
+            } else {
+              _tmpMedicineImagePath = _cursor.getString(_cursorIndexOfMedicineImagePath);
+            }
+            _item = new Reminder(_tmpId,_tmpMedicineId,_tmpMedicineName,_tmpTime,_tmpRepeatDays,_tmpIsEnabled,_tmpAlarmRequestCode,_tmpCreatedAt,_tmpFrequency,_tmpStatus,_tmpMedicineImagePath);
             _result.add(_item);
           }
           return _result;
@@ -404,6 +435,7 @@ public final class ReminderDao_Impl implements ReminderDao {
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
           final int _cursorIndexOfFrequency = CursorUtil.getColumnIndexOrThrow(_cursor, "frequency");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
+          final int _cursorIndexOfMedicineImagePath = CursorUtil.getColumnIndexOrThrow(_cursor, "medicineImagePath");
           final List<Reminder> _result = new ArrayList<Reminder>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Reminder _item;
@@ -429,7 +461,13 @@ public final class ReminderDao_Impl implements ReminderDao {
             _tmpFrequency = _cursor.getString(_cursorIndexOfFrequency);
             final String _tmpStatus;
             _tmpStatus = _cursor.getString(_cursorIndexOfStatus);
-            _item = new Reminder(_tmpId,_tmpMedicineId,_tmpMedicineName,_tmpTime,_tmpRepeatDays,_tmpIsEnabled,_tmpAlarmRequestCode,_tmpCreatedAt,_tmpFrequency,_tmpStatus);
+            final String _tmpMedicineImagePath;
+            if (_cursor.isNull(_cursorIndexOfMedicineImagePath)) {
+              _tmpMedicineImagePath = null;
+            } else {
+              _tmpMedicineImagePath = _cursor.getString(_cursorIndexOfMedicineImagePath);
+            }
+            _item = new Reminder(_tmpId,_tmpMedicineId,_tmpMedicineName,_tmpTime,_tmpRepeatDays,_tmpIsEnabled,_tmpAlarmRequestCode,_tmpCreatedAt,_tmpFrequency,_tmpStatus,_tmpMedicineImagePath);
             _result.add(_item);
           }
           return _result;
@@ -461,6 +499,7 @@ public final class ReminderDao_Impl implements ReminderDao {
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
           final int _cursorIndexOfFrequency = CursorUtil.getColumnIndexOrThrow(_cursor, "frequency");
           final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
+          final int _cursorIndexOfMedicineImagePath = CursorUtil.getColumnIndexOrThrow(_cursor, "medicineImagePath");
           final List<Reminder> _result = new ArrayList<Reminder>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Reminder _item;
@@ -486,7 +525,13 @@ public final class ReminderDao_Impl implements ReminderDao {
             _tmpFrequency = _cursor.getString(_cursorIndexOfFrequency);
             final String _tmpStatus;
             _tmpStatus = _cursor.getString(_cursorIndexOfStatus);
-            _item = new Reminder(_tmpId,_tmpMedicineId,_tmpMedicineName,_tmpTime,_tmpRepeatDays,_tmpIsEnabled,_tmpAlarmRequestCode,_tmpCreatedAt,_tmpFrequency,_tmpStatus);
+            final String _tmpMedicineImagePath;
+            if (_cursor.isNull(_cursorIndexOfMedicineImagePath)) {
+              _tmpMedicineImagePath = null;
+            } else {
+              _tmpMedicineImagePath = _cursor.getString(_cursorIndexOfMedicineImagePath);
+            }
+            _item = new Reminder(_tmpId,_tmpMedicineId,_tmpMedicineName,_tmpTime,_tmpRepeatDays,_tmpIsEnabled,_tmpAlarmRequestCode,_tmpCreatedAt,_tmpFrequency,_tmpStatus,_tmpMedicineImagePath);
             _result.add(_item);
           }
           return _result;

@@ -95,6 +95,6 @@ def predict_medicine_from_image(img_path):
 # Manual test (only for debugging)
 # ---------------------------
 if __name__ == "__main__":
-    test_image = "test_images/sample1.jpeg"  # Update path
+    test_image = "test_images/Tablet/sample1.jpeg"  # Updated path
     result = predict_medicine_from_image(test_image)
     print(result)

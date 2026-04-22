@@ -8,7 +8,7 @@ import com.mediease.app.models.*
 
 @Database(
     entities = [Patient::class, Medicine::class, Reminder::class, MedicineLog::class, User::class],
-    version = 4,
+    version = 5,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

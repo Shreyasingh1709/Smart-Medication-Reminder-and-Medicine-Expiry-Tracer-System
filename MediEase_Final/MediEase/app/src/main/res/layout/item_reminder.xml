@@ -6,10 +6,18 @@
     app:cardBackgroundColor="@color/white" android:layout_marginBottom="12dp">
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
         android:padding="18dp" android:gravity="center_vertical">
-        <FrameLayout android:layout_width="48dp" android:layout_height="48dp" android:layout_marginEnd="14dp">
+        <FrameLayout android:layout_width="64dp" android:layout_height="64dp" android:layout_marginEnd="14dp">
             <View android:layout_width="match_parent" android:layout_height="match_parent"
                 android:background="@drawable/bg_circle_lavender"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            <ImageView android:id="@+id/iv_medicine_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:clipToOutline="true"
+                android:background="@drawable/bg_circle_lavender"
+                android:visibility="gone"/>
+            <TextView android:id="@+id/tv_icon_placeholder"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:layout_gravity="center" android:text="🔔" android:textSize="22sp"/>
         </FrameLayout>
         <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"

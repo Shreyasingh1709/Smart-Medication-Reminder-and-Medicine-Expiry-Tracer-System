@@ -100,6 +100,15 @@ plt.figure(figsize=(12, 5))
 plt.subplot(1, 2, 1)
 plt.plot(history.history['accuracy'], label='Train Accuracy')
 plt.plot(history.history['val_accuracy'], label='Val Accuracy')
+# Add test accuracy if available
+import json
+test_metrics_path = os.path.join(MODEL_OUTPUT_DIR, 'test_metrics.json')
+if os.path.exists(test_metrics_path):
+    with open(test_metrics_path, 'r') as f:
+        test_metrics = json.load(f)
+    test_acc = test_metrics.get('test_accuracy', None)
+    if test_acc is not None:
+        plt.axhline(y=test_acc, color='g', linestyle='--', label='Test Accuracy')
 plt.title('Model Accuracy')
 plt.xlabel('Epoch')
 plt.ylabel('Accuracy')

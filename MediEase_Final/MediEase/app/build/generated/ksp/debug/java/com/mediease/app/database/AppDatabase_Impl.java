@@ -40,17 +40,17 @@ public final class AppDatabase_Impl extends AppDatabase {
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(4) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(5) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `patients` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `age` INTEGER NOT NULL, `email` TEXT NOT NULL, `password` TEXT NOT NULL, `bedTime` TEXT NOT NULL, `wakeTime` TEXT NOT NULL, `breakfastTime` TEXT NOT NULL, `lunchTime` TEXT NOT NULL, `dinnerTime` TEXT NOT NULL, `profileCode` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `medicines` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` TEXT NOT NULL, `name` TEXT NOT NULL, `dosage` TEXT NOT NULL, `type` TEXT NOT NULL, `frequency` TEXT NOT NULL, `repeatDays` TEXT NOT NULL, `reminderTimes` TEXT NOT NULL, `mealTiming` TEXT NOT NULL, `startDate` INTEGER NOT NULL, `expiryDate` INTEGER, `imagePath` TEXT, `notes` TEXT NOT NULL, `isActive` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL, `dosageInfo` TEXT NOT NULL, `detectedTime` TEXT NOT NULL)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `reminders` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `medicineId` INTEGER NOT NULL, `medicineName` TEXT NOT NULL, `time` TEXT NOT NULL, `repeatDays` TEXT NOT NULL, `isEnabled` INTEGER NOT NULL, `alarmRequestCode` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, `frequency` TEXT NOT NULL, `status` TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `reminders` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `medicineId` INTEGER NOT NULL, `medicineName` TEXT NOT NULL, `time` TEXT NOT NULL, `repeatDays` TEXT NOT NULL, `isEnabled` INTEGER NOT NULL, `alarmRequestCode` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, `frequency` TEXT NOT NULL, `status` TEXT NOT NULL, `medicineImagePath` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `medicine_logs` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `medicineId` INTEGER NOT NULL, `scheduledTime` INTEGER NOT NULL, `takenTime` INTEGER, `status` TEXT NOT NULL, `date` TEXT NOT NULL, `notes` TEXT NOT NULL, `createdAt` INTEGER NOT NULL, FOREIGN KEY(`medicineId`) REFERENCES `medicines`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
         db.execSQL("CREATE INDEX IF NOT EXISTS `index_medicine_logs_medicineId` ON `medicine_logs` (`medicineId`)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `users` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `email` TEXT NOT NULL, `password` TEXT NOT NULL, `role` TEXT NOT NULL, `dob` INTEGER NOT NULL, `age` INTEGER NOT NULL, `ageRange` TEXT NOT NULL, `wakeUpTime` TEXT NOT NULL, `bedTime` TEXT NOT NULL, `breakfastTime` TEXT NOT NULL, `lunchTime` TEXT NOT NULL, `dinnerTime` TEXT NOT NULL, `profileCode` TEXT NOT NULL, `linkedUserId` TEXT NOT NULL, `avatarPath` TEXT, `createdAt` INTEGER NOT NULL, PRIMARY KEY(`id`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0aa7469c74ce14fddec1a525b6c39796')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4b10e774de52665b3d1e34abb86499fd')");
       }
 
       @Override
@@ -153,7 +153,7 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoMedicines + "\n"
                   + " Found:\n" + _existingMedicines);
         }
-        final HashMap<String, TableInfo.Column> _columnsReminders = new HashMap<String, TableInfo.Column>(10);
+        final HashMap<String, TableInfo.Column> _columnsReminders = new HashMap<String, TableInfo.Column>(11);
         _columnsReminders.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsReminders.put("medicineId", new TableInfo.Column("medicineId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsReminders.put("medicineName", new TableInfo.Column("medicineName", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -164,6 +164,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         _columnsReminders.put("createdAt", new TableInfo.Column("createdAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsReminders.put("frequency", new TableInfo.Column("frequency", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsReminders.put("status", new TableInfo.Column("status", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsReminders.put("medicineImagePath", new TableInfo.Column("medicineImagePath", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysReminders = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesReminders = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoReminders = new TableInfo("reminders", _columnsReminders, _foreignKeysReminders, _indicesReminders);
@@ -222,7 +223,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "0aa7469c74ce14fddec1a525b6c39796", "036a7972fe72002f5bf6b32e0c35d2d5");
+    }, "4b10e774de52665b3d1e34abb86499fd", "3fc9d0b21eea8a314e7617ba40907932");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

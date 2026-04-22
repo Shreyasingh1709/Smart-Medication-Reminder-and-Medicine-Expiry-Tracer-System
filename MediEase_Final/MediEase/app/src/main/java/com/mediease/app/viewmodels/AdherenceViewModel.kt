@@ -23,13 +23,16 @@ class AdherenceViewModel(application: Application) : AndroidViewModel(applicatio
         viewModelScope.launch {
             isLoading.value = true
             try {
-                val result = repo.getAdherenceStats(prefs.userId.toLongOrNull() ?: 0)
-                if (result != null && result.isNotEmpty()) {
-                    weeklyStats.value = result[0]
-                    if (result.size > 1) {
-                        monthlyStats.value = result[1]
-                    } else {
-                        monthlyStats.value = result[0]
+                val userId = prefs.userId
+                if (userId.isNotEmpty()) {
+                    val result = repo.getAdherenceStats(userId)
+                    if (result != null && result.isNotEmpty()) {
+                        weeklyStats.value = result[0]
+                        if (result.size > 1) {
+                            monthlyStats.value = result[1]
+                        } else {
+                            monthlyStats.value = result[0]
+                        }
                     }
                 }
                 error.value = null
