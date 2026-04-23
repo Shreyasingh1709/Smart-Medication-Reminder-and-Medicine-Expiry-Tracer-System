@@ -20,10 +20,6 @@
         "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\fragment_caregiver_patients.xml"
     },
     {
-        "merged": "com.mediease.app-merged_res-82:/menu_bottom_nav_menu.xml.flat",
-        "source": "com.mediease.app-main-84:/menu/bottom_nav_menu.xml"
-    },
-    {
         "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\xml_network_security_config.xml.flat",
         "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\xml\\network_security_config.xml"
     },
@@ -194,10 +190,6 @@
     {
         "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_toggle_bar.xml.flat",
         "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_toggle_bar.xml"
-    },
-    {
-        "merged": "com.mediease.app-merged_res-82:/menu_bottom_nav_caregiver.xml.flat",
-        "source": "com.mediease.app-main-84:/menu/bottom_nav_caregiver.xml"
     },
     {
         "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_bell.xml.flat",

@@ -183,7 +183,6 @@ class AddMedicineActivity : AppCompatActivity() {
             }
 
             // Downscale to ~1800px max dimension. This is ideal for OCR.
-            // Full 12MP camera images are often too noisy and cause EasyOCR to fail or misread.
             val maxDimension = 1800 
             var inSampleSize = 1
             if (options.outHeight > maxDimension || options.outWidth > maxDimension) {
@@ -214,7 +213,6 @@ class AddMedicineActivity : AppCompatActivity() {
             }
 
             val outputStream = ByteArrayOutputStream()
-            // 85-90% quality is the sweet spot for OCR (less noise than 100%, sharper than 70%)
             rotatedBitmap.compress(Bitmap.CompressFormat.JPEG, 90, outputStream)
             val bytes = outputStream.toByteArray()
             val requestFile = bytes.toRequestBody("image/jpeg".toMediaTypeOrNull())
@@ -246,15 +244,13 @@ class AddMedicineActivity : AppCompatActivity() {
         }
         
         if (!extracted.expiryDate.isNullOrBlank()) {
-            // Aggressive cleaning to handle OCR misreads like "3XP" instead of "EXP"
             val cleanedDate = extracted.expiryDate
-                .replace(Regex("(?i)[38B]XP[\\.\\s]*[0D]A?T?E?[:\\s]*"), "") // Handles 3XP.DATE, EXP DATE, etc.
+                .replace(Regex("(?i)[38B]XP[\\.\\s]*[0D]A?T?E?[:\\s]*"), "")
                 .replace(Regex("(?i)(exp|expiry|exp\\.?|date|valid|until|use\\s*by|lot|batch):?"), "")
                 .trim()
             
             parseAndSetExpiryDate(cleanedDate)
             
-            // Normalization display (Feature: 11/25 -> 01/11/2025)
             expiryDateMillis?.let {
                 val displaySdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
                 binding.tvExpiryDate.text = displaySdf.format(Date(it))
@@ -318,20 +314,31 @@ class AddMedicineActivity : AppCompatActivity() {
 
     private fun parseAndSetExpiryDate(dateStr: String) {
         val formats = listOf(
-            "MM/yyyy", "MM/yy", "dd/MM/yyyy", "yyyy-MM-dd", 
+            "dd/MM/yyyy", // Try this first, since backend sends this format
+            "MM/yyyy", "MM/yy", "dd/MM/yyyy", "yyyy-MM-dd",
             "MMM yyyy", "MMMM yyyy", "MMM yy", "MMMM yy",
             "MM-yyyy", "MM.yyyy", "MM / yyyy", "MM / yy",
             "MMyy", "MMyyyy"
         )
+        var parsed = false
         for (f in formats) {
             try {
                 val sdf = SimpleDateFormat(f, Locale.getDefault())
                 val date = sdf.parse(dateStr)
                 if (date != null) {
                     expiryDateMillis = date.time
+                    Log.d("ExpiryParse", "Parsed with format: $f")
+                    parsed = true
                     break
                 }
-            } catch (e: Exception) {}
+            } catch (e: Exception) {
+                // Continue trying other formats
+            }
+        }
+        if (!parsed) {
+            expiryDateMillis = null
+            Log.e("ExpiryParse", "Failed to parse expiry date: $dateStr")
+            Toast.makeText(this, "Invalid expiry date format. Please correct.", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -416,7 +423,7 @@ class AddMedicineActivity : AppCompatActivity() {
     private fun showTimePicker() {
         val calendar = Calendar.getInstance()
         TimePickerDialog(this, { _, h, m ->
-            val time = String.format("%02d:%02d", h, m)
+            val time = String.format(Locale.getDefault(), "%02d:%02d", h, m)
             if (!reminderTimes.contains(time)) {
                 reminderTimes.add(time)
                 updateTimeChips()
@@ -513,8 +520,8 @@ class AddMedicineActivity : AppCompatActivity() {
     private fun saveMedicine() {
         val name = binding.etMedicineName.text.toString().trim()
         val dosage = binding.etDosage.text.toString().trim()
-        if (name.isEmpty() || reminderTimes.isEmpty()) {
-            Toast.makeText(this, "Please fill required fields (Name and Time)", Toast.LENGTH_SHORT).show()
+        if (name.isEmpty() || reminderTimes.isEmpty() || expiryDateMillis == null) {
+            Toast.makeText(this, "Please fill required fields (Name, Time, and a valid Expiry Date)", Toast.LENGTH_SHORT).show()
             return
         }
         
