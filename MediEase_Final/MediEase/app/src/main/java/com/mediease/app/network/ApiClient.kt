@@ -11,15 +11,15 @@ object ApiClient {
     private const val BASE_URL = "http://192.168.1.9:8000/"
 
     private val logging = HttpLoggingInterceptor().apply {
-        level = HttpLoggingInterceptor.Level.BODY
+        level = HttpLoggingInterceptor.Level.HEADERS // Changed to HEADERS to avoid overhead with large image uploads
     }
 
     private val httpClient = OkHttpClient.Builder()
         .addInterceptor(logging)
-        // Increased timeouts for AI processing
-        .connectTimeout(30, TimeUnit.SECONDS)
-        .readTimeout(60, TimeUnit.SECONDS)
-        .writeTimeout(60, TimeUnit.SECONDS)
+        .connectTimeout(60, TimeUnit.SECONDS)
+        .readTimeout(120, TimeUnit.SECONDS)
+        .writeTimeout(120, TimeUnit.SECONDS)
+        .retryOnConnectionFailure(true)
         .build()
 
     val retrofit: Retrofit = Retrofit.Builder()
@@ -27,4 +27,8 @@ object ApiClient {
         .addConverterFactory(GsonConverterFactory.create())
         .client(httpClient)
         .build()
+
+    val apiService: ApiService by lazy {
+        retrofit.create(ApiService::class.java)
+    }
 }
