@@ -3432,11 +3432,13 @@ int id btn_email_support 0x7f0a0070
 int id btn_gallery 0x7f0a0071
 int id btn_login 0x7f0a0072
 int id btn_logout 0x7f0a0073
+int id btn_mark_taken 0x7f0a02ab
 int id btn_monthly 0x7f0a0074
 int id btn_next 0x7f0a0075
 int id btn_register 0x7f0a0076
 int id btn_reset_password 0x7f0a0077
 int id btn_save 0x7f0a0078
+int id btn_save_and_next 0x7f0a02ac
 int id btn_send 0x7f0a0079
 int id btn_send_otp 0x7f0a007a
 int id btn_weekly 0x7f0a007b
@@ -3464,6 +3466,8 @@ int id centerCrop 0x7f0a0090
 int id centerInside 0x7f0a0091
 int id center_horizontal 0x7f0a0092
 int id center_vertical 0x7f0a0093
+int id cg_meal 0x7f0a02b4
+int id cg_type 0x7f0a02b5
 int id chain 0x7f0a0094
 int id chain2 0x7f0a0095
 int id chains 0x7f0a0096
@@ -3471,12 +3475,14 @@ int id checkbox 0x7f0a0097
 int id checked 0x7f0a0098
 int id chip_after 0x7f0a0099
 int id chip_anytime 0x7f0a009a
+int id chip_base_breakfast 0x7f0a02af
+int id chip_base_dinner 0x7f0a02b0
+int id chip_base_lunch 0x7f0a02b1
 int id chip_before 0x7f0a009b
 int id chip_capsule 0x7f0a009c
 int id chip_drops 0x7f0a009d
 int id chip_fri 0x7f0a009e
 int id chip_mon 0x7f0a009f
-int id chip_other 0x7f0a00a0
 int id chip_sat 0x7f0a00a1
 int id chip_sun 0x7f0a00a2
 int id chip_syrup 0x7f0a00a3
@@ -3638,6 +3644,7 @@ int id jumpToEnd 0x7f0a013e
 int id jumpToStart 0x7f0a013f
 int id labeled 0x7f0a0140
 int id layout 0x7f0a0141
+int id layout_image_placeholder 0x7f0a02b2
 int id layout_otp_password 0x7f0a0142
 int id left 0x7f0a0143
 int id leftToRight 0x7f0a0144
@@ -3940,7 +3947,6 @@ int id tv_expiry_status 0x7f0a026d
 int id tv_forgot_password 0x7f0a026e
 int id tv_greeting 0x7f0a026f
 int id tv_icon_placeholder 0x7f0a0270
-int id tv_image_placeholder 0x7f0a0271
 int id tv_lunch_time 0x7f0a0272
 int id tv_meal_timing 0x7f0a0273
 int id tv_medicine_count 0x7f0a0274
@@ -3954,6 +3960,7 @@ int id tv_no_medicines 0x7f0a027b
 int id tv_no_patients 0x7f0a027c
 int id tv_no_reminders 0x7f0a027d
 int id tv_profile_code 0x7f0a027e
+int id tv_queue_status 0x7f0a02b3
 int id tv_reminder_times 0x7f0a027f
 int id tv_schedule_date 0x7f0a0280
 int id tv_status 0x7f0a0281

@@ -26,24 +26,30 @@
 
             <!-- Medicine Image -->
             <androidx.cardview.widget.CardView android:layout_width="match_parent"
-                android:layout_height="130dp" app:cardCornerRadius="16dp"
+                android:layout_height="180dp" app:cardCornerRadius="16dp"
                 app:cardElevation="3dp" app:cardBackgroundColor="@color/white"
                 android:layout_marginBottom="18dp">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-                    android:orientation="vertical" android:gravity="center">
-                    <FrameLayout android:layout_width="80dp" android:layout_height="80dp"
-                        android:layout_gravity="center">
-                        <View android:layout_width="match_parent" android:layout_height="match_parent"
-                            android:background="@drawable/bg_circle_lavender"/>
-                        <ImageView android:id="@+id/iv_medicine_image" android:layout_width="match_parent"
-                            android:layout_height="match_parent" android:scaleType="centerCrop"
-                            android:visibility="gone"
-                            android:contentDescription="@string/cd_medicine_image"/>
-                        <TextView android:id="@+id/tv_image_placeholder" android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:layout_gravity="center"
-                            android:text="💊" android:textSize="36sp"/>
-                    </FrameLayout>
-                </LinearLayout>
+                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                    <ImageView android:id="@+id/iv_medicine_image" android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:scaleType="centerInside"
+                        android:visibility="gone"
+                        android:contentDescription="@string/cd_medicine_image"/>
+                    <LinearLayout android:id="@+id/layout_image_placeholder"
+                        android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="📸" android:textSize="48sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Upload Image" android:textSize="14sp"
+                            android:fontFamily="@font/nunito" android:textColor="@color/charcoal_light"/>
+                    </LinearLayout>
+                    <TextView android:id="@+id/tv_queue_status" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_gravity="top|end"
+                        android:layout_margin="12dp" android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp" android:background="@drawable/bg_tag_lavender"
+                        android:textColor="@color/lavender_deeper" android:textSize="12sp"
+                        android:textStyle="bold" android:visibility="gone" android:text="1 of 1"/>
+                </FrameLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- Image Buttons -->
@@ -63,40 +69,59 @@
                     android:stateListAnimator="@null" android:layout_marginStart="8dp"/>
             </LinearLayout>
 
+            <!-- Base Schedule Info -->
+            <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:scrollbars="none" android:layout_marginBottom="16dp">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.google.android.material.chip.Chip android:id="@+id/chip_base_breakfast"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Breakfast: --:--" android:layout_marginEnd="8dp"
+                        app:chipBackgroundColor="@color/white" app:chipStrokeWidth="1dp" app:chipStrokeColor="@color/lavender"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/chip_base_lunch"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Lunch: --:--" android:layout_marginEnd="8dp"
+                        app:chipBackgroundColor="@color/white" app:chipStrokeWidth="1dp" app:chipStrokeColor="@color/lavender"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/chip_base_dinner"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Dinner: --:--" android:layout_marginEnd="8dp"
+                        app:chipBackgroundColor="@color/white" app:chipStrokeWidth="1dp" app:chipStrokeColor="@color/lavender"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
             <!-- Medicine Name -->
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:text="Medicine Name *" android:textSize="15sp" android:fontFamily="@font/nunito"
                 android:textStyle="bold" android:textColor="@color/charcoal" android:layout_marginBottom="8dp"/>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/field_height"
+            <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
                 android:background="@drawable/bg_field" android:gravity="center_vertical"
                 android:paddingHorizontal="16dp" android:layout_marginBottom="16dp">
                 <EditText android:id="@+id/et_medicine_name" android:layout_width="match_parent"
                     android:layout_height="match_parent" android:background="@null"
-                    android:hint="e.g. Metformin" android:textSize="17sp"
+                    android:hint="Name" android:textSize="17sp"
                     android:fontFamily="@font/nunito" android:inputType="textCapWords"
-                    android:textColor="@android:color/black"
-                    android:textColorHint="@color/charcoal_light"/>
+                    android:textColor="@android:color/black"/>
             </LinearLayout>
 
             <!-- Dosage -->
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:text="Dosage" android:textSize="15sp" android:fontFamily="@font/nunito"
                 android:textStyle="bold" android:textColor="@color/charcoal" android:layout_marginBottom="8dp"/>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/field_height"
+            <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
                 android:background="@drawable/bg_field" android:gravity="center_vertical"
                 android:paddingHorizontal="16dp" android:layout_marginBottom="16dp">
                 <EditText android:id="@+id/et_dosage" android:layout_width="match_parent"
                     android:layout_height="match_parent" android:background="@null"
                     android:hint="e.g. 500mg" android:textSize="17sp" android:fontFamily="@font/nunito"
-                    android:textColor="@android:color/black"
-                    android:textColorHint="@color/charcoal_light"/>
+                    android:textColor="@android:color/black"/>
             </LinearLayout>
 
             <!-- Medicine Type -->
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:text="Medicine Type" android:textSize="15sp" android:fontFamily="@font/nunito"
                 android:textStyle="bold" android:textColor="@color/charcoal" android:layout_marginBottom="8dp"/>
-            <com.google.android.material.chip.ChipGroup android:layout_width="match_parent"
+            <com.google.android.material.chip.ChipGroup android:id="@+id/cg_type"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:layout_marginBottom="16dp"
                 app:singleSelection="true">
                 <com.google.android.material.chip.Chip android:id="@+id/chip_tablet"
@@ -112,16 +137,14 @@
                 <com.google.android.material.chip.Chip android:id="@+id/chip_drops"
                     android:layout_width="wrap_content" android:layout_height="48dp"
                     android:text="💧 Drops" style="@style/Widget.MaterialComponents.Chip.Choice"/>
-                <com.google.android.material.chip.Chip android:id="@+id/chip_other"
-                    android:layout_width="wrap_content" android:layout_height="48dp"
-                    android:text="🔵 Other" style="@style/Widget.MaterialComponents.Chip.Choice"/>
             </com.google.android.material.chip.ChipGroup>
 
             <!-- Meal Timing -->
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:text="When to Take" android:textSize="15sp" android:fontFamily="@font/nunito"
                 android:textStyle="bold" android:textColor="@color/charcoal" android:layout_marginBottom="8dp"/>
-            <com.google.android.material.chip.ChipGroup android:layout_width="match_parent"
+            <com.google.android.material.chip.ChipGroup android:id="@+id/cg_meal"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:layout_marginBottom="16dp"
                 app:singleSelection="true">
                 <com.google.android.material.chip.Chip android:id="@+id/chip_before"
@@ -184,7 +207,7 @@
 
             <!-- Expiry Date -->
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Expiry Date" android:textSize="15sp" android:fontFamily="@font/nunito"
+                android:text="Expiry Date *" android:textSize="15sp" android:fontFamily="@font/nunito"
                 android:textStyle="bold" android:textColor="@color/charcoal" android:layout_marginBottom="8dp"/>
             <LinearLayout android:id="@+id/card_expiry" android:layout_width="match_parent"
                 android:layout_height="60dp" android:background="@drawable/bg_picker_row"
@@ -196,33 +219,38 @@
                     android:layout_height="wrap_content" android:layout_weight="1"
                     android:text="Tap to set expiry date" android:textSize="16sp"
                     android:fontFamily="@font/nunito" android:textColor="@color/charcoal_light"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="›" android:textSize="18sp" android:textColor="@color/charcoal_light"/>
             </LinearLayout>
 
             <!-- Notes -->
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Notes (optional)" android:textSize="15sp" android:fontFamily="@font/nunito"
+                android:text="Notes / Duration" android:textSize="15sp" android:fontFamily="@font/nunito"
                 android:textStyle="bold" android:textColor="@color/charcoal" android:layout_marginBottom="8dp"/>
             <LinearLayout android:layout_width="match_parent" android:layout_height="100dp"
                 android:background="@drawable/bg_field" android:paddingHorizontal="16dp"
                 android:paddingVertical="12dp" android:layout_marginBottom="24dp">
                 <EditText android:id="@+id/et_notes" android:layout_width="match_parent"
                     android:layout_height="match_parent" android:background="@null"
-                    android:hint="Any special instructions..." android:textSize="16sp"
+                    android:hint="Special instructions or duration..." android:textSize="16sp"
                     android:fontFamily="@font/nunito" android:gravity="top"
                     android:inputType="textMultiLine" android:lines="3"
-                    android:textColor="@android:color/black"
-                    android:textColorHint="@color/charcoal_light"/>
+                    android:textColor="@android:color/black"/>
             </LinearLayout>
 
-            <!-- Save Button -->
+            <!-- Actions -->
+            <Button android:id="@+id/btn_save_and_next"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:text="➕ Save &amp; Next Medicine" android:background="@drawable/bg_btn_outline"
+                android:textColor="@color/charcoal" android:textSize="16sp"
+                android:fontFamily="@font/nunito" android:textStyle="bold"
+                android:stateListAnimator="@null" android:layout_marginBottom="12dp"
+                android:visibility="gone"/>
+
             <Button android:id="@+id/btn_save"
-                android:layout_width="match_parent" android:layout_height="@dimen/btn_height_primary"
-                android:text="💾 Save Medicine" android:background="@drawable/bg_btn_coral"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:text="💾 Save &amp; Finish" android:background="@drawable/bg_btn_coral"
                 android:textColor="@color/white" android:textSize="18sp"
                 android:fontFamily="@font/nunito" android:textStyle="bold"
-                android:stateListAnimator="@null" android:layout_marginBottom="24dp"/>
+                android:stateListAnimator="@null"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

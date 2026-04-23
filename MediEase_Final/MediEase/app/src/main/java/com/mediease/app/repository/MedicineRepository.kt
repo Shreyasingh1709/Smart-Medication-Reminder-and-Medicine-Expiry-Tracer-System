@@ -45,6 +45,9 @@ class MedicineRepository(context: Context) {
     fun getLogsForDate(date: String): LiveData<List<MedicineLog>> =
         logDao.getLogsForDate(date)
 
+    suspend fun getLogsForDateSync(date: String): List<MedicineLog> =
+        logDao.getLogsForDateSync(date)
+
     fun getLogsForMedicine(medicineId: Long): LiveData<List<MedicineLog>> =
         logDao.getLogsForMedicine(medicineId)
 
@@ -76,7 +79,6 @@ class MedicineRepository(context: Context) {
 
         // Build per-day data for last 7 days
         val weeklyData = mutableListOf<DayAdherence>()
-        val dayLabels = listOf("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
         for (i in daysBack - 1 downTo 0) {
             val dayCal = Calendar.getInstance()
             dayCal.add(Calendar.DAY_OF_YEAR, -i)

@@ -60,12 +60,12 @@
         "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\activity_patient_setup.xml"
     },
     {
-        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-mergeDebugResources-81:\\layout\\fragment_home.xml",
-        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\fragment_home.xml"
+        "merged": "com.mediease.app-mergeDebugResources-81:/layout/activity_add_medicine.xml",
+        "source": "com.mediease.app-main-84:/layout/activity_add_medicine.xml"
     },
     {
-        "merged": "com.mediease.app-mergeDebugResources-81:/layout/fragment_chat.xml",
-        "source": "com.mediease.app-main-84:/layout/fragment_chat.xml"
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-mergeDebugResources-81:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-mergeDebugResources-81:\\layout\\activity_caregiver_setup.xml",

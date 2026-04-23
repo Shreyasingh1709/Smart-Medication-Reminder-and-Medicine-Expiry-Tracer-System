@@ -56,5 +56,17 @@
                 android:textColor="@color/charcoal" android:fontFamily="@font/nunito"
                 android:textStyle="bold" android:drawablePadding="4dp"/>
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_mark_taken"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_circle_lavender"
+            android:src="@drawable/ic_check"
+            app:tint="@color/lavender_deeper"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="Mark as Taken" />
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

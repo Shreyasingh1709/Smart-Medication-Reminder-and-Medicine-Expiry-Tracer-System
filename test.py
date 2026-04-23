@@ -25,7 +25,9 @@ else:
 			return "[MOCK OCR] No mock output found for " + image_path
 from vision_utils.parser import extract_medicine_details
 from cnn_module.predict_cnn import predict_medicine_from_image   # existing team code
-from nlp_module import extract_medicine_info
+
+# Import both old and new extraction functions
+from nlp_prescription import extract_medicine_info, extract_structured_prescriptions
 
 
 
@@ -66,11 +68,21 @@ if (not text or text.strip() == "") and dosage_str == "Not specified":
 elif dosage_str == "Not specified":
     print("Dosage time not found in prescription or strip, please enter manually.")
 
+
 # --- New test: Use improved extraction logic ---
 print("\n--- EXTRACTED MEDICINES (using nlp_module) ---")
 medicines = extract_medicine_info(text)
 for idx, med in enumerate(medicines, 1):
     print(f"Medicine {idx}:")
+    for k, v in med.items():
+        print(f"  {k}: {v}")
+    print()
+
+# --- Test: Use advanced structured extraction ---
+print("\n--- STRUCTURED EXTRACTION (advanced) ---")
+structured_meds = extract_structured_prescriptions(text)
+for idx, med in enumerate(structured_meds, 1):
+    print(f"Structured Medicine {idx}:")
     for k, v in med.items():
         print(f"  {k}: {v}")
     print()
@@ -92,9 +104,16 @@ Dosage (from lines): {dosage_str}
 
 --- EXTRACTED MEDICINES (using nlp_module) ---
 """
+
 summary += "\n".join([
     f"Medicine {i+1}:\n  " + "\n  ".join(f"{k}: {v}" for k, v in med.items())
     for i, med in enumerate(medicines)
+]) + "\n"
+
+summary += "\n--- STRUCTURED EXTRACTION (advanced) ---\n"
+summary += "\n".join([
+    f"Structured Medicine {i+1}:\n  " + "\n  ".join(f"{k}: {v}" for k, v in med.items())
+    for i, med in enumerate(structured_meds)
 ]) + "\n"
 
 print(summary)

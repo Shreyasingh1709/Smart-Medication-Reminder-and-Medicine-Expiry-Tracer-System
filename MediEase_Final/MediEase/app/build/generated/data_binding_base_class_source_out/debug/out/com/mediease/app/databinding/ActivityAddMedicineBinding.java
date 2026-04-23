@@ -40,13 +40,31 @@ public final class ActivityAddMedicineBinding implements ViewBinding {
   public final Button btnSave;
 
   @NonNull
+  public final Button btnSaveAndNext;
+
+  @NonNull
   public final LinearLayout cardExpiry;
+
+  @NonNull
+  public final ChipGroup cgMeal;
+
+  @NonNull
+  public final ChipGroup cgType;
 
   @NonNull
   public final Chip chipAfter;
 
   @NonNull
   public final Chip chipAnytime;
+
+  @NonNull
+  public final Chip chipBaseBreakfast;
+
+  @NonNull
+  public final Chip chipBaseDinner;
+
+  @NonNull
+  public final Chip chipBaseLunch;
 
   @NonNull
   public final Chip chipBefore;
@@ -62,9 +80,6 @@ public final class ActivityAddMedicineBinding implements ViewBinding {
 
   @NonNull
   public final Chip chipMon;
-
-  @NonNull
-  public final Chip chipOther;
 
   @NonNull
   public final Chip chipSat;
@@ -103,44 +118,53 @@ public final class ActivityAddMedicineBinding implements ViewBinding {
   public final ImageView ivMedicineImage;
 
   @NonNull
+  public final LinearLayout layoutImagePlaceholder;
+
+  @NonNull
   public final ChipGroup timeChipsContainer;
 
   @NonNull
   public final TextView tvExpiryDate;
 
   @NonNull
-  public final TextView tvImagePlaceholder;
+  public final TextView tvQueueStatus;
 
   @NonNull
   public final TextView tvTitle;
 
   private ActivityAddMedicineBinding(@NonNull LinearLayout rootView, @NonNull Button btnAddTime,
       @NonNull Button btnBack, @NonNull Button btnCamera, @NonNull Button btnGallery,
-      @NonNull Button btnSave, @NonNull LinearLayout cardExpiry, @NonNull Chip chipAfter,
-      @NonNull Chip chipAnytime, @NonNull Chip chipBefore, @NonNull Chip chipCapsule,
-      @NonNull Chip chipDrops, @NonNull Chip chipFri, @NonNull Chip chipMon,
-      @NonNull Chip chipOther, @NonNull Chip chipSat, @NonNull Chip chipSun,
-      @NonNull Chip chipSyrup, @NonNull Chip chipTablet, @NonNull Chip chipThu,
-      @NonNull Chip chipTue, @NonNull Chip chipWed, @NonNull Chip chipWith,
+      @NonNull Button btnSave, @NonNull Button btnSaveAndNext, @NonNull LinearLayout cardExpiry,
+      @NonNull ChipGroup cgMeal, @NonNull ChipGroup cgType, @NonNull Chip chipAfter,
+      @NonNull Chip chipAnytime, @NonNull Chip chipBaseBreakfast, @NonNull Chip chipBaseDinner,
+      @NonNull Chip chipBaseLunch, @NonNull Chip chipBefore, @NonNull Chip chipCapsule,
+      @NonNull Chip chipDrops, @NonNull Chip chipFri, @NonNull Chip chipMon, @NonNull Chip chipSat,
+      @NonNull Chip chipSun, @NonNull Chip chipSyrup, @NonNull Chip chipTablet,
+      @NonNull Chip chipThu, @NonNull Chip chipTue, @NonNull Chip chipWed, @NonNull Chip chipWith,
       @NonNull EditText etDosage, @NonNull EditText etMedicineName, @NonNull EditText etNotes,
-      @NonNull ImageView ivMedicineImage, @NonNull ChipGroup timeChipsContainer,
-      @NonNull TextView tvExpiryDate, @NonNull TextView tvImagePlaceholder,
-      @NonNull TextView tvTitle) {
+      @NonNull ImageView ivMedicineImage, @NonNull LinearLayout layoutImagePlaceholder,
+      @NonNull ChipGroup timeChipsContainer, @NonNull TextView tvExpiryDate,
+      @NonNull TextView tvQueueStatus, @NonNull TextView tvTitle) {
     this.rootView = rootView;
     this.btnAddTime = btnAddTime;
     this.btnBack = btnBack;
     this.btnCamera = btnCamera;
     this.btnGallery = btnGallery;
     this.btnSave = btnSave;
+    this.btnSaveAndNext = btnSaveAndNext;
     this.cardExpiry = cardExpiry;
+    this.cgMeal = cgMeal;
+    this.cgType = cgType;
     this.chipAfter = chipAfter;
     this.chipAnytime = chipAnytime;
+    this.chipBaseBreakfast = chipBaseBreakfast;
+    this.chipBaseDinner = chipBaseDinner;
+    this.chipBaseLunch = chipBaseLunch;
     this.chipBefore = chipBefore;
     this.chipCapsule = chipCapsule;
     this.chipDrops = chipDrops;
     this.chipFri = chipFri;
     this.chipMon = chipMon;
-    this.chipOther = chipOther;
     this.chipSat = chipSat;
     this.chipSun = chipSun;
     this.chipSyrup = chipSyrup;
@@ -153,9 +177,10 @@ public final class ActivityAddMedicineBinding implements ViewBinding {
     this.etMedicineName = etMedicineName;
     this.etNotes = etNotes;
     this.ivMedicineImage = ivMedicineImage;
+    this.layoutImagePlaceholder = layoutImagePlaceholder;
     this.timeChipsContainer = timeChipsContainer;
     this.tvExpiryDate = tvExpiryDate;
-    this.tvImagePlaceholder = tvImagePlaceholder;
+    this.tvQueueStatus = tvQueueStatus;
     this.tvTitle = tvTitle;
   }
 
@@ -216,9 +241,27 @@ public final class ActivityAddMedicineBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btn_save_and_next;
+      Button btnSaveAndNext = ViewBindings.findChildViewById(rootView, id);
+      if (btnSaveAndNext == null) {
+        break missingId;
+      }
+
       id = R.id.card_expiry;
       LinearLayout cardExpiry = ViewBindings.findChildViewById(rootView, id);
       if (cardExpiry == null) {
+        break missingId;
+      }
+
+      id = R.id.cg_meal;
+      ChipGroup cgMeal = ViewBindings.findChildViewById(rootView, id);
+      if (cgMeal == null) {
+        break missingId;
+      }
+
+      id = R.id.cg_type;
+      ChipGroup cgType = ViewBindings.findChildViewById(rootView, id);
+      if (cgType == null) {
         break missingId;
       }
 
@@ -231,6 +274,24 @@ public final class ActivityAddMedicineBinding implements ViewBinding {
       id = R.id.chip_anytime;
       Chip chipAnytime = ViewBindings.findChildViewById(rootView, id);
       if (chipAnytime == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_base_breakfast;
+      Chip chipBaseBreakfast = ViewBindings.findChildViewById(rootView, id);
+      if (chipBaseBreakfast == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_base_dinner;
+      Chip chipBaseDinner = ViewBindings.findChildViewById(rootView, id);
+      if (chipBaseDinner == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_base_lunch;
+      Chip chipBaseLunch = ViewBindings.findChildViewById(rootView, id);
+      if (chipBaseLunch == null) {
         break missingId;
       }
 
@@ -261,12 +322,6 @@ public final class ActivityAddMedicineBinding implements ViewBinding {
       id = R.id.chip_mon;
       Chip chipMon = ViewBindings.findChildViewById(rootView, id);
       if (chipMon == null) {
-        break missingId;
-      }
-
-      id = R.id.chip_other;
-      Chip chipOther = ViewBindings.findChildViewById(rootView, id);
-      if (chipOther == null) {
         break missingId;
       }
 
@@ -342,6 +397,12 @@ public final class ActivityAddMedicineBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.layout_image_placeholder;
+      LinearLayout layoutImagePlaceholder = ViewBindings.findChildViewById(rootView, id);
+      if (layoutImagePlaceholder == null) {
+        break missingId;
+      }
+
       id = R.id.time_chips_container;
       ChipGroup timeChipsContainer = ViewBindings.findChildViewById(rootView, id);
       if (timeChipsContainer == null) {
@@ -354,9 +415,9 @@ public final class ActivityAddMedicineBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tv_image_placeholder;
-      TextView tvImagePlaceholder = ViewBindings.findChildViewById(rootView, id);
-      if (tvImagePlaceholder == null) {
+      id = R.id.tv_queue_status;
+      TextView tvQueueStatus = ViewBindings.findChildViewById(rootView, id);
+      if (tvQueueStatus == null) {
         break missingId;
       }
 
@@ -367,10 +428,11 @@ public final class ActivityAddMedicineBinding implements ViewBinding {
       }
 
       return new ActivityAddMedicineBinding((LinearLayout) rootView, btnAddTime, btnBack, btnCamera,
-          btnGallery, btnSave, cardExpiry, chipAfter, chipAnytime, chipBefore, chipCapsule,
-          chipDrops, chipFri, chipMon, chipOther, chipSat, chipSun, chipSyrup, chipTablet, chipThu,
-          chipTue, chipWed, chipWith, etDosage, etMedicineName, etNotes, ivMedicineImage,
-          timeChipsContainer, tvExpiryDate, tvImagePlaceholder, tvTitle);
+          btnGallery, btnSave, btnSaveAndNext, cardExpiry, cgMeal, cgType, chipAfter, chipAnytime,
+          chipBaseBreakfast, chipBaseDinner, chipBaseLunch, chipBefore, chipCapsule, chipDrops,
+          chipFri, chipMon, chipSat, chipSun, chipSyrup, chipTablet, chipThu, chipTue, chipWed,
+          chipWith, etDosage, etMedicineName, etNotes, ivMedicineImage, layoutImagePlaceholder,
+          timeChipsContainer, tvExpiryDate, tvQueueStatus, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

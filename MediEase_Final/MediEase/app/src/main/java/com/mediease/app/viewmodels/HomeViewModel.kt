@@ -5,9 +5,10 @@ import androidx.lifecycle.*
 import com.mediease.app.models.MedicineLog
 import com.mediease.app.repository.MedicineRepository
 import com.mediease.app.models.Medicine
-import com.mediease.app.utils.DateUtils
 import com.mediease.app.utils.PrefsManager
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.*
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
     private val repo = MedicineRepository(application)
@@ -25,15 +26,17 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             isLoading.value = true
             try {
-                // Using the local DB repository instead of the API one which was wrongly referenced
                 val userId = prefs.userId
-                val result = repo.getMedicinesForUserSync(userId)
-                todayMedicines.value = result
+                val medicines = repo.getMedicinesForUserSync(userId)
+                todayMedicines.value = medicines
                 
-                // Mocking counts for now
-                totalToday.value = result.size
-                takenCount.value = 0
-                missedCount.value = 0
+                val today = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+                val logs = repo.getLogsForDateSync(today)
+                
+                // Calculate counts based on today's logs
+                totalToday.value = medicines.size
+                takenCount.value = logs.count { it.status == "TAKEN" }
+                missedCount.value = logs.count { it.status == "MISSED" }
                 
                 error.value = null
             } catch (e: Exception) {
@@ -41,6 +44,23 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             } finally {
                 isLoading.value = false
             }
+        }
+    }
+
+    fun markMedicineAsTaken(medicine: Medicine) {
+        viewModelScope.launch {
+            val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            val today = sdf.format(Date())
+            
+            val log = MedicineLog(
+                medicineId = medicine.id,
+                scheduledTime = System.currentTimeMillis(),
+                takenTime = System.currentTimeMillis(),
+                status = "TAKEN",
+                date = today
+            )
+            repo.insertLog(log)
+            loadTodayMedicines()
         }
     }
 

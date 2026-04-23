@@ -53,12 +53,16 @@ object NotificationUtils {
 
     fun scheduleAlarm(context: Context, requestCode: Int, triggerMillis: Long,
                       medicineId: Long, medicineName: String) {
-        val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, MedicineAlarmReceiver::class.java).apply {
             putExtra("medicine_id", medicineId)
             putExtra("medicine_name", medicineName)
             putExtra("request_code", requestCode)
         }
+        scheduleAlarmWithIntent(context, requestCode, triggerMillis, intent)
+    }
+
+    fun scheduleAlarmWithIntent(context: Context, requestCode: Int, triggerMillis: Long, intent: Intent) {
+        val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val pi = PendingIntent.getBroadcast(context, requestCode, intent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
         

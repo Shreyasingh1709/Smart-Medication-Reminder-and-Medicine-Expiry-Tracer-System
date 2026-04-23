@@ -13,6 +13,7 @@ import com.mediease.app.models.ChatMessage
 import com.mediease.app.network.ApiClient
 import com.mediease.app.network.ApiService
 import com.mediease.app.network.ChatRequest
+import com.mediease.app.utils.PrefsManager
 import kotlinx.coroutines.launch
 
 class ChatFragment : Fragment() {
@@ -20,6 +21,7 @@ class ChatFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var adapter: ChatAdapter
     private val messages = mutableListOf<ChatMessage>()
+    private lateinit var prefs: PrefsManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentChatBinding.inflate(inflater, container, false)
@@ -29,6 +31,7 @@ class ChatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
+        prefs = PrefsManager(requireContext())
         adapter = ChatAdapter()
         binding.rvChat.adapter = adapter
         
@@ -52,7 +55,7 @@ class ChatFragment : Fragment() {
         val api = ApiClient.retrofit.create(ApiService::class.java)
         lifecycleScope.launch {
             try {
-                val response = api.chat(ChatRequest(text))
+                val response = api.chat(ChatRequest(text, prefs.userId))
                 binding.pbLoading.visibility = View.GONE
                 
                 if (response.isSuccessful) {

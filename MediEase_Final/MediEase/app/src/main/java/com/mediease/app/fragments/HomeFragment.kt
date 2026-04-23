@@ -38,11 +38,17 @@ class HomeFragment : Fragment() {
         setupRecyclerViews()
         setupFab()
         observeData()
+    }
+
+    override fun onResume() {
+        super.onResume()
         homeVM.markOverdueAsMissed()
+        homeVM.loadTodayMedicines()
     }
 
     private fun setupGreeting() {
-        val name = (prefs.userName ?: "Friend").split(" ").firstOrNull() ?: "Friend"
+        val userName = prefs.userName
+        val name = if (userName.isNotEmpty()) userName.split(" ").first() else "Friend"
         binding.tvGreeting.text = "${DateUtils.getGreeting()} $name 👋"
         binding.tvDate.text = java.text.SimpleDateFormat("EEEE, dd MMM yyyy",
             java.util.Locale.getDefault()).format(java.util.Date())
@@ -50,7 +56,10 @@ class HomeFragment : Fragment() {
 
     private fun setupRecyclerViews() {
         medicineAdapter = MedicineCardAdapter(
-            onMarkTaken = { log -> homeVM.markAsTaken(log.id) }
+            onMarkTaken = { medicine -> homeVM.markMedicineAsTaken(medicine) },
+            onEdit = { _ ->
+                // Navigate to edit/details if needed
+            }
         )
         binding.rvMedicines.adapter = medicineAdapter
 

@@ -9,10 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mediease.app.databinding.ItemMedicineCardBinding
 import com.mediease.app.models.Medicine
-import com.mediease.app.models.MedicineLog
 
 class MedicineCardAdapter(
-    private val onMarkTaken: (MedicineLog) -> Unit = {},
+    private val onMarkTaken: (Medicine) -> Unit = {},
     private val onEdit: (Medicine) -> Unit = {}
 ) : ListAdapter<Medicine, MedicineCardAdapter.ViewHolder>(DiffCallback) {
 
@@ -54,6 +53,15 @@ class MedicineCardAdapter(
                     .into(binding.ivMedicine)
             } else {
                 binding.ivMedicine.setImageResource(com.mediease.app.R.drawable.ic_medicine_placeholder)
+            }
+
+            // Mark Taken Button
+            binding.btnMarkTaken.setOnClickListener {
+                onMarkTaken(medicine)
+            }
+            
+            binding.root.setOnClickListener {
+                onEdit(medicine)
             }
         }
 

@@ -322,6 +322,63 @@ public final class MedicineLogDao_Impl implements MedicineLogDao {
   }
 
   @Override
+  public Object getLogsForDateSync(final String date,
+      final Continuation<? super List<MedicineLog>> $completion) {
+    final String _sql = "SELECT * FROM medicine_logs WHERE date = ? ORDER BY scheduledTime ASC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindString(_argIndex, date);
+    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<MedicineLog>>() {
+      @Override
+      @NonNull
+      public List<MedicineLog> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfMedicineId = CursorUtil.getColumnIndexOrThrow(_cursor, "medicineId");
+          final int _cursorIndexOfScheduledTime = CursorUtil.getColumnIndexOrThrow(_cursor, "scheduledTime");
+          final int _cursorIndexOfTakenTime = CursorUtil.getColumnIndexOrThrow(_cursor, "takenTime");
+          final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
+          final int _cursorIndexOfDate = CursorUtil.getColumnIndexOrThrow(_cursor, "date");
+          final int _cursorIndexOfNotes = CursorUtil.getColumnIndexOrThrow(_cursor, "notes");
+          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+          final List<MedicineLog> _result = new ArrayList<MedicineLog>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final MedicineLog _item;
+            final long _tmpId;
+            _tmpId = _cursor.getLong(_cursorIndexOfId);
+            final long _tmpMedicineId;
+            _tmpMedicineId = _cursor.getLong(_cursorIndexOfMedicineId);
+            final long _tmpScheduledTime;
+            _tmpScheduledTime = _cursor.getLong(_cursorIndexOfScheduledTime);
+            final Long _tmpTakenTime;
+            if (_cursor.isNull(_cursorIndexOfTakenTime)) {
+              _tmpTakenTime = null;
+            } else {
+              _tmpTakenTime = _cursor.getLong(_cursorIndexOfTakenTime);
+            }
+            final String _tmpStatus;
+            _tmpStatus = _cursor.getString(_cursorIndexOfStatus);
+            final String _tmpDate;
+            _tmpDate = _cursor.getString(_cursorIndexOfDate);
+            final String _tmpNotes;
+            _tmpNotes = _cursor.getString(_cursorIndexOfNotes);
+            final long _tmpCreatedAt;
+            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
+            _item = new MedicineLog(_tmpId,_tmpMedicineId,_tmpScheduledTime,_tmpTakenTime,_tmpStatus,_tmpDate,_tmpNotes,_tmpCreatedAt);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
   public Object getLogsForDateRange(final String startDate, final String endDate,
       final Continuation<? super List<MedicineLog>> $completion) {
     final String _sql = "SELECT * FROM medicine_logs WHERE date BETWEEN ? AND ? ORDER BY scheduledTime ASC";

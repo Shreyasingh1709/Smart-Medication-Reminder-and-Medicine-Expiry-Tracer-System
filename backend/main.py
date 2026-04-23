@@ -3,7 +3,7 @@ from fastapi import FastAPI, Request
 from backend.routers import users, medicines, reminders, adherence, images, auth
 from fastapi.middleware.cors import CORSMiddleware
 import os
-from nlp_module import extract_medicine_info
+from nlp_strip import extract_medicine_info
 
 app = FastAPI(title="MediEase Backend")
 

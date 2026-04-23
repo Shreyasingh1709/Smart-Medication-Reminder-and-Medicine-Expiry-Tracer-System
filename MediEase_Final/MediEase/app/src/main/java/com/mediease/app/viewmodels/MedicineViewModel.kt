@@ -44,7 +44,7 @@ class MedicineViewModel(application: Application) : AndroidViewModel(application
                     // Cancel existing reminders before re-scheduling
                     val oldMed = repo.getMedicineById(medicine.id)
                     oldMed?.let {
-                        ReminderScheduler.cancelForMedicine(getApplication(), it.id, it.getReminderTimesList().size)
+                        ReminderScheduler.cancelForMedicine(getApplication(), it.id)
                     }
                     
                     repo.updateMedicine(medicine.copy(updatedAt = System.currentTimeMillis()))
@@ -60,7 +60,7 @@ class MedicineViewModel(application: Application) : AndroidViewModel(application
     fun deleteMedicine(medicine: Medicine) {
         viewModelScope.launch {
             try {
-                ReminderScheduler.cancelForMedicine(getApplication(), medicine.id, medicine.getReminderTimesList().size)
+                ReminderScheduler.cancelForMedicine(getApplication(), medicine.id)
                 repo.deleteMedicine(medicine)
                 _deleteResult.postValue(true)
             } catch (e: Exception) {

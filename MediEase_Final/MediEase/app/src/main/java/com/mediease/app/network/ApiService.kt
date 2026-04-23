@@ -24,11 +24,26 @@ interface ApiService {
 
     @GET("adherence/stats/{patient_id}")
     suspend fun getAdherenceStats(@Path("patient_id") patientId: String): Response<List<AdherenceStats>>
+
+    // Sync Endpoints
+    @GET("medicines/sync")
+    suspend fun pullMedicines(): Response<List<Medicine>>
+
+    @POST("medicines/sync")
+    suspend fun pushMedicines(@Body medicines: List<Medicine>): Response<Unit>
+
+    @GET("logs/sync")
+    suspend fun pullLogs(): Response<List<MedicineLog>>
+
+    @POST("logs/sync")
+    suspend fun pushLogs(@Body logs: List<MedicineLog>): Response<Unit>
 }
 
 data class ChatRequest(
     @SerializedName("message")
-    val message: String
+    val message: String,
+    @SerializedName("user_id")
+    val userId: String
 )
 
 data class ChatResponse(

@@ -12,6 +12,9 @@ interface MedicineLogDao {
     @Query("SELECT * FROM medicine_logs WHERE date = :date ORDER BY scheduledTime ASC")
     fun getLogsForDate(date: String): LiveData<List<MedicineLog>>
 
+    @Query("SELECT * FROM medicine_logs WHERE date = :date ORDER BY scheduledTime ASC")
+    suspend fun getLogsForDateSync(date: String): List<MedicineLog>
+
     @Query("SELECT * FROM medicine_logs WHERE date BETWEEN :startDate AND :endDate ORDER BY scheduledTime ASC")
     suspend fun getLogsForDateRange(startDate: String, endDate: String): List<MedicineLog>
 

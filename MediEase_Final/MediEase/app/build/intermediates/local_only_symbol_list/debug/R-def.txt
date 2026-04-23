@@ -166,11 +166,13 @@ id btn_email_support
 id btn_gallery
 id btn_login
 id btn_logout
+id btn_mark_taken
 id btn_monthly
 id btn_next
 id btn_register
 id btn_reset_password
 id btn_save
+id btn_save_and_next
 id btn_send
 id btn_send_otp
 id btn_weekly
@@ -188,14 +190,18 @@ id card_missed_alert
 id card_patient
 id card_tip
 id card_wake_time
+id cg_meal
+id cg_type
 id chip_after
 id chip_anytime
+id chip_base_breakfast
+id chip_base_dinner
+id chip_base_lunch
 id chip_before
 id chip_capsule
 id chip_drops
 id chip_fri
 id chip_mon
-id chip_other
 id chip_sat
 id chip_sun
 id chip_syrup
@@ -227,6 +233,7 @@ id help_support_row
 id homeFragment
 id iv_medicine
 id iv_medicine_image
+id layout_image_placeholder
 id layout_otp_password
 id line_chart
 id ll_message_container
@@ -272,7 +279,6 @@ id tv_expiry_status
 id tv_forgot_password
 id tv_greeting
 id tv_icon_placeholder
-id tv_image_placeholder
 id tv_lunch_time
 id tv_meal_timing
 id tv_medicine_count
@@ -286,6 +292,7 @@ id tv_no_medicines
 id tv_no_patients
 id tv_no_reminders
 id tv_profile_code
+id tv_queue_status
 id tv_reminder_times
 id tv_schedule_date
 id tv_status

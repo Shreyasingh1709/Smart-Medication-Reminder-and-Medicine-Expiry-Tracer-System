@@ -4,6 +4,7 @@ package com.mediease.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -19,6 +20,9 @@ import java.lang.String;
 public final class ItemMedicineCardBinding implements ViewBinding {
   @NonNull
   private final CardView rootView;
+
+  @NonNull
+  public final ImageButton btnMarkTaken;
 
   @NonNull
   public final ImageView ivMedicine;
@@ -41,11 +45,12 @@ public final class ItemMedicineCardBinding implements ViewBinding {
   @NonNull
   public final TextView tvReminderTimes;
 
-  private ItemMedicineCardBinding(@NonNull CardView rootView, @NonNull ImageView ivMedicine,
-      @NonNull TextView tvDosage, @NonNull TextView tvExpiryStatus, @NonNull TextView tvMealTiming,
-      @NonNull TextView tvMedicineName, @NonNull TextView tvMedicineType,
-      @NonNull TextView tvReminderTimes) {
+  private ItemMedicineCardBinding(@NonNull CardView rootView, @NonNull ImageButton btnMarkTaken,
+      @NonNull ImageView ivMedicine, @NonNull TextView tvDosage, @NonNull TextView tvExpiryStatus,
+      @NonNull TextView tvMealTiming, @NonNull TextView tvMedicineName,
+      @NonNull TextView tvMedicineType, @NonNull TextView tvReminderTimes) {
     this.rootView = rootView;
+    this.btnMarkTaken = btnMarkTaken;
     this.ivMedicine = ivMedicine;
     this.tvDosage = tvDosage;
     this.tvExpiryStatus = tvExpiryStatus;
@@ -82,6 +87,12 @@ public final class ItemMedicineCardBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btn_mark_taken;
+      ImageButton btnMarkTaken = ViewBindings.findChildViewById(rootView, id);
+      if (btnMarkTaken == null) {
+        break missingId;
+      }
+
       id = R.id.iv_medicine;
       ImageView ivMedicine = ViewBindings.findChildViewById(rootView, id);
       if (ivMedicine == null) {
@@ -124,8 +135,8 @@ public final class ItemMedicineCardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemMedicineCardBinding((CardView) rootView, ivMedicine, tvDosage, tvExpiryStatus,
-          tvMealTiming, tvMedicineName, tvMedicineType, tvReminderTimes);
+      return new ItemMedicineCardBinding((CardView) rootView, btnMarkTaken, ivMedicine, tvDosage,
+          tvExpiryStatus, tvMealTiming, tvMedicineName, tvMedicineType, tvReminderTimes);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

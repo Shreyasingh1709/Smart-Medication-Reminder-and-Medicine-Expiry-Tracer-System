@@ -132,6 +132,10 @@
         <receiver
             android:name="com.mediease.app.notifications.MedicineAlarmReceiver"
             android:exported="false" />
+        <!-- Register MedicineActionReceiver for notification action button -->
+        <receiver
+            android:name="com.mediease.app.notifications.MedicineActionReceiver"
+            android:exported="false" />
         <receiver
             android:name="com.mediease.app.notifications.BootReceiver"
             android:exported="true" >

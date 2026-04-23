@@ -180,16 +180,20 @@
         "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\item_chat_message.xml"
     },
     {
-        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_field_focused.xml.flat",
-        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_field_focused.xml"
-    },
-    {
         "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_item_medicine_card.xml.flat",
         "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\item_medicine_card.xml"
     },
     {
+        "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_field_focused.xml.flat",
+        "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_field_focused.xml"
+    },
+    {
         "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_toggle_bar.xml.flat",
         "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_toggle_bar.xml"
+    },
+    {
+        "merged": "com.mediease.app-merged_res-82:/layout_activity_add_medicine.xml.flat",
+        "source": "com.mediease.app-main-84:/layout/activity_add_medicine.xml"
     },
     {
         "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_ic_bell.xml.flat",
@@ -258,10 +262,6 @@
     {
         "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_btn_coral.xml.flat",
         "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_btn_coral.xml"
-    },
-    {
-        "merged": "com.mediease.app-merged_res-82:/layout_fragment_chat.xml.flat",
-        "source": "com.mediease.app-main-84:/layout/fragment_chat.xml"
     },
     {
         "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_tag_lavender.xml.flat",

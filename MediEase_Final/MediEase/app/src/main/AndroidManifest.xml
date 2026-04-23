@@ -57,6 +57,8 @@
         </provider>
 
         <receiver android:name=".notifications.MedicineAlarmReceiver" android:exported="false" />
+        <!-- Register MedicineActionReceiver for notification action button -->
+        <receiver android:name=".notifications.MedicineActionReceiver" android:exported="false" />
         <receiver android:name=".notifications.BootReceiver" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
