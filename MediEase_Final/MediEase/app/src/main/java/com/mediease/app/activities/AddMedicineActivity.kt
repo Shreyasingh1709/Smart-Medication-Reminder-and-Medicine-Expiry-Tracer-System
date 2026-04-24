@@ -58,6 +58,7 @@ class AddMedicineActivity : AppCompatActivity() {
     
     private var extractedMedicinesQueue = mutableListOf<ExtractedMedicine>()
     private var currentQueueIndex = 0
+    private var isCurrentlyPrescription = false
 
     private val TAG = "AddMedicineActivity"
 
@@ -137,13 +138,31 @@ class AddMedicineActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         var extractedList = response.body()?.medicines ?: emptyList()
                         
-                        if (extractedList.size <= 1) {
-                            val rawText = extractedList.firstOrNull()?.instructions ?: ""
-                            val trimmed = trimPrescriptionText(rawText)
-                            if (trimmed.length > 10) {
-                                val splitList = splitPrescriptionIntoMedicines(trimmed)
-                                if (splitList.isNotEmpty()) extractedList = splitList
+                        // Heuristic detection: Look for Prescription headers
+                        val allText = (extractedList.joinToString(" ") { 
+                            (it.name ?: "") + " " + (it.instructions ?: "") + " " + (it.dosage ?: "")
+                        }).uppercase()
+
+                        isCurrentlyPrescription = allText.contains("CONSULTANT") || 
+                                                allText.contains("CONSULTATION") || 
+                                                allText.contains("PATIENT") ||
+                                                allText.contains("HOSPITAL") ||
+                                                allText.contains("DR.") ||
+                                                allText.contains("OPD") ||
+                                                allText.contains("FOLLOW")
+
+                        if (isCurrentlyPrescription) {
+                            Log.d(TAG, "Detected as PRESCRIPTION. Applying splitting logic.")
+                            if (extractedList.size <= 1) {
+                                val rawText = extractedList.firstOrNull()?.instructions ?: ""
+                                val trimmed = trimPrescriptionText(rawText)
+                                if (trimmed.length > 10) {
+                                    val splitList = splitPrescriptionIntoMedicines(trimmed)
+                                    if (splitList.isNotEmpty()) extractedList = splitList
+                                }
                             }
+                        } else {
+                            Log.d(TAG, "Detected as MEDICINE STRIP. Using raw logic.")
                         }
 
                         if (extractedList.isNotEmpty()) {
@@ -183,20 +202,25 @@ class AddMedicineActivity : AppCompatActivity() {
 
     private fun autoFillForm(extracted: ExtractedMedicine) {
         val rawName = extracted.name?.trim() ?: ""
-        // Clean name from common OCR type tags
-        val cleanName = rawName.replace(Regex("(?i)Cream|Lotion|Tablets|Tablet|Solution|Ointment"), "").trim()
+        // Clean name only if it's a prescription to avoid removing part of strip brand names
+        val cleanName = if (isCurrentlyPrescription) {
+            rawName.replace(Regex("(?i)Cream|Lotion|Tablets|Tablet|Solution|Ointment"), "").trim()
+        } else {
+            rawName
+        }
+        
         val cleanDosage = cleanDosageOcr(extracted.dosage ?: "")
         
         binding.etMedicineName.setText(cleanName)
         binding.etDosage.setText(cleanDosage)
         
-        val instructions = trimPrescriptionText(extracted.instructions ?: "")
+        val instructions = if (isCurrentlyPrescription) trimPrescriptionText(extracted.instructions ?: "") else (extracted.instructions ?: "")
         binding.etNotes.setText(instructions)
 
         val upperText = instructions.uppercase()
         val nameAndInstr = "$rawName $cleanDosage $instructions".uppercase()
 
-        // 1. Determine Type & Meal Timing Default
+        // Determine Type & Meal Timing Default
         when {
             nameAndInstr.contains("CREAM") || nameAndInstr.contains("OINTMENT") || 
             nameAndInstr.contains("GEL") || nameAndInstr.contains("LOTION") -> {
@@ -245,7 +269,6 @@ class AddMedicineActivity : AppCompatActivity() {
 
     private fun splitPrescriptionIntoMedicines(trimmedText: String): List<ExtractedMedicine> {
         val medicines = mutableListOf<ExtractedMedicine>()
-        // Robust split on various "Dispense" misreads
         val blocks = trimmedText.split(Regex("(?i)(?:\\()?(?:Dispense|Dk|ddpentr|Dispensc|Dknanse|Dipense|Dipensc|Disp|Dispen)[^\\d)]*\\d+(?:\\))?"))
         
         for (block in blocks) {
@@ -287,7 +310,6 @@ class AddMedicineActivity : AppCompatActivity() {
 
         val suggested = mutableListOf<String>()
 
-        // Patterns like 1-0-1 or 1 - 0 - 1
         val pattern = Regex("(\\d)\\s*[-/ ]\\s*(\\d)\\s*[-/ ]\\s*(\\d)")
         val match = pattern.find(text)
         
@@ -519,8 +541,44 @@ class AddMedicineActivity : AppCompatActivity() {
         try {
             val inputStream = contentResolver.openInputStream(uri) ?: return@withContext null
             val originalBytes = inputStream.use { it.readBytes() }
-            val requestBody = originalBytes.toRequestBody("image/jpeg".toMediaTypeOrNull())
+
+            val options = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+            BitmapFactory.decodeByteArray(originalBytes, 0, originalBytes.size, options)
+            
+            var inSampleSize = 1
+            val maxDim = 1200 
+            if (options.outHeight > maxDim || options.outWidth > maxDim) {
+                inSampleSize = 2
+            }
+            
+            val bitmap = BitmapFactory.decodeByteArray(originalBytes, 0, originalBytes.size, BitmapFactory.Options().apply { this.inSampleSize = inSampleSize })
+                ?: return@withContext null
+
+            val exif = ExifInterface(originalBytes.inputStream())
+            val orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL)
+            val matrix = Matrix()
+            when (orientation) {
+                ExifInterface.ORIENTATION_ROTATE_90 -> matrix.postRotate(90f)
+                ExifInterface.ORIENTATION_ROTATE_180 -> matrix.postRotate(180f)
+                ExifInterface.ORIENTATION_ROTATE_270 -> matrix.postRotate(270f)
+            }
+            
+            val rotated = if (orientation != ExifInterface.ORIENTATION_NORMAL && orientation != 0) {
+                Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+            } else { bitmap }
+
+            val out = ByteArrayOutputStream()
+            rotated.compress(Bitmap.CompressFormat.JPEG, 80, out)
+            
+            if (rotated != bitmap) rotated.recycle()
+            bitmap.recycle()
+
+            val byteArray = out.toByteArray()
+            val requestBody = byteArray.toRequestBody("image/jpeg".toMediaTypeOrNull())
             MultipartBody.Part.createFormData("files", "image_${System.currentTimeMillis()}.jpg", requestBody)
-        } catch (e: Exception) { null }
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to process image part", e)
+            null
+        }
     }
 }
