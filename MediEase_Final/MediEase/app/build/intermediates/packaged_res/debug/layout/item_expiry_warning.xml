@@ -21,7 +21,14 @@
             android:orientation="vertical" android:gravity="end">
             <TextView android:id="@+id/tv_status" android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:textSize="12sp"
-                android:fontFamily="@font/nunito" android:textStyle="bold"/>
+                android:fontFamily="@font/nunito" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+            <Button android:id="@+id/btn_discard" android:layout_width="wrap_content"
+                android:layout_height="32dp" android:text="Discard"
+                android:background="@drawable/bg_btn_coral" android:textColor="@color/white"
+                android:textSize="11sp" android:paddingHorizontal="12dp"
+                android:textAllCaps="false" android:fontFamily="@font/nunito"
+                android:textStyle="bold" android:stateListAnimator="@null"
+                android:visibility="gone"/>
             <TextView android:id="@+id/tv_days_left" android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:textSize="12sp"
                 android:fontFamily="@font/nunito" android:layout_marginTop="2dp"/>

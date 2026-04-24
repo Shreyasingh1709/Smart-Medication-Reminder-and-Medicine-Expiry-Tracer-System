@@ -47,4 +47,7 @@ interface MedicineLogDao {
 
     @Query("SELECT * FROM medicine_logs WHERE medicineId = :medicineId AND status = 'MISSED' ORDER BY scheduledTime DESC")
     suspend fun getMissedLogsForMedicine(medicineId: Long): List<MedicineLog>
+
+    @Query("DELETE FROM medicine_logs WHERE medicineId = :medicineId")
+    suspend fun deleteLogsForMedicine(medicineId: Long)
 }

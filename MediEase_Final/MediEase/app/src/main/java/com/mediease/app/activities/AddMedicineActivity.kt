@@ -32,7 +32,6 @@ import com.mediease.app.utils.PrefsManager
 import com.mediease.app.viewmodels.MedicineViewModel
 import com.mediease.app.viewmodels.UserViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -40,6 +39,8 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.ByteArrayOutputStream
 import java.io.File
+import java.net.ConnectException
+import java.net.SocketTimeoutException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -67,7 +68,7 @@ class AddMedicineActivity : AppCompatActivity() {
     private val cameraLauncher = registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
         if (success) {
             cameraImageUri?.let { uri ->
-                lifecycleScope.launch { delay(1000); handleSelectedImages(listOf(uri)) }
+                handleSelectedImages(listOf(uri))
             }
         }
     }
@@ -85,8 +86,15 @@ class AddMedicineActivity : AppCompatActivity() {
 
         setupUI()
         observeViewModel()
+        
         val prefs = PrefsManager(this)
-        userVM.loadCurrentUserById(prefs.userId)
+        val uid = prefs.userId
+        if (uid.isNotEmpty()) {
+            userVM.loadCurrentUserById(uid)
+        } else {
+            currentUser = User()
+            updateBaseTimeChips(currentUser!!)
+        }
     }
 
     private fun setupUI() {
@@ -97,10 +105,17 @@ class AddMedicineActivity : AppCompatActivity() {
         binding.btnGallery.setOnClickListener { galleryLauncher.launch("image/*") }
         binding.btnSave.setOnClickListener { saveMedicine(true) }
         binding.btnSaveAndNext.setOnClickListener { saveMedicine(false) }
+        
+        binding.chipMon.isChecked = true
+        binding.chipTue.isChecked = true
+        binding.chipWed.isChecked = true
+        binding.chipThu.isChecked = true
+        binding.chipFri.isChecked = true
+        binding.chipSat.isChecked = true
+        binding.chipSun.isChecked = true
     }
 
     private fun handleSelectedImages(uris: List<Uri>) {
-        if (uris.isEmpty()) return
         loadImage(uris[0].toString())
         uploadAndExtract(uris)
     }
@@ -109,30 +124,45 @@ class AddMedicineActivity : AppCompatActivity() {
         lifecycleScope.launch {
             try {
                 binding.etMedicineName.error = null
+                binding.btnSave.isEnabled = false
+                
                 val parts = withContext(Dispatchers.IO) {
                     uris.mapNotNull { uri -> processAndGetImagePart(uri) }
                 }
+                
                 if (parts.isNotEmpty()) {
-                    Toast.makeText(this@AddMedicineActivity, "Processing Image...", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@AddMedicineActivity, "Uploading to Server...", Toast.LENGTH_SHORT).show()
                     val response = ApiClient.apiService.uploadAndExtract(parts)
+                    
                     if (response.isSuccessful) {
-                        val extractedList = response.body()?.medicines
-                        if (!extractedList.isNullOrEmpty()) {
+                        var extractedList = response.body()?.medicines ?: emptyList()
+                        
+                        if (extractedList.size <= 1) {
+                            val rawText = extractedList.firstOrNull()?.instructions ?: ""
+                            val trimmed = trimPrescriptionText(rawText)
+                            if (trimmed.length > 10) {
+                                val splitList = splitPrescriptionIntoMedicines(trimmed)
+                                if (splitList.isNotEmpty()) extractedList = splitList
+                            }
+                        }
+
+                        if (extractedList.isNotEmpty()) {
                             extractedMedicinesQueue = extractedList.toMutableList()
                             currentQueueIndex = 0
                             showExtractedMedicine(extractedMedicinesQueue[0])
                         } else {
-                            Toast.makeText(this@AddMedicineActivity, "No data extracted. Please enter manually.", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@AddMedicineActivity, "No data extracted.", Toast.LENGTH_LONG).show()
                         }
                     } else {
-                        Toast.makeText(this@AddMedicineActivity, "Extraction failed: ${response.code()}", Toast.LENGTH_LONG).show()
+                        Log.e(TAG, "Server Error: ${response.code()}")
+                        Toast.makeText(this@AddMedicineActivity, "Server Error: ${response.code()}", Toast.LENGTH_LONG).show()
                     }
                 }
             } catch (e: Exception) {
                 Log.e(TAG, "Extraction Error", e)
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(this@AddMedicineActivity, "Server connection failed. Check IP & Server status.", Toast.LENGTH_LONG).show()
-                }
+                Toast.makeText(this@AddMedicineActivity, "Error: ${e.message}", Toast.LENGTH_LONG).show()
+            } finally {
+                binding.btnSave.isEnabled = true
             }
         }
     }
@@ -142,108 +172,151 @@ class AddMedicineActivity : AppCompatActivity() {
             binding.tvQueueStatus.visibility = View.VISIBLE
             binding.tvQueueStatus.text = "${currentQueueIndex + 1} of ${extractedMedicinesQueue.size}"
             binding.btnSaveAndNext.visibility = if (currentQueueIndex < extractedMedicinesQueue.size - 1) View.VISIBLE else View.GONE
+            binding.btnSave.text = if (currentQueueIndex == extractedMedicinesQueue.size - 1) "💾 Save & Finish" else "💾 Save Current"
         } else {
             binding.tvQueueStatus.visibility = View.GONE
             binding.btnSaveAndNext.visibility = View.GONE
+            binding.btnSave.text = "💾 Save & Finish"
         }
         autoFillForm(extracted)
     }
 
     private fun autoFillForm(extracted: ExtractedMedicine) {
-        // Fix for "default name" bug: Explicitly clear or set current name
-        binding.etMedicineName.setText(extracted.name ?: "")
-        binding.etDosage.setText(extracted.dosage ?: "")
+        val rawName = extracted.name?.trim() ?: ""
+        // Clean name from common OCR type tags
+        val cleanName = rawName.replace(Regex("(?i)Cream|Lotion|Tablets|Tablet|Solution|Ointment"), "").trim()
+        val cleanDosage = cleanDosageOcr(extracted.dosage ?: "")
         
-        var instructions = extracted.instructions ?: ""
+        binding.etMedicineName.setText(cleanName)
+        binding.etDosage.setText(cleanDosage)
         
-        // Handle Durations (e.g., 15 days, 20 duyi, etc)
-        val durationRegex = Regex("(\\d+)\\s*(DAYS|DAYT|DUYI|DARS|WEEKS)", RegexOption.IGNORE_CASE)
-        val durationMatch = durationRegex.find(instructions)
-        if (durationMatch != null) {
-            val durationText = durationMatch.value
-            if (!instructions.contains(durationText, ignoreCase = true)) {
-                instructions += " ($durationText)"
-            }
-        }
+        val instructions = trimPrescriptionText(extracted.instructions ?: "")
         binding.etNotes.setText(instructions)
 
         val upperText = instructions.uppercase()
-        val nameAndInstr = "${extracted.name} ${extracted.dosage} $instructions".uppercase()
+        val nameAndInstr = "$rawName $cleanDosage $instructions".uppercase()
 
-        // 1. Medicine Type Detection (Expanded Abbreviations)
+        // 1. Determine Type & Meal Timing Default
         when {
-            nameAndInstr.contains("TAB") || nameAndInstr.contains("MG") || nameAndInstr.contains("MCG") -> binding.chipTablet.isChecked = true
-            nameAndInstr.contains("CAP") || nameAndInstr.contains("CAPSULA") -> binding.chipCapsule.isChecked = true
-            nameAndInstr.contains("SYR") || nameAndInstr.contains("ML") || nameAndInstr.contains("ELIX") || 
-                    nameAndInstr.contains("SOL") || nameAndInstr.contains("SUSP") || nameAndInstr.contains("LIQUID") -> binding.chipSyrup.isChecked = true
-            nameAndInstr.contains("DROP") || nameAndInstr.contains("GUTT") -> binding.chipDrops.isChecked = true
-            else -> binding.chipTablet.isChecked = true
-        }
-
-        // 2. Meal Timing Detection (ac/pc/af/after food)
-        when {
+            nameAndInstr.contains("CREAM") || nameAndInstr.contains("OINTMENT") || 
+            nameAndInstr.contains("GEL") || nameAndInstr.contains("LOTION") -> {
+                binding.chipSyrup.isChecked = true
+                binding.chipAnytime.isChecked = true
+            }
             upperText.contains("BEFORE MEAL") || upperText.contains("EMPTY STOMACH") || upperText.contains("AC ") -> binding.chipBefore.isChecked = true
-            upperText.contains("AFTER MEAL") || upperText.contains("AFTER FOOD") || upperText.contains("PC ") || upperText.contains("AF ") -> binding.chipAfter.isChecked = true
+            upperText.contains("AFTER MEAL") || upperText.contains("AFTER FOOD") || upperText.contains("PC ") -> binding.chipAfter.isChecked = true
             upperText.contains("WITH MEAL") || upperText.contains("WITH FOOD") -> binding.chipWith.isChecked = true
             else -> binding.chipAnytime.isChecked = true
         }
-        
-        // Handle Expiry: Use word boundaries and prioritize the last match (often EXP is after MFG)
-        val fullTextForExpiry = "$instructions ${extracted.expiryDate ?: ""}".uppercase()
-        val expiryKeywordsRegex = Regex("\\b(?:EXP|EXPIRY|E\\.D\\.|ED|EXP\\.|VALID\\s*TILL|VAL)\\b\\D*(\\d{1,2}[-/.]\\d{2,4})")
-        val keywordMatch = expiryKeywordsRegex.findAll(fullTextForExpiry).lastOrNull()
-        
-        if (keywordMatch != null) {
-            parseAndSetExpiryDate(keywordMatch.groupValues[1])
-        } else if (!extracted.expiryDate.isNullOrBlank()) {
-            parseAndSetExpiryDate(extracted.expiryDate)
-        }
 
-        // 3. Auto-calculate Reminders (Personalized)
+        if (!binding.chipSyrup.isChecked) {
+            when {
+                nameAndInstr.contains("TAB") || nameAndInstr.contains("MG") || nameAndInstr.contains("MCG") -> binding.chipTablet.isChecked = true
+                nameAndInstr.contains("CAP") || nameAndInstr.contains("CAPSULA") -> binding.chipCapsule.isChecked = true
+                nameAndInstr.contains("SYR") || nameAndInstr.contains("ML") -> binding.chipSyrup.isChecked = true
+                nameAndInstr.contains("DROP") -> binding.chipDrops.isChecked = true
+                else -> binding.chipTablet.isChecked = true
+            }
+        }
+        
         suggestReminderTimes(instructions)
     }
 
+    private fun trimPrescriptionText(text: String): String {
+        if (text.isBlank()) return ""
+        val upperText = text.uppercase()
+        val startMarkers = listOf("PRESCRIPTION", "PRESCRIPTIONS", "RX", "R/X")
+        var startIndex = 0
+        for (marker in startMarkers) {
+            val idx = upperText.indexOf(marker)
+            if (idx != -1) { startIndex = idx + marker.length; break }
+        }
+
+        val endMarkers = listOf("SPECIAL ADVICE", "NEXT FOLLOW", "OPD TIMINGS", "DISCLAIMER", "SIGNATURE")
+        var endIndex = text.length
+        val remainingText = upperText.substring(startIndex)
+        for (marker in endMarkers) {
+            val idx = remainingText.indexOf(marker)
+            if (idx != -1) { endIndex = startIndex + idx; break }
+        }
+
+        return text.substring(startIndex, endIndex).trim()
+    }
+
+    private fun splitPrescriptionIntoMedicines(trimmedText: String): List<ExtractedMedicine> {
+        val medicines = mutableListOf<ExtractedMedicine>()
+        // Robust split on various "Dispense" misreads
+        val blocks = trimmedText.split(Regex("(?i)(?:\\()?(?:Dispense|Dk|ddpentr|Dispensc|Dknanse|Dipense|Dipensc|Disp|Dispen)[^\\d)]*\\d+(?:\\))?"))
+        
+        for (block in blocks) {
+            val content = block.trim()
+            if (content.length < 5) continue
+            
+            val lines = content.split("\n").filter { it.trim().isNotEmpty() }
+            if (lines.isEmpty()) continue
+            
+            val firstLine = lines[0].trim()
+            val regex = Regex("^([^\\d(]+)(?:\\s+([\\dzOImg\\-\\[\\]\\/\\.]+))?", RegexOption.IGNORE_CASE)
+            val match = regex.find(firstLine)
+            
+            var name = match?.groupValues?.get(1)?.trim() ?: firstLine.split(" ")[0]
+            val dosage = match?.groupValues?.get(2)?.trim() ?: ""
+            name = name.replace(Regex("[^a-zA-Z\\s\\-]"), "").trim()
+
+            if (name.length > 2) {
+                medicines.add(ExtractedMedicine(name = name, dosage = cleanDosageOcr(dosage), instructions = content))
+            }
+        }
+        return medicines
+    }
+
+    private fun cleanDosageOcr(dosage: String): String {
+        if (dosage.isEmpty()) return ""
+        return dosage.uppercase()
+            .replace("SMG", "5MG").replace("S MG", "5 MG")
+            .replace("[", "").replace("]", "")
+            .replace("Z", "2").replace("O", "0").replace("I", "1")
+            .replace("PUG", "MG").replace("102Y", "1/DAY")
+            .trim()
+    }
+
     private fun suggestReminderTimes(instructions: String) {
-        val user = currentUser ?: return
+        val user = currentUser ?: User()
         val text = instructions.uppercase(Locale.getDefault())
-            // Correct garbled OCR dosage symbols
-            .replace("O", "0")
-            .replace(Regex("[Nn]-"), "1-")
-            .replace(Regex("[Ff]-"), "1-")
-            .replace("I", "1")
-            .replace("J", "")
+            .replace("O", "0").replace("I", "1")
 
         val suggested = mutableListOf<String>()
-        val mealTiming = getSelectedMealTiming()
 
-        // Handle Patterns like 1-0-1 or 1-1-1 or 1-0-0
+        // Patterns like 1-0-1 or 1 - 0 - 1
         val pattern = Regex("(\\d)\\s*[-/ ]\\s*(\\d)\\s*[-/ ]\\s*(\\d)")
         val match = pattern.find(text)
         
         if (match != null) {
             val (m, a, n) = match.destructured
-            if (m != "0") suggested.add(calculateReminderTime(user.breakfastTime, mealTiming))
-            if (a != "0") suggested.add(calculateReminderTime(user.lunchTime, mealTiming))
-            if (n != "0") suggested.add(calculateReminderTime(user.dinnerTime, mealTiming))
+            if (m != "0") suggested.add(calculateReminderTime(user.breakfastTime, "MORNING"))
+            if (a != "0") suggested.add(calculateReminderTime(user.lunchTime, "AFTERNOON"))
+            if (n != "0") suggested.add(calculateReminderTime(user.dinnerTime, "NIGHT"))
         } else {
-            // Backup keywords
             if (text.contains("MORNING") || text.contains("BREAKFAST")) 
-                suggested.add(calculateReminderTime(user.breakfastTime, mealTiming))
-            if (text.contains("AFTERNOON") || text.contains("LUNCH") || text.contains("NOON")) 
-                suggested.add(calculateReminderTime(user.lunchTime, mealTiming))
+                suggested.add(calculateReminderTime(user.breakfastTime, "MORNING"))
+            
+            if (text.contains("AFTERNOON") || text.contains("LUNCH")) 
+                suggested.add(calculateReminderTime(user.lunchTime, "AFTERNOON"))
+            
             if (text.contains("NIGHT") || text.contains("DINNER") || text.contains("EVENING")) 
-                suggested.add(calculateReminderTime(user.dinnerTime, mealTiming))
+                suggested.add(calculateReminderTime(user.dinnerTime, "NIGHT"))
         }
 
-        // Specific rules requested: Bedtime (30 mins before), Wake up (30 mins after)
-        if (text.contains("BEDTIME") || text.contains("BEFORE SLEEP") || text.contains("HS") || text.contains("NIGHT")) {
+        if (text.contains("BD") || text.contains("B.I.D.") || text.contains("TWICE DAILY")) {
+            if (!suggested.contains(calculateReminderTime(user.breakfastTime, "MORNING")))
+                suggested.add(calculateReminderTime(user.breakfastTime, "MORNING"))
+            if (!suggested.contains(calculateReminderTime(user.dinnerTime, "NIGHT")))
+                suggested.add(calculateReminderTime(user.dinnerTime, "NIGHT"))
+        }
+
+        if (text.contains("BEDTIME") || text.contains("HS")) {
             val bedtimeReminder = addMinutes(user.bedTime, -30)
             if (!suggested.contains(bedtimeReminder)) suggested.add(bedtimeReminder)
-        }
-        
-        if (text.contains("WAKE UP") || text.contains("EARLY MORNING") || text.contains("FASTING")) {
-            val wakeUpReminder = addMinutes(user.wakeUpTime, 30)
-            if (!suggested.contains(wakeUpReminder)) suggested.add(wakeUpReminder)
         }
 
         if (suggested.isNotEmpty()) {
@@ -253,10 +326,11 @@ class AddMedicineActivity : AppCompatActivity() {
         }
     }
 
-    private fun calculateReminderTime(baseTime: String, mealTiming: String): String {
-        return when (mealTiming) {
-            "AFTER_MEAL" -> addMinutes(baseTime, 30)
-            "BEFORE_MEAL" -> addMinutes(baseTime, -30)
+    private fun calculateReminderTime(baseTime: String, period: String): String {
+        return when (period) {
+            "MORNING" -> addMinutes(baseTime, 60)   // 1 hr after breakfast
+            "NIGHT", "DINNER" -> addMinutes(baseTime, 30) // 0.5 hr after dinner
+            "AFTERNOON" -> addMinutes(baseTime, 30) // 0.5 hr after lunch
             else -> baseTime
         }
     }
@@ -275,12 +349,9 @@ class AddMedicineActivity : AppCompatActivity() {
     private fun saveMedicine(finishActivity: Boolean) {
         val name = binding.etMedicineName.text.toString().trim()
         val dosage = binding.etDosage.text.toString().trim()
-        if (name.isEmpty() || reminderTimes.isEmpty() || (expiryDateMillis == null && !finishActivity)) {
-            // Note: Allow save without expiry only if it's the final save or we'll handle it
-            if (name.isEmpty()) {
-                binding.etMedicineName.error = "Required"
-                return
-            }
+        if (name.isEmpty() || reminderTimes.isEmpty()) {
+            if (name.isEmpty()) binding.etMedicineName.error = "Required"
+            return
         }
 
         val medicine = Medicine(
@@ -317,72 +388,26 @@ class AddMedicineActivity : AppCompatActivity() {
         binding.etNotes.text.clear()
         reminderTimes.clear()
         updateTimeChips()
-        // Keep image path and base schedule
+        binding.chipSyrup.isChecked = false
+        binding.chipTablet.isChecked = true
     }
 
     private fun observeViewModel() {
         userVM.currentUser.observe(this) { user ->
-            currentUser = user
-            user?.let {
-                binding.chipBaseBreakfast.text = "Breakfast: ${it.breakfastTime}"
-                binding.chipBaseLunch.text = "Lunch: ${it.lunchTime}"
-                binding.chipBaseDinner.text = "Dinner: ${it.dinnerTime}"
+            if (user != null) {
+                currentUser = user
+                updateBaseTimeChips(user)
+            } else {
+                currentUser = User()
+                updateBaseTimeChips(currentUser!!)
             }
         }
     }
 
-    private fun parseAndSetExpiryDate(dateStr: String) {
-        // OCR often misreads separators or uses dots/dashes
-        val normalized = dateStr.replace(".", "/").replace("-", "/").trim()
-        val formats = listOf("MM/yy", "MM/yyyy", "dd/MM/yyyy", "yyyy/MM/dd", "MMM yyyy", "MM-yyyy")
-        
-        for (f in formats) {
-            try {
-                val sdf = SimpleDateFormat(f, Locale.getDefault())
-                sdf.isLenient = false
-                val date = sdf.parse(normalized)
-                if (date != null) {
-                    expiryDateMillis = date.time
-                    binding.tvExpiryDate.text = SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(date)
-                    return
-                }
-            } catch (e: Exception) { }
-        }
-    }
-
-    private suspend fun processAndGetImagePart(uri: Uri): MultipartBody.Part? = withContext(Dispatchers.IO) {
-        try {
-            val bytes = contentResolver.openInputStream(uri)?.use { it.readBytes() } ?: return@withContext null
-            val exif = ExifInterface(bytes.inputStream())
-            val orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL)
-            val options = BitmapFactory.Options().apply { inJustDecodeBounds = true }
-            BitmapFactory.decodeByteArray(bytes, 0, bytes.size, options)
-            val maxDimension = 1500 
-            var inSampleSize = 1
-            if (options.outHeight > maxDimension || options.outWidth > maxDimension) {
-                val halfHeight = options.outHeight / 2
-                val halfWidth = options.outWidth / 2
-                while (halfHeight / inSampleSize >= maxDimension && halfWidth / inSampleSize >= maxDimension) {
-                    inSampleSize *= 2
-                }
-            }
-            val decodeOptions = BitmapFactory.Options().apply { this.inSampleSize = inSampleSize }
-            val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size, decodeOptions) ?: return@withContext null
-            val matrix = Matrix()
-            when (orientation) {
-                ExifInterface.ORIENTATION_ROTATE_90 -> matrix.postRotate(90f)
-                ExifInterface.ORIENTATION_ROTATE_180 -> matrix.postRotate(180f)
-                ExifInterface.ORIENTATION_ROTATE_270 -> matrix.postRotate(270f)
-            }
-            val rotatedBitmap = if (orientation != ExifInterface.ORIENTATION_NORMAL && orientation != 0) {
-                Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
-            } else { bitmap }
-            val outputStream = ByteArrayOutputStream()
-            rotatedBitmap.compress(Bitmap.CompressFormat.JPEG, 85, outputStream)
-            val finalBytes = outputStream.toByteArray()
-            val requestFile = finalBytes.toRequestBody("image/jpeg".toMediaTypeOrNull())
-            MultipartBody.Part.createFormData("files", "image_${System.currentTimeMillis()}.jpg", requestFile)
-        } catch (e: Exception) { null }
+    private fun updateBaseTimeChips(user: User) {
+        binding.chipBaseBreakfast.text = "Breakfast: ${user.breakfastTime}"
+        binding.chipBaseLunch.text = "Lunch: ${user.lunchTime}"
+        binding.chipBaseDinner.text = "Dinner: ${user.dinnerTime}"
     }
 
     private fun showDatePicker() {
@@ -451,7 +476,15 @@ class AddMedicineActivity : AppCompatActivity() {
     }
 
     private fun getSelectedDays(): String {
-        return "1,2,3,4,5,6,7" // Default to all days since chips were removed from layout
+        val days = mutableListOf<String>()
+        if (binding.chipMon.isChecked) days.add("1")
+        if (binding.chipTue.isChecked) days.add("2")
+        if (binding.chipWed.isChecked) days.add("3")
+        if (binding.chipThu.isChecked) days.add("4")
+        if (binding.chipFri.isChecked) days.add("5")
+        if (binding.chipSat.isChecked) days.add("6")
+        if (binding.chipSun.isChecked) days.add("7")
+        return days.joinToString(",")
     }
 
     private fun getSelectedFrequency(): String {
@@ -466,9 +499,28 @@ class AddMedicineActivity : AppCompatActivity() {
                 when (med.type) { "TABLET" -> binding.chipTablet.isChecked = true; "CAPSULE" -> binding.chipCapsule.isChecked = true; "SYRUP" -> binding.chipSyrup.isChecked = true; "DROPS" -> binding.chipDrops.isChecked = true }
                 when (med.mealTiming) { "BEFORE_MEAL" -> binding.chipBefore.isChecked = true; "AFTER_MEAL" -> binding.chipAfter.isChecked = true; "WITH_MEAL" -> binding.chipWith.isChecked = true; "ANYTIME" -> binding.chipAnytime.isChecked = true }
                 med.expiryDate?.let { expiryDateMillis = it; binding.tvExpiryDate.text = SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(Date(it)) }
+                
+                val days = med.repeatDays.split(",")
+                binding.chipMon.isChecked = days.contains("1")
+                binding.chipTue.isChecked = days.contains("2")
+                binding.chipWed.isChecked = days.contains("3")
+                binding.chipThu.isChecked = days.contains("4")
+                binding.chipFri.isChecked = days.contains("5")
+                binding.chipSat.isChecked = days.contains("6")
+                binding.chipSun.isChecked = days.contains("7")
+
                 reminderTimes.clear(); reminderTimes.addAll(med.getReminderTimesList()); updateTimeChips()
                 if (!med.imagePath.isNullOrEmpty()) loadImage(med.imagePath)
             }
         }
+    }
+
+    private suspend fun processAndGetImagePart(uri: Uri): MultipartBody.Part? = withContext(Dispatchers.IO) {
+        try {
+            val inputStream = contentResolver.openInputStream(uri) ?: return@withContext null
+            val originalBytes = inputStream.use { it.readBytes() }
+            val requestBody = originalBytes.toRequestBody("image/jpeg".toMediaTypeOrNull())
+            MultipartBody.Part.createFormData("files", "image_${System.currentTimeMillis()}.jpg", requestBody)
+        } catch (e: Exception) { null }
     }
 }

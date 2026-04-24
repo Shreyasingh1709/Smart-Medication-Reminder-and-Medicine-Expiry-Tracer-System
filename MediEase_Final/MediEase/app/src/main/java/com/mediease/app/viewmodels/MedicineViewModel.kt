@@ -20,14 +20,14 @@ class MedicineViewModel(application: Application) : AndroidViewModel(application
         repo.getMedicinesWithExpiry(prefs.userId)
     }
 
-    val medicineCount: LiveData<Int> get() = _medicineCount
     private val _medicineCount = MutableLiveData<Int>()
+    val medicineCount: LiveData<Int> get() = _medicineCount
 
-    val saveResult: LiveData<Boolean> get() = _saveResult
     private val _saveResult = MutableLiveData<Boolean>()
+    val saveResult: LiveData<Boolean> get() = _saveResult
 
-    val deleteResult: LiveData<Boolean> get() = _deleteResult
     private val _deleteResult = MutableLiveData<Boolean>()
+    val deleteResult: LiveData<Boolean> get() = _deleteResult
 
     fun getMedicineById(id: Long): LiveData<Medicine?> = repo.getMedicineByIdLive(id)
 
@@ -41,7 +41,6 @@ class MedicineViewModel(application: Application) : AndroidViewModel(application
                         ReminderScheduler.scheduleForMedicine(getApplication(), savedMed)
                     }
                 } else {
-                    // Cancel existing reminders before re-scheduling
                     val oldMed = repo.getMedicineById(medicine.id)
                     oldMed?.let {
                         ReminderScheduler.cancelForMedicine(getApplication(), it.id)
@@ -61,7 +60,18 @@ class MedicineViewModel(application: Application) : AndroidViewModel(application
         viewModelScope.launch {
             try {
                 ReminderScheduler.cancelForMedicine(getApplication(), medicine.id)
-                repo.deleteMedicine(medicine)
+                repo.deleteMedicine(medicine.id)
+                _deleteResult.postValue(true)
+            } catch (e: Exception) {
+                _deleteResult.postValue(false)
+            }
+        }
+    }
+
+    fun deleteAllMedicines() {
+        viewModelScope.launch {
+            try {
+                repo.deleteAllMedicines(prefs.userId)
                 _deleteResult.postValue(true)
             } catch (e: Exception) {
                 _deleteResult.postValue(false)

@@ -4,6 +4,7 @@ package com.mediease.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +21,9 @@ public final class ItemExpiryWarningBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
+  public final Button btnDiscard;
+
+  @NonNull
   public final TextView tvDaysLeft;
 
   @NonNull
@@ -31,9 +35,11 @@ public final class ItemExpiryWarningBinding implements ViewBinding {
   @NonNull
   public final TextView tvStatus;
 
-  private ItemExpiryWarningBinding(@NonNull CardView rootView, @NonNull TextView tvDaysLeft,
-      @NonNull TextView tvDosage, @NonNull TextView tvName, @NonNull TextView tvStatus) {
+  private ItemExpiryWarningBinding(@NonNull CardView rootView, @NonNull Button btnDiscard,
+      @NonNull TextView tvDaysLeft, @NonNull TextView tvDosage, @NonNull TextView tvName,
+      @NonNull TextView tvStatus) {
     this.rootView = rootView;
+    this.btnDiscard = btnDiscard;
     this.tvDaysLeft = tvDaysLeft;
     this.tvDosage = tvDosage;
     this.tvName = tvName;
@@ -67,6 +73,12 @@ public final class ItemExpiryWarningBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btn_discard;
+      Button btnDiscard = ViewBindings.findChildViewById(rootView, id);
+      if (btnDiscard == null) {
+        break missingId;
+      }
+
       id = R.id.tv_days_left;
       TextView tvDaysLeft = ViewBindings.findChildViewById(rootView, id);
       if (tvDaysLeft == null) {
@@ -91,8 +103,8 @@ public final class ItemExpiryWarningBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemExpiryWarningBinding((CardView) rootView, tvDaysLeft, tvDosage, tvName,
-          tvStatus);
+      return new ItemExpiryWarningBinding((CardView) rootView, btnDiscard, tvDaysLeft, tvDosage,
+          tvName, tvStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

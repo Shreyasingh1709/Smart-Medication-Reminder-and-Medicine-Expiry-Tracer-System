@@ -6,10 +6,10 @@ import com.mediease.app.models.Medicine
 
 @Dao
 interface MedicineDao {
-    @Query("SELECT * FROM medicines WHERE userId = :userId ORDER BY createdAt DESC")
+    @Query("SELECT * FROM medicines WHERE userId = :userId AND isActive = 1 ORDER BY createdAt DESC")
     fun getMedicinesForUser(userId: String): LiveData<List<Medicine>>
 
-    @Query("SELECT * FROM medicines WHERE userId = :userId ORDER BY createdAt DESC")
+    @Query("SELECT * FROM medicines WHERE userId = :userId AND isActive = 1 ORDER BY createdAt DESC")
     suspend fun getMedicinesForUserSync(userId: String): List<Medicine>
 
     @Query("SELECT * FROM medicines WHERE id = :id")
@@ -18,13 +18,13 @@ interface MedicineDao {
     @Query("SELECT * FROM medicines WHERE id = :id")
     fun getMedicineByIdLive(id: Long): LiveData<Medicine?>
 
-    @Query("SELECT * FROM medicines WHERE userId = :userId AND expiryDate IS NOT NULL ORDER BY expiryDate ASC")
+    @Query("SELECT * FROM medicines WHERE userId = :userId AND isActive = 1 AND expiryDate IS NOT NULL ORDER BY expiryDate ASC")
     fun getMedicinesWithExpiry(userId: String): LiveData<List<Medicine>>
 
-    @Query("SELECT * FROM medicines WHERE userId = :userId AND expiryDate < :now")
+    @Query("SELECT * FROM medicines WHERE userId = :userId AND isActive = 1 AND expiryDate < :now")
     suspend fun getExpiredMedicines(userId: String, now: Long): List<Medicine>
 
-    @Query("SELECT * FROM medicines WHERE userId = :userId AND expiryDate BETWEEN :now AND :threshold")
+    @Query("SELECT * FROM medicines WHERE userId = :userId AND isActive = 1 AND expiryDate BETWEEN :now AND :threshold")
     suspend fun getExpiringSoonMedicines(userId: String, now: Long, threshold: Long): List<Medicine>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -41,4 +41,7 @@ interface MedicineDao {
 
     @Query("UPDATE medicines SET isActive = 0 WHERE id = :id")
     suspend fun deactivateMedicine(id: Long)
+
+    @Query("DELETE FROM medicines WHERE id = :id")
+    suspend fun deleteMedicineById(id: Long)
 }

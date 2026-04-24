@@ -4,22 +4,27 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import okhttp3.Protocol
 import java.util.concurrent.TimeUnit
 
 object ApiClient {
-    // Updated to match your computer's local IP address for physical device testing
-    private const val BASE_URL = "http://192.168.1.9:8000/"
+    /**
+     * Updated BASE_URL to match your laptop's current IP address (10.1.70.128).
+     * Ensure your laptop and phone are on the same Wi-Fi network (ALLiANCEBLR.COM).
+     */
+    private const val BASE_URL = "http://10.1.70.128:8000/"
 
     private val logging = HttpLoggingInterceptor().apply {
-        level = HttpLoggingInterceptor.Level.HEADERS // Changed to HEADERS to avoid overhead with large image uploads
+        level = HttpLoggingInterceptor.Level.BODY 
     }
 
     private val httpClient = OkHttpClient.Builder()
         .addInterceptor(logging)
-        .connectTimeout(60, TimeUnit.SECONDS)
-        .readTimeout(120, TimeUnit.SECONDS)
+        .connectTimeout(120, TimeUnit.SECONDS)
+        .readTimeout(120, TimeUnit.SECONDS)    
         .writeTimeout(120, TimeUnit.SECONDS)
         .retryOnConnectionFailure(true)
+        .protocols(listOf(Protocol.HTTP_1_1)) 
         .build()
 
     val retrofit: Retrofit = Retrofit.Builder()
@@ -31,4 +36,6 @@ object ApiClient {
     val apiService: ApiService by lazy {
         retrofit.create(ApiService::class.java)
     }
+
+    fun getBaseUrl(): String = BASE_URL
 }

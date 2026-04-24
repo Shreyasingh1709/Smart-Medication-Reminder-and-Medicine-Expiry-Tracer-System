@@ -84,9 +84,9 @@
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
-            <!-- Today's medicines -->
+            <!-- Today's reminders -->
             <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:text="📋 Today's Schedule" android:textSize="18sp"
+                android:text="📅 Today's Reminder" android:textSize="18sp"
                 android:fontFamily="@font/nunito" android:textStyle="bold"
                 android:textColor="@color/charcoal" android:layout_marginBottom="12dp"/>
 
@@ -118,7 +118,8 @@
 
             <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_medicines"
                 android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"/>
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
             <!-- Expiry Section -->
             <LinearLayout android:id="@+id/card_expiry_section" android:layout_width="match_parent"
@@ -130,7 +131,8 @@
                     android:textColor="@color/charcoal" android:layout_marginBottom="12dp"/>
                 <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_expiry_warnings"
                     android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:nestedScrollingEnabled="false"/>
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
@@ -143,7 +145,7 @@
         android:layout_gravity="center"
         android:layout_marginHorizontal="80dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/bg_status_expiring"
+        android:background="@drawable/bg_btn_coral"
         android:fontFamily="@font/nunito"
         android:paddingHorizontal="26dp"
         android:stateListAnimator="@null"

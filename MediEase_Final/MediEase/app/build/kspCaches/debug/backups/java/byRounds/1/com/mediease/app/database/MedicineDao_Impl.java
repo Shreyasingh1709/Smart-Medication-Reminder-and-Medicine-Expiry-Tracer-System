@@ -44,6 +44,8 @@ public final class MedicineDao_Impl implements MedicineDao {
 
   private final SharedSQLiteStatement __preparedStmtOfDeactivateMedicine;
 
+  private final SharedSQLiteStatement __preparedStmtOfDeleteMedicineById;
+
   public MedicineDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfMedicine = new EntityInsertionAdapter<Medicine>(__db) {
@@ -146,6 +148,14 @@ public final class MedicineDao_Impl implements MedicineDao {
         return _query;
       }
     };
+    this.__preparedStmtOfDeleteMedicineById = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "DELETE FROM medicines WHERE id = ?";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -231,8 +241,33 @@ public final class MedicineDao_Impl implements MedicineDao {
   }
 
   @Override
+  public Object deleteMedicineById(final long id, final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteMedicineById.acquire();
+        int _argIndex = 1;
+        _stmt.bindLong(_argIndex, id);
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfDeleteMedicineById.release(_stmt);
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
   public LiveData<List<Medicine>> getMedicinesForUser(final String userId) {
-    final String _sql = "SELECT * FROM medicines WHERE userId = ? ORDER BY createdAt DESC";
+    final String _sql = "SELECT * FROM medicines WHERE userId = ? AND isActive = 1 ORDER BY createdAt DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     _statement.bindString(_argIndex, userId);
@@ -328,7 +363,7 @@ public final class MedicineDao_Impl implements MedicineDao {
   @Override
   public Object getMedicinesForUserSync(final String userId,
       final Continuation<? super List<Medicine>> $completion) {
-    final String _sql = "SELECT * FROM medicines WHERE userId = ? ORDER BY createdAt DESC";
+    final String _sql = "SELECT * FROM medicines WHERE userId = ? AND isActive = 1 ORDER BY createdAt DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     _statement.bindString(_argIndex, userId);
@@ -607,7 +642,7 @@ public final class MedicineDao_Impl implements MedicineDao {
 
   @Override
   public LiveData<List<Medicine>> getMedicinesWithExpiry(final String userId) {
-    final String _sql = "SELECT * FROM medicines WHERE userId = ? AND expiryDate IS NOT NULL ORDER BY expiryDate ASC";
+    final String _sql = "SELECT * FROM medicines WHERE userId = ? AND isActive = 1 AND expiryDate IS NOT NULL ORDER BY expiryDate ASC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     _statement.bindString(_argIndex, userId);
@@ -703,7 +738,7 @@ public final class MedicineDao_Impl implements MedicineDao {
   @Override
   public Object getExpiredMedicines(final String userId, final long now,
       final Continuation<? super List<Medicine>> $completion) {
-    final String _sql = "SELECT * FROM medicines WHERE userId = ? AND expiryDate < ?";
+    final String _sql = "SELECT * FROM medicines WHERE userId = ? AND isActive = 1 AND expiryDate < ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
     _statement.bindString(_argIndex, userId);
@@ -798,7 +833,7 @@ public final class MedicineDao_Impl implements MedicineDao {
   @Override
   public Object getExpiringSoonMedicines(final String userId, final long now, final long threshold,
       final Continuation<? super List<Medicine>> $completion) {
-    final String _sql = "SELECT * FROM medicines WHERE userId = ? AND expiryDate BETWEEN ? AND ?";
+    final String _sql = "SELECT * FROM medicines WHERE userId = ? AND isActive = 1 AND expiryDate BETWEEN ? AND ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 3);
     int _argIndex = 1;
     _statement.bindString(_argIndex, userId);

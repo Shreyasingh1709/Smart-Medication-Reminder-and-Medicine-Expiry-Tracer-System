@@ -161,6 +161,7 @@ id btn_camera
 id btn_connect
 id btn_copy_code
 id btn_create_account
+id btn_discard
 id btn_edit_schedule
 id btn_email_support
 id btn_gallery

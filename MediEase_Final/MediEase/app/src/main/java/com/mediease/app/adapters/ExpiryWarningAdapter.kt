@@ -9,25 +9,33 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mediease.app.databinding.ItemExpiryWarningBinding
 import com.mediease.app.models.Medicine
 
-class ExpiryWarningAdapter :
-    ListAdapter<Medicine, ExpiryWarningAdapter.ViewHolder>(DiffCallback) {
+class ExpiryWarningAdapter(
+    private val onDiscard: (Medicine) -> Unit
+) : ListAdapter<Medicine, ExpiryWarningAdapter.ViewHolder>(DiffCallback) {
 
     inner class ViewHolder(private val binding: ItemExpiryWarningBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(medicine: Medicine) {
             binding.tvName.text = medicine.name
             binding.tvDosage.text = medicine.dosage
+            
             if (medicine.isExpired()) {
                 binding.tvStatus.text = "⚠️ EXPIRED"
                 binding.tvStatus.setTextColor(0xFFC62828.toInt())
                 binding.tvDaysLeft.text = "Please discard this medicine"
                 binding.tvDaysLeft.setTextColor(0xFFC62828.toInt())
+                binding.btnDiscard.visibility = View.VISIBLE
             } else {
                 val days = medicine.daysUntilExpiry() ?: 0
                 binding.tvStatus.text = "⏰ Expires Soon"
                 binding.tvStatus.setTextColor(0xFFF57F17.toInt())
                 binding.tvDaysLeft.text = "$days days remaining"
                 binding.tvDaysLeft.setTextColor(0xFFF9A825.toInt())
+                binding.btnDiscard.visibility = View.GONE
+            }
+
+            binding.btnDiscard.setOnClickListener {
+                onDiscard(medicine)
             }
         }
     }

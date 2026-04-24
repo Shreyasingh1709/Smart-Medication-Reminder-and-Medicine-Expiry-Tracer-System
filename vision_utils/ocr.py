@@ -1,10 +1,7 @@
-
 import os
 import cv2
 import numpy as np
-
 import easyocr
-import os
 
 reader = easyocr.Reader(['en'])
 

@@ -3427,6 +3427,7 @@ int id btn_camera 0x7f0a006b
 int id btn_connect 0x7f0a006c
 int id btn_copy_code 0x7f0a006d
 int id btn_create_account 0x7f0a006e
+int id btn_discard 0x7f0a02b6
 int id btn_edit_schedule 0x7f0a006f
 int id btn_email_support 0x7f0a0070
 int id btn_gallery 0x7f0a0071

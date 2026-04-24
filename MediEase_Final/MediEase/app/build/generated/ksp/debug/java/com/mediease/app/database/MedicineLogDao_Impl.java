@@ -44,6 +44,8 @@ public final class MedicineLogDao_Impl implements MedicineLogDao {
 
   private final SharedSQLiteStatement __preparedStmtOfMarkOverdueAsMissed;
 
+  private final SharedSQLiteStatement __preparedStmtOfDeleteLogsForMedicine;
+
   public MedicineLogDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfMedicineLog = new EntityInsertionAdapter<MedicineLog>(__db) {
@@ -108,6 +110,14 @@ public final class MedicineLogDao_Impl implements MedicineLogDao {
       @NonNull
       public String createQuery() {
         final String _query = "UPDATE medicine_logs SET status = 'MISSED' WHERE scheduledTime < ? AND status = 'PENDING'";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfDeleteLogsForMedicine = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "DELETE FROM medicine_logs WHERE medicineId = ?";
         return _query;
       }
     };
@@ -198,6 +208,32 @@ public final class MedicineLogDao_Impl implements MedicineLogDao {
           }
         } finally {
           __preparedStmtOfMarkOverdueAsMissed.release(_stmt);
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object deleteLogsForMedicine(final long medicineId,
+      final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteLogsForMedicine.acquire();
+        int _argIndex = 1;
+        _stmt.bindLong(_argIndex, medicineId);
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfDeleteLogsForMedicine.release(_stmt);
         }
       }
     }, $completion);

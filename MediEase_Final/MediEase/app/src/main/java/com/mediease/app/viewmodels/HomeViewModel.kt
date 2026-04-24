@@ -27,14 +27,36 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             isLoading.value = true
             try {
                 val userId = prefs.userId
-                val medicines = repo.getMedicinesForUserSync(userId)
-                todayMedicines.value = medicines
+                val allMedicines = repo.getMedicinesForUserSync(userId)
+                
+                // Get today's day of week (1=Mon, 7=Sun)
+                val calendar = Calendar.getInstance()
+                // java.util.Calendar uses 1=Sun, 2=Mon...
+                // Our repeatDays uses 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat, 7=Sun
+                val dayOfWeek = when(calendar.get(Calendar.DAY_OF_WEEK)) {
+                    Calendar.MONDAY -> 1
+                    Calendar.TUESDAY -> 2
+                    Calendar.WEDNESDAY -> 3
+                    Calendar.THURSDAY -> 4
+                    Calendar.FRIDAY -> 5
+                    Calendar.SATURDAY -> 6
+                    Calendar.SUNDAY -> 7
+                    else -> 1
+                }
+                
+                // Filter medicines that should be taken today
+                val filtered = allMedicines.filter { medicine ->
+                    val repeatDays = medicine.getRepeatDaysList()
+                    repeatDays.contains(dayOfWeek) && medicine.isActive
+                }
+                
+                todayMedicines.value = filtered
                 
                 val today = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
                 val logs = repo.getLogsForDateSync(today)
                 
                 // Calculate counts based on today's logs
-                totalToday.value = medicines.size
+                totalToday.value = filtered.size
                 takenCount.value = logs.count { it.status == "TAKEN" }
                 missedCount.value = logs.count { it.status == "MISSED" }
                 
