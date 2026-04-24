@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -29,18 +30,28 @@ public final class FragmentChatBinding implements ViewBinding {
   public final EditText etMessage;
 
   @NonNull
+  public final LinearLayout layoutSuggestions;
+
+  @NonNull
   public final ProgressBar pbLoading;
 
   @NonNull
   public final RecyclerView rvChat;
 
+  @NonNull
+  public final NestedScrollView scrollSuggestions;
+
   private FragmentChatBinding(@NonNull LinearLayout rootView, @NonNull ImageButton btnSend,
-      @NonNull EditText etMessage, @NonNull ProgressBar pbLoading, @NonNull RecyclerView rvChat) {
+      @NonNull EditText etMessage, @NonNull LinearLayout layoutSuggestions,
+      @NonNull ProgressBar pbLoading, @NonNull RecyclerView rvChat,
+      @NonNull NestedScrollView scrollSuggestions) {
     this.rootView = rootView;
     this.btnSend = btnSend;
     this.etMessage = etMessage;
+    this.layoutSuggestions = layoutSuggestions;
     this.pbLoading = pbLoading;
     this.rvChat = rvChat;
+    this.scrollSuggestions = scrollSuggestions;
   }
 
   @Override
@@ -82,6 +93,12 @@ public final class FragmentChatBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.layout_suggestions;
+      LinearLayout layoutSuggestions = ViewBindings.findChildViewById(rootView, id);
+      if (layoutSuggestions == null) {
+        break missingId;
+      }
+
       id = R.id.pb_loading;
       ProgressBar pbLoading = ViewBindings.findChildViewById(rootView, id);
       if (pbLoading == null) {
@@ -94,8 +111,14 @@ public final class FragmentChatBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentChatBinding((LinearLayout) rootView, btnSend, etMessage, pbLoading,
-          rvChat);
+      id = R.id.scroll_suggestions;
+      NestedScrollView scrollSuggestions = ViewBindings.findChildViewById(rootView, id);
+      if (scrollSuggestions == null) {
+        break missingId;
+      }
+
+      return new FragmentChatBinding((LinearLayout) rootView, btnSend, etMessage, layoutSuggestions,
+          pbLoading, rvChat, scrollSuggestions);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

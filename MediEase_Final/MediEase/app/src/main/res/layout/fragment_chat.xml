@@ -25,6 +25,24 @@
             android:textColor="@color/charcoal"/>
     </LinearLayout>
 
+    <!-- Suggestions/FAQ vertical list -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_suggestions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="200dp"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="16dp"
+        android:background="#F5F5F5">
+        <LinearLayout
+            android:id="@+id/layout_suggestions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Chips/Buttons will be added dynamically -->
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
     <!-- Chat Messages -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_chat"
@@ -61,7 +79,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Ask anything about health..."
+            android:hint="Ask about your medicine..."
             android:background="@drawable/bg_field"
             android:paddingHorizontal="16dp"
             android:paddingVertical="12dp"

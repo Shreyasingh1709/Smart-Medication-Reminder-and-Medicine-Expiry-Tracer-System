@@ -3648,6 +3648,7 @@ id labeled
 id layout
 id layout_image_placeholder
 id layout_otp_password
+id layout_suggestions
 id left
 id leftToRight
 id legacy
@@ -3827,6 +3828,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scroll_suggestions
 id scrollable
 id search_badge
 id search_bar

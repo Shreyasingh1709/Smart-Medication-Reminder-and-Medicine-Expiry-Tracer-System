@@ -244,10 +244,6 @@
         "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\font\\nunito_semibold.ttf"
     },
     {
-        "merged": "com.mediease.app-merged_res-82:/layout_item_expiry_warning.xml.flat",
-        "source": "com.mediease.app-main-84:/layout/item_expiry_warning.xml"
-    },
-    {
         "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\layout_fragment_chat.xml.flat",
         "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\layout\\fragment_chat.xml"
     },
@@ -262,6 +258,10 @@
     {
         "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_btn_coral.xml.flat",
         "source": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-main-84:\\drawable\\bg_btn_coral.xml"
+    },
+    {
+        "merged": "com.mediease.app-merged_res-82:/layout_fragment_chat.xml.flat",
+        "source": "com.mediease.app-main-84:/layout/fragment_chat.xml"
     },
     {
         "merged": "C:\\Users\\shrey\\.gradle\\daemon\\8.2\\com.mediease.app-merged_res-82:\\drawable_bg_tag_lavender.xml.flat",

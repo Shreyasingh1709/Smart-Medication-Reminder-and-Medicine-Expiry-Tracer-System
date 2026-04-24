@@ -3647,6 +3647,7 @@ int id labeled 0x7f0a0140
 int id layout 0x7f0a0141
 int id layout_image_placeholder 0x7f0a02b2
 int id layout_otp_password 0x7f0a0142
+int id layout_suggestions 0x7f0a02b7
 int id left 0x7f0a0143
 int id leftToRight 0x7f0a0144
 int id legacy 0x7f0a0145
@@ -3826,6 +3827,7 @@ int id scroll 0x7f0a01f3
 int id scrollIndicatorDown 0x7f0a01f4
 int id scrollIndicatorUp 0x7f0a01f5
 int id scrollView 0x7f0a01f6
+int id scroll_suggestions 0x7f0a02b8
 int id scrollable 0x7f0a01f7
 int id search_badge 0x7f0a01f8
 int id search_bar 0x7f0a01f9

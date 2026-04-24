@@ -236,6 +236,7 @@ id iv_medicine
 id iv_medicine_image
 id layout_image_placeholder
 id layout_otp_password
+id layout_suggestions
 id line_chart
 id ll_message_container
 id nav_ai_chat
@@ -261,6 +262,7 @@ id rv_expiry_warnings
 id rv_medicines
 id rv_patients
 id rv_reminders
+id scroll_suggestions
 id spinner_age_range
 id switch_caregiver
 id switch_enabled
